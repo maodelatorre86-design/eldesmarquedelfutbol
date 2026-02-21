@@ -4,341 +4,135 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internacional de Bogotá vs Millonarios EN VIVO | El Desmarque del Fútbol</title>
-
-<meta name="description" content="Transmisión en vivo Internacional de Bogotá vs Millonarios hoy. Previa desde las 7:30 PM por El Desmarque del Fútbol.">
-<meta name="keywords" content="Internacional de Bogotá vs Millonarios en vivo, Millonarios hoy, fútbol colombiano en vivo">
+<title>EL DESMARQUE DEL FÚTBOL | EN VIVO</title>
 
 <style>
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
+  background:#0b0f19;
   color:white;
-  background:black;
+  text-align:center;
 }
 
-/* Fondo estadio */
-.bg{
-  position:fixed;
+/* HEADER */
+.header{
+  background:#0f1c3a;
+  padding:15px;
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+/* REPRODUCTOR */
+.player-container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:15px;
+}
+
+/* VIDEO / IMAGEN */
+.video-wrapper{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+  background:black;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 25px rgba(0,0,0,0.8);
+}
+
+.video-wrapper iframe,
+.video-wrapper img{
+  position:absolute;
   top:0;
   left:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  z-index:-1;
-  filter:brightness(0.35);
 }
 
-.header{
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(6px);
-  padding:15px;
-  font-size:22px;
-  font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-}
-
-.header img{ width:35px; }
-
-.container{
-  width:95%;
-  max-width:1100px;
-  margin:20px auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.card{
-  background:rgba(0,0,0,0.65);
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.logo{
-  width:90px;
-  margin-bottom:15px;
-}
-
-.badge{
-  background:rgba(255,255,255,0.15);
-  padding:8px 15px;
-  border-radius:20px;
-  display:inline-block;
-  margin-bottom:15px;
-  font-weight:bold;
-}
-
-.vs{
-  background:#ff7a00;
-  padding:5px 10px;
+/* BOTÓN FULLSCREEN */
+.full-btn{
+  margin-top:15px;
+  padding:12px 25px;
+  font-size:16px;
+  background:#ff7b00;
+  border:none;
   border-radius:8px;
-  font-weight:bold;
-}
-
-.countdown{
-  font-size:24px;
-  margin-top:15px;
-  font-weight:bold;
-}
-
-.viewer{
-  margin-top:10px;
-  font-weight:bold;
-  background:rgba(255,255,255,0.1);
-  padding:8px;
-  border-radius:10px;
-  display:inline-block;
-}
-
-.player{
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:14px;
-  overflow:hidden;
-  background:black;
-}
-
-.player iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-.btn{
-  margin-top:15px;
-  padding:10px 20px;
-  background:#ff7a00;
-  border:none;
-  border-radius:10px;
   color:white;
-  font-weight:bold;
   cursor:pointer;
 }
 
-/* Responsive */
-@media(max-width:900px){
-  .container{ grid-template-columns:1fr; }
+.full-btn:hover{
+  background:#ff9500;
 }
 
-/* =========================================================
-   FULLSCREEN COMPACTO (para móvil, sin recortes)
-   ========================================================= */
-#fullscreenContainer{
-  display:none;
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  background:#000;
-  z-index:9999;
-  flex-direction:column;
+/* INFO */
+.info{
+  margin-top:25px;
+  font-size:20px;
+  line-height:1.6;
 }
 
-.fullscreenHeader{
-  background:rgba(0,0,0,0.82);
-  backdrop-filter: blur(6px);
-  padding:10px 12px;
-  font-size:14px;
-  font-weight:800;
-  text-align:center;
-  border-bottom:1px solid rgba(255,255,255,0.12);
+@media(max-width:768px){
+  .header{
+    font-size:22px;
+  }
 }
-
-.fullscreenPlayer{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.fullscreenPlayer iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-.exitBtn{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:rgba(255,0,0,0.9);
-  color:#fff;
-  border:none;
-  padding:8px 10px;
-  border-radius:10px;
-  font-weight:900;
-  cursor:pointer;
-  z-index:10000;
-}
-
 </style>
 </head>
 
 <body>
 
-<img class="bg" src="ESTADIO DE TECHO.jpg" alt="Estadio de Techo">
-
 <div class="header">
-  <img src="EJEMPLO LOGO 2 (2).png" alt="Logo">
-  EL DESMARQUE DEL FÚTBOL
+⚽ EL DESMARQUE DEL FÚTBOL
 </div>
 
-<div class="container">
+<div class="player-container">
 
-  <!-- INFO -->
-  <div class="card">
-    <img class="logo" src="EJEMPLO LOGO 2 (2).png" alt="Logo">
+<!-- REPRODUCTOR -->
+<div class="video-wrapper" id="player">
 
-    <div class="badge">📡 HOY EN VIVO</div>
+<!-- 👇 IMAGEN ACTUAL (ANTES DEL LIVE) -->
+<img src="INTER VS MILLONARIOS COM.png" alt="Transmisión en vivo">
 
-    <h2>Internacional de Bogotá <span class="vs">VS</span> Millonarios</h2>
+<!-- 👇 CUANDO COMIENCE EL LIVE REEMPLAZAS POR IFRAME -->
 
-    <p>Partido: <strong>8:30 PM</strong></p>
-    <p>Transmisión: <strong>7:30 PM</strong></p>
-
-    <p>
-      Narra Álvaro Malkún<br>
-      con el análisis de Mauricio Guerrero y Jaime Vélez
-    </p>
-
-    <div class="countdown" id="countdown"></div>
-
-    <div class="viewer">
-      👀 <span id="viewers">0</span> personas viendo
-    </div>
-  </div>
-
-  <!-- PLAYER -->
-  <div class="card">
-    <div class="player" id="playerBox">
-      <iframe id="fbPlayer" allowfullscreen></iframe>
-    </div>
-
-    <button class="btn" onclick="openCompactFullscreen()">VER EN PANTALLA COMPLETA</button>
-    <button class="btn" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.14);"
-            onclick="reloadPlayer()">RECARGAR EN VIVO</button>
-  </div>
+<!--
+<iframe 
+src="AQUI_PONES_EL_LINK_DEL_VIDEO_FACEBOOK"
+frameborder="0"
+allowfullscreen>
+</iframe>
+-->
 
 </div>
 
-<!-- =========================================================
-     FULLSCREEN COMPACTO (Overlay)
-     ========================================================= -->
-<div id="fullscreenContainer">
-  <button class="exitBtn" onclick="exitCompactFullscreen()">X</button>
+<button class="full-btn" onclick="openFullscreen()">
+Ver en pantalla completa
+</button>
 
-  <div class="fullscreenHeader">
-    Internacional de Bogotá vs Millonarios • EL DESMARQUE DEL FÚTBOL
-  </div>
+<div class="info">
+Hoy EN VIVO<br>
+Internacional de Bogotá vs Millonarios<br>
+Partido: 8:30 PM<br>
+Nuestra transmisión: 7:30 PM
+</div>
 
-  <div class="fullscreenPlayer">
-    <iframe id="fullscreenFrame" allowfullscreen></iframe>
-  </div>
 </div>
 
 <script>
-/* =========================================================
-   1) SOLO CAMBIA ESTE LINK cuando tengas el live
-   ========================================================= */
-const FACEBOOK_LIVE_URL = "https://www.facebook.com/100063705559520/videos/2721277258226717?locale=es_LA";
-
-/* =========================================================
-   2) Contador HOY hasta 7:30 PM
-   ========================================================= */
-const startStream = new Date();
-startStream.setHours(19,30,0,0); // 7:30 PM hoy
-
-function updateCountdown(){
-  const now = new Date();
-  const diff = startStream - now;
-
-  if(diff <= 0){
-    document.getElementById("countdown").innerHTML = "🔴 YA ESTAMOS EN VIVO";
-    return;
+function openFullscreen(){
+  var elem = document.getElementById("player");
+  if(elem.requestFullscreen){
+    elem.requestFullscreen();
+  }else if(elem.webkitRequestFullscreen){
+    elem.webkitRequestFullscreen();
+  }else if(elem.msRequestFullscreen){
+    elem.msRequestFullscreen();
   }
-
-  const total = Math.floor(diff/1000);
-  const h = Math.floor(total/3600);
-  const m = Math.floor((total%3600)/60);
-  const s = total%60;
-
-  document.getElementById("countdown").innerHTML =
-    `Faltan: ${h}h ${m}m ${s}s`;
 }
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
-/* =========================================================
-   3) Cargar reproductor Facebook
-   ========================================================= */
-function loadPlayer(){
-  if(!FACEBOOK_LIVE_URL) return;
-  const encoded = encodeURIComponent(FACEBOOK_LIVE_URL);
-  document.getElementById("fbPlayer").src =
-    `https://www.facebook.com/plugins/video.php?href=${encoded}&show_text=0&autoplay=0`;
-}
-loadPlayer();
-
-function reloadPlayer(){
-  const frame = document.getElementById("fbPlayer");
-  const old = frame.src;
-  frame.src = "";
-  setTimeout(()=>{ frame.src = old; }, 200);
-}
-
-/* =========================================================
-   4) Viewers fake
-   ========================================================= */
-let viewers = Math.floor(200 + Math.random()*400);
-
-function updateViewers(){
-  viewers += Math.floor(Math.random()*20 - 8);
-  if(viewers < 50) viewers = 50;
-  if(Math.random() < 0.06) viewers += Math.floor(40 + Math.random()*140);
-  document.getElementById("viewers").innerText = viewers;
-}
-setInterval(updateViewers,3000);
-updateViewers();
-
-/* =========================================================
-   5) FULLSCREEN COMPACTO (mejor para móvil)
-   ========================================================= */
-function openCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
-
-  // Copia el src del player actual
-  const currentSrc = document.getElementById("fbPlayer").src;
-  f.src = currentSrc;
-
-  container.style.display = "flex";
-
-  // Evita scroll detrás
-  document.body.style.overflow = "hidden";
-}
-
-function exitCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
-
-  container.style.display = "none";
-  f.src = ""; // libera recursos
-  document.body.style.overflow = "";
-}
-
-// Cierra con ESC en PC
-document.addEventListener("keydown", (e) => {
-  if(e.key === "Escape"){
-    const c = document.getElementById("fullscreenContainer");
-    if(c.style.display === "flex") exitCompactFullscreen();
-  }
-});
 </script>
 
 </body>
