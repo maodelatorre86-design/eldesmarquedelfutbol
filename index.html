@@ -4,146 +4,156 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internacional de Bogotá vs Millonarios EN VIVO | El Desmarque del Fútbol</title>
-
-<meta name="description" content="Internacional de Bogotá vs Millonarios EN VIVO. Narración de Álvaro Malkún con el análisis de Mauricio Guerrero y Jaime Vélez. Transmisión desde las 7:30 PM.">
-
-<meta name="keywords" content="Internacional de Bogotá vs Millonarios, Millonarios en vivo, fútbol colombiano en vivo, transmisión Millonarios hoy">
+<title>EL DESMARQUE DEL FÚTBOL — Próxima Transmisión</title>
 
 <style>
 
+:root{
+  --bg:#0b0f19;
+  --panel:rgba(10,15,25,0.75);
+  --text:#ffffff;
+  --accent:#ff7a00;
+}
+
+/* ====== FONDO ====== */
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-color:white;
-background:#0b0f19;
-overflow-x:hidden;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  text-align:center;
+  background:#000;
+  overflow-x:hidden;
 }
 
-/* Fondo estadio */
+/* Imagen estadio */
 .bg{
-position:fixed;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-filter:brightness(0.35);
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
 
-/* Franja superior */
-.header{
-background:rgba(10,20,40,0.65);
-backdrop-filter:blur(8px);
-padding:15px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
+/* Oscurecer fondo */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.9));
+  z-index:-1;
 }
 
-/* Logo arriba */
-.header img{
-width:40px;
+/* ===== HEADER ===== */
+header{
+  background:rgba(17,26,51,0.65);
+  backdrop-filter:blur(6px);
+  padding:15px 10px;
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
-/* Tarjeta central */
+/* ===== LOGO ===== */
+.logo{
+  width:110px;
+  margin:25px auto 10px;
+  display:block;
+}
+
+/* ===== CARD ===== */
 .card{
-width:90%;
-max-width:520px;
-margin:80px auto;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(14px);
-border-radius:20px;
-padding:30px;
-text-align:center;
-box-shadow:0 0 40px rgba(0,0,0,0.7);
-animation:fade 1.5s ease;
+  max-width:520px;
+  margin:20px auto;
+  background:var(--panel);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:25px 20px;
+  box-shadow:0 0 35px rgba(0,0,0,.7);
+  animation:fadeIn 1.2s ease;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
-.live{
-display:inline-block;
-background:rgba(255,255,255,0.15);
-padding:8px 18px;
-border-radius:30px;
-font-weight:bold;
-margin-bottom:15px;
+/* ===== BADGE ===== */
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:30px;
+  background:rgba(255,255,255,.1);
+  margin-bottom:15px;
+  font-weight:bold;
 }
 
-.match{
-font-size:28px;
-font-weight:bold;
-line-height:1.3;
-}
-
+/* ===== VS ===== */
 .vs{
-background:#ff7b00;
-padding:4px 10px;
-border-radius:8px;
-margin:0 6px;
+  display:inline-block;
+  background:var(--accent);
+  padding:5px 10px;
+  border-radius:8px;
+  margin:0 6px;
+}
+
+/* ===== TEXTO ===== */
+.match{
+  font-size:26px;
+  font-weight:bold;
+  margin:10px 0;
 }
 
 .info{
-margin-top:15px;
-font-size:20px;
-line-height:1.6;
+  font-size:18px;
+  margin:6px 0;
 }
 
+.narra{
+  margin-top:12px;
+  font-size:16px;
+  color:#ddd;
+}
+
+/* ===== CONTADOR ===== */
 .countdown{
-margin-top:20px;
-font-size:26px;
-font-weight:bold;
-letter-spacing:1px;
+  margin-top:18px;
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-/* Footer */
-.footer{
-width:90%;
-max-width:700px;
-margin:30px auto;
-background:rgba(20,30,60,0.7);
-padding:18px;
-border-radius:16px;
-text-align:center;
-font-size:16px;
+/* ===== FOOTER ===== */
+footer{
+  margin-top:25px;
+  padding:18px;
+  background:rgba(17,26,51,.75);
+  font-size:15px;
 }
 
-/* Responsive celular */
+/* ===== RESPONSIVE ===== */
 @media(max-width:600px){
 
-.header{
-font-size:22px;
-padding:12px;
-}
+  header{
+    font-size:22px;
+    padding:12px;
+  }
 
-.header img{
-width:30px;
-}
+  .logo{
+    width:85px;
+  }
 
-.card{
-margin:50px 15px;
-padding:22px;
-}
+  .card{
+    margin:15px;
+    padding:20px 15px;
+  }
 
-.match{
-font-size:22px;
-}
+  .match{
+    font-size:22px;
+  }
 
-.info{
-font-size:18px;
-}
-
-.countdown{
-font-size:22px;
-}
-
+  .countdown{
+    font-size:24px;
+  }
 }
 
 </style>
@@ -151,66 +161,63 @@ font-size:22px;
 
 <body>
 
-<!-- Fondo -->
-<img class="bg" src="techo.jpg">
+<!-- Fondo estadio -->
+<img class="bg" src="ESTADIO%20DE%20TECHO.jpg" alt="Estadio de Techo">
+<div class="overlay"></div>
 
-<!-- Header -->
-<div class="header">
-<img src="logo.png">
-EL DESMARQUE DEL FÚTBOL
-</div>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
-<!-- Tarjeta -->
+<!-- Logo -->
+<img class="logo" src="EJEMPLO%20LOGO%202%20(2).png" alt="Logo">
+
 <div class="card">
 
-<div class="live">📡 MAÑANA EN VIVO</div>
+  <div class="badge">📡 MAÑANA EN VIVO</div>
 
-<div class="match">
-Internacional de Bogotá <span class="vs">VS</span> Millonarios
-</div>
+  <div class="match">
+    Internacional de Bogotá
+    <span class="vs">VS</span>
+    Millonarios
+  </div>
 
-<div class="info">
-Partido: 8:30 PM<br>
-Nuestra transmisión: 7:30 PM
-</div>
+  <div class="info">Partido: 8:30 PM</div>
+  <div class="info">Nuestra transmisión: 7:30 PM</div>
 
-<div class="info" style="margin-top:15px;font-size:16px;opacity:0.9;">
-Narra Álvaro Malkún con el análisis de Mauricio Guerrero y Jaime Vélez
-</div>
+  <div class="narra">
+    Narra Álvaro Malkún con el análisis de Mauricio Guerrero y de Jaime Vélez.
+  </div>
 
-<div class="countdown" id="countdown">
-Cargando contador...
-</div>
+  <div class="countdown" id="countdown"></div>
 
 </div>
 
-<!-- Footer -->
-<div class="footer">
+<footer>
 Activa las notificaciones y entra mañana minutos antes para no perderte la previa.
-</div>
+</footer>
 
-<!-- Contador -->
 <script>
 
-const eventDate = new Date("Feb 22, 2026 19:30:00").getTime();
+// Fecha del partido (ajusta si cambia)
+const eventDate = new Date("2026-02-22T19:30:00").getTime();
 
-const timer = setInterval(function(){
+const timer = setInterval(()=>{
 
-const now = new Date().getTime();
-const distance = eventDate - now;
+  const now = new Date().getTime();
+  const diff = eventDate - now;
 
-const d = Math.floor(distance / (1000*60*60*24));
-const h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-const m = Math.floor((distance % (1000*60*60)) / (1000*60));
-const s = Math.floor((distance % (1000*60)) / 1000);
+  if(diff <= 0){
+    document.getElementById("countdown").innerHTML = "🔴 YA ESTAMOS EN VIVO";
+    clearInterval(timer);
+    return;
+  }
 
-document.getElementById("countdown").innerHTML =
-d+"d : "+h+"h : "+m+"m : "+s+"s";
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
 
-if(distance < 0){
-clearInterval(timer);
-document.getElementById("countdown").innerHTML="¡YA EN VIVO!";
-}
+  document.getElementById("countdown").innerHTML =
+    `${d}d : ${h}h : ${m}m : ${s}s`;
 
 },1000);
 
