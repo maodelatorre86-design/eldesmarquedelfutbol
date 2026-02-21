@@ -1,126 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EL DESMARQUE DEL FÚTBOL — Próxima Transmisión</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL DESMARQUE DEL FÚTBOL — Próxima Transmisión</title>
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0b0f19;
-    color:white;
-    text-align:center;
-}
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --panel:#111a33;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.75);
+      --accent:#00d4ff;
+      --shadow:0 0 30px rgba(0,0,0,.6);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align:center;
+    }
+    header{
+      padding:18px 16px;
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:.6px;
+      background: var(--panel);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px 14px 26px;
+    }
+    .hero{
+      position:relative;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.08);
+      min-height: 520px;
+      background:#0a0d15;
+    }
+    .hero .bg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.55) contrast(1.05) saturate(1.05);
+      transform: scale(1.02);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(0,212,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 20%, rgba(0,212,255,.10), transparent 55%),
+        linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15));
+      pointer-events:none;
+    }
+    .logo{
+      position:absolute;
+      top:18px;
+      left:18px;
+      width:110px;
+      height:auto;
+      z-index:2;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
+      border-radius: 10px;
+      background: rgba(0,0,0,.18);
+      padding: 6px;
+      backdrop-filter: blur(6px);
+    }
+    .content{
+      position:relative;
+      z-index:2;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 90px 18px 40px;
+    }
+    .card{
+      width:min(860px, 92vw);
+      padding: 26px 18px;
+      border-radius: 18px;
+      background: rgba(10,14,25,.55);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+    }
+    .tag{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius: 999px;
+      font-weight:900;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
+      margin-bottom:14px;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1); opacity:.9}
+      50%{transform:scale(1.03); opacity:1}
+      100%{transform:scale(1); opacity:.9}
+    }
 
-header{
-    padding:20px;
-    font-size:24px;
-    font-weight:bold;
-    background:#111a33;
-}
-
-.banner{
-    position:relative;
-    height:500px;
-    overflow:hidden;
-}
-
-.banner img.bg{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:brightness(0.6);
-}
-
-.logo{
-    position:absolute;
-    top:20px;
-    left:20px;
-    width:120px;
-}
-
-.info{
-    position:absolute;
-    bottom:40px;
-    width:100%;
-}
-
-.info h2{
-    font-size:28px;
-    margin:10px 0;
-}
-
-.countdown{
-    font-size:26px;
-    font-weight:bold;
-    margin-top:15px;
-}
-
-.card{
-    padding:30px;
-    background:#111a33;
-}
-
-footer{
-    padding:20px;
-    opacity:0.6;
-}
-</style>
+    h1{margin:10px 0 6px; font-size:28px}
+    h2{margin:10px 0; font-size:22px; font-weight:800}
+    .muted{color:var(--muted)}
+    .vs{
+      display:inline-block;
+      padding:2px 10px;
+      margin: 0 10px;
+      border-radius: 10px;
+      background: rgba(255,120,0,.9);
+      font-weight:900;
+    }
+    .times{
+      margin-top: 14px;
+      font-size: 20px;
+      font-weight:800;
+      line-height: 1.6;
+    }
+    .count{
+      margin-top: 16px;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: .6px;
+    }
+    footer{
+      margin-top: 18px;
+      padding:16px 12px;
+      color: rgba(255,255,255,.70);
+      font-size: 14px;
+    }
+    .note{
+      margin-top: 14px;
+      background: var(--panel);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      color: rgba(255,255,255,.85);
+    }
+    .img-fallback{
+      position:absolute;
+      inset:auto 12px 12px 12px;
+      z-index:3;
+      font-size:12px;
+      color: rgba(255,255,255,.65);
+      display:none;
+    }
+  </style>
 </head>
 
 <body>
+  <header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
-<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
+  <div class="wrap">
+    <section class="hero">
+      <!-- IMPORTANTE: usamos los nombres EXACTOS del repo con %20 -->
+      <img class="bg" id="bgImg" src="ESTADIO%20DE%20TECHO.jpg" alt="Estadio de Techo" />
+      <img class="logo" id="logoImg" src="EJEMPLO%20LOGO%202%20(2).png" alt="Logo El Desmarque del Fútbol" />
+      <div class="img-fallback" id="imgFallback">⚠️ No cargaron las imágenes. Revisa que estén en la raíz del repo y en la rama main.</div>
 
-<div class="banner">
+      <div class="content">
+        <div class="card">
+          <div class="tag">📡 MAÑANA EN VIVO</div>
 
-    <!-- FOTO ESTADIO DESDE URL DIRECTA -->
-    <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Estadio_Metropolitano_de_Techo.jpg">
+          <h1>Internacional de Bogotá <span class="vs">VS</span> Millonarios</h1>
 
-    <!-- LOGO DESDE URL DIRECTA -->
-    <img class="logo" src="https://i.imgur.com/6XKQX8H.png">
+          <div class="times">
+            <div>Partido: <span class="muted">8:30 PM</span></div>
+            <div>Nuestra transmisión: <span class="muted">7:30 PM</span></div>
+          </div>
 
-    <div class="info">
-        <h2>📡 MAÑANA EN VIVO</h2>
-        <h2>Internacional de Bogotá 🆚 Millonarios</h2>
-        <h2>Partido: 8:30 PM</h2>
-        <h2>Nuestra transmisión: 7:30 PM</h2>
-        <div class="countdown" id="countdown"></div>
+          <div class="count" id="countdown">Cargando contador…</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      Activa las notificaciones y entra mañana minutos antes para no perderte la previa.
     </div>
 
-</div>
+    <footer>© 2026 El Desmarque del Fútbol</footer>
+  </div>
 
-<div class="card">
-    Activa las notificaciones y entra mañana minutos antes para no perderte la previa.
-</div>
+  <script>
+    // Ajusta la fecha si hace falta (hora Colombia -05:00)
+    const target = new Date("2026-02-21T19:30:00-05:00").getTime();
+    const el = document.getElementById("countdown");
 
-<footer>© 2026 El Desmarque del Fútbol</footer>
+    function pad(n){ return String(n).padStart(2,"0"); }
 
-<script>
-const target = new Date("2026-02-21T19:30:00-05:00").getTime();
-const el = document.getElementById("countdown");
+    function update(){
+      const now = Date.now();
+      let diff = target - now;
 
-function update(){
-    const now = new Date().getTime();
-    let diff = target - now;
-
-    if(diff <= 0){
-        el.innerHTML = "¡YA COMENZAMOS!";
+      if(diff <= 0){
+        el.textContent = "¡YA COMENZAMOS!";
         return;
+      }
+
+      const d = Math.floor(diff / (1000*60*60*24));
+      diff %= (1000*60*60*24);
+      const h = Math.floor(diff / (1000*60*60));
+      diff %= (1000*60*60);
+      const m = Math.floor(diff / (1000*60));
+      diff %= (1000*60);
+      const s = Math.floor(diff / 1000);
+
+      el.textContent = `${d}d : ${pad(h)}h : ${pad(m)}m : ${pad(s)}s`;
     }
+    update();
+    setInterval(update, 1000);
 
-    let days = Math.floor(diff / (1000*60*60*24));
-    let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-    let mins = Math.floor((diff % (1000*60*60)) / (1000*60));
-    let secs = Math.floor((diff % (1000*60)) / 1000);
-
-    el.innerHTML = days+"d : "+hours+"h : "+mins+"m : "+secs+"s";
-}
-
-setInterval(update,1000);
-</script>
-
+    // Si alguna imagen falla, mostramos aviso (esto ayuda a diagnosticar)
+    const bg = document.getElementById("bgImg");
+    const logo = document.getElementById("logoImg");
+    const fb = document.getElementById("imgFallback");
+    let failed = 0;
+    function onFail(){ failed++; fb.style.display = "block"; }
+    bg.addEventListener("error", onFail);
+    logo.addEventListener("error", onFail);
+  </script>
 </body>
 </html>
