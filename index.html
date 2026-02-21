@@ -8,13 +8,14 @@
   <style>
     :root{
       --bg:#0b0f19;
-      --panel:#111a33;
+      --panel:rgba(17,26,51,.55);      /* MÁS TRASLÚCIDO */
+      --panel-strong:rgba(17,26,51,.72);
       --text:#ffffff;
-      --muted:rgba(255,255,255,.75);
-      --accent:#00d4ff;
-      --shadow:0 0 30px rgba(0,0,0,.6);
-      --radius:14px;
+      --muted:rgba(255,255,255,.78);
+      --shadow:0 0 30px rgba(0,0,0,.55);
+      --radius:16px;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -22,29 +23,41 @@
       background: var(--bg);
       color: var(--text);
       text-align:center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* HEADER traslúcido + blur */
     header{
-      padding:18px 16px;
-      font-size:24px;
+      position: sticky;
+      top:0;
+      z-index: 50;
+      padding:14px 12px;
+      font-size:22px;
       font-weight:900;
       letter-spacing:.6px;
       background: var(--panel);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
+
     .wrap{
       max-width:1100px;
       margin:0 auto;
-      padding:18px 14px 26px;
+      padding:14px 12px 22px;
     }
+
     .hero{
       position:relative;
       border-radius: var(--radius);
       overflow:hidden;
       box-shadow: var(--shadow);
-      border:1px solid rgba(255,255,255,.08);
-      min-height: 520px;
+      border:1px solid rgba(255,255,255,.10);
+      min-height: 560px;
       background:#0a0d15;
     }
+
     .hero .bg{
       position:absolute;
       inset:0;
@@ -55,16 +68,19 @@
       filter: brightness(.55) contrast(1.05) saturate(1.05);
       transform: scale(1.02);
     }
+
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(900px 600px at 20% 10%, rgba(0,212,255,.18), transparent 55%),
-        radial-gradient(900px 600px at 90% 20%, rgba(0,212,255,.10), transparent 55%),
-        linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15));
+        radial-gradient(900px 600px at 20% 10%, rgba(0,212,255,.15), transparent 55%),
+        radial-gradient(900px 600px at 90% 20%, rgba(0,212,255,.08), transparent 55%),
+        linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.12));
       pointer-events:none;
     }
+
+    /* LOGO: abajo del header (y no se tapa) */
     .logo{
       position:absolute;
       top:18px;
@@ -73,88 +89,164 @@
       height:auto;
       z-index:2;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
-      border-radius: 10px;
+      border-radius: 12px;
       background: rgba(0,0,0,.18);
       padding: 6px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
+
     .content{
       position:relative;
       z-index:2;
-      min-height:520px;
+      min-height:560px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding: 90px 18px 40px;
+      padding: 90px 16px 40px;
     }
+
     .card{
       width:min(860px, 92vw);
-      padding: 26px 18px;
-      border-radius: 18px;
+      padding: 24px 18px;
+      border-radius: 22px;
       background: rgba(10,14,25,.55);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.45);
     }
+
     .tag{
-      display:inline-block;
-      padding:8px 14px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
       border-radius: 999px;
       font-weight:900;
       background: rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.14);
       margin-bottom:14px;
       animation: pulse 1.2s infinite;
     }
+
     @keyframes pulse{
       0%{transform:scale(1); opacity:.9}
       50%{transform:scale(1.03); opacity:1}
       100%{transform:scale(1); opacity:.9}
     }
 
-    h1{margin:10px 0 6px; font-size:28px}
-    h2{margin:10px 0; font-size:22px; font-weight:800}
-    .muted{color:var(--muted)}
+    h1{margin:10px 0 8px; font-size:30px; line-height:1.12}
     .vs{
       display:inline-block;
-      padding:2px 10px;
+      padding:4px 12px;
       margin: 0 10px;
-      border-radius: 10px;
-      background: rgba(255,120,0,.9);
+      border-radius: 12px;
+      background: rgba(255,120,0,.92);
       font-weight:900;
+      transform: translateY(-2px);
     }
+
     .times{
       margin-top: 14px;
       font-size: 20px;
       font-weight:800;
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
+    .muted{color:var(--muted)}
+
     .count{
       margin-top: 16px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       letter-spacing: .6px;
     }
-    footer{
-      margin-top: 18px;
-      padding:16px 12px;
-      color: rgba(255,255,255,.70);
-      font-size: 14px;
-    }
+
     .note{
       margin-top: 14px;
-      background: var(--panel);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
+      background: var(--panel-strong);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
       padding: 14px 12px;
-      color: rgba(255,255,255,.85);
+      color: rgba(255,255,255,.88);
     }
-    .img-fallback{
-      position:absolute;
-      inset:auto 12px 12px 12px;
-      z-index:3;
-      font-size:12px;
+
+    footer{
+      margin-top: 14px;
+      padding:12px 12px;
       color: rgba(255,255,255,.65);
-      display:none;
+      font-size: 13px;
+    }
+
+    /* ====== MEJORAS SOLO PARA CELULAR ====== */
+    @media (max-width: 520px){
+      header{
+        font-size:18px;
+        padding:12px 10px;
+      }
+
+      .wrap{
+        padding:10px 10px 18px;
+      }
+
+      .hero{
+        min-height: 520px;
+        border-radius: 18px;
+      }
+
+      /* Logo más pequeño y más abajo para que NO lo tape nada */
+      .logo{
+        top:12px;
+        left:12px;
+        width:78px;
+        padding: 6px;
+      }
+
+      .content{
+        min-height: 520px;
+        padding: 88px 12px 26px;
+      }
+
+      .card{
+        width: 92vw;
+        padding: 18px 14px;
+        border-radius: 20px;
+      }
+
+      .tag{
+        padding:8px 12px;
+        font-size:14px;
+        margin-bottom:12px;
+      }
+
+      h1{
+        font-size:24px;
+        line-height:1.15;
+      }
+
+      .vs{
+        padding:3px 10px;
+        margin: 0 8px;
+        border-radius: 10px;
+      }
+
+      .times{
+        font-size:17px;
+        line-height:1.6;
+      }
+
+      .count{
+        font-size:24px;
+      }
+
+      .note{
+        border-radius: 16px;
+        padding: 12px 10px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -164,10 +256,9 @@
 
   <div class="wrap">
     <section class="hero">
-      <!-- IMPORTANTE: usamos los nombres EXACTOS del repo con %20 -->
+      <!-- Nombres EXACTOS del repo -->
       <img class="bg" id="bgImg" src="ESTADIO%20DE%20TECHO.jpg" alt="Estadio de Techo" />
       <img class="logo" id="logoImg" src="EJEMPLO%20LOGO%202%20(2).png" alt="Logo El Desmarque del Fútbol" />
-      <div class="img-fallback" id="imgFallback">⚠️ No cargaron las imágenes. Revisa que estén en la raíz del repo y en la rama main.</div>
 
       <div class="content">
         <div class="card">
@@ -193,7 +284,7 @@
   </div>
 
   <script>
-    // Ajusta la fecha si hace falta (hora Colombia -05:00)
+    // Hora Colombia (UTC-5)
     const target = new Date("2026-02-21T19:30:00-05:00").getTime();
     const el = document.getElementById("countdown");
 
@@ -218,17 +309,9 @@
 
       el.textContent = `${d}d : ${pad(h)}h : ${pad(m)}m : ${pad(s)}s`;
     }
+
     update();
     setInterval(update, 1000);
-
-    // Si alguna imagen falla, mostramos aviso (esto ayuda a diagnosticar)
-    const bg = document.getElementById("bgImg");
-    const logo = document.getElementById("logoImg");
-    const fb = document.getElementById("imgFallback");
-    let failed = 0;
-    function onFail(){ failed++; fb.style.display = "block"; }
-    bg.addEventListener("error", onFail);
-    logo.addEventListener("error", onFail);
   </script>
 </body>
 </html>
