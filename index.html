@@ -3,375 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELDESMARQUEDELFUTBOL — Próxima Transmisión</title>
+<title>EL DESMARQUE DEL FÚTBOL — Próxima Transmisión</title>
 
 <style>
-  :root{
-    --bg:#0b0f19;
-    --panel:#111a33;
-    --text:#ffffff;
-    --muted:rgba(255,255,255,.75);
-    --accent:#00d4ff;
-    --danger:#ff3b6b;
-    --shadow:0 0 30px rgba(0,0,0,0.6);
-    --radius:14px;
-  }
-
-  *{box-sizing:border-box}
-  body{
+body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(900px 600px at 20% 0%, #162a55 0%, rgba(0,0,0,0) 60%),
-                radial-gradient(900px 600px at 90% 10%, #1a2a52 0%, rgba(0,0,0,0) 55%),
-                var(--bg);
-    color:var(--text);
+    background:#0b0f19;
+    color:white;
     text-align:center;
-  }
+}
 
-  header{
-    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    padding:18px 12px;
+header{
+    padding:20px;
     font-size:24px;
-    font-weight:900;
-    letter-spacing:1px;
-  }
+    font-weight:bold;
+    background:#111a33;
+}
 
-  .container{
-    max-width:1100px;
-    margin:28px auto 42px;
-    padding:18px;
-  }
-
-  /* ======= Banner animado ======= */
-  .banner{
+.banner{
     position:relative;
-    width:100%;
-    max-width:980px;
-    margin: 0 auto;
-    border-radius: var(--radius);
+    height:500px;
     overflow:hidden;
-    box-shadow: var(--shadow);
-    border:1px solid rgba(255,255,255,.10);
-    background:#000;
-    aspect-ratio: 16/9;
-  }
+}
 
-  /* Foto del estadio */
-  .banner img.bg{
+.banner img.bg{
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
-    transform: scale(1.03);
-    animation: kenburns 9s ease-in-out infinite alternate;
-    filter: contrast(1.05) saturate(1.05);
-  }
-  @keyframes kenburns{
-    from{ transform: scale(1.03) translateY(0px); }
-    to  { transform: scale(1.08) translateY(-8px); }
-  }
+    filter:brightness(0.6);
+}
 
-  /* Oscurecer un poquito la foto para que el texto/logo resalten */
-  .banner .overlay{
+.logo{
     position:absolute;
-    inset:0;
-    background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
-    pointer-events:none;
-  }
+    top:20px;
+    left:20px;
+    width:120px;
+}
 
-  /* Brillo diagonal animado */
-  .banner::after{
-    content:"";
+.info{
     position:absolute;
-    inset:-30%;
-    background: linear-gradient(120deg,
-      rgba(255,255,255,0) 35%,
-      rgba(255,255,255,.16) 45%,
-      rgba(255,255,255,0) 55%);
-    transform: translateX(-60%);
-    animation: shine 3.8s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes shine{
-    0%   { transform: translateX(-60%); opacity:.0; }
-    15%  { opacity:.35; }
-    55%  { opacity:.35; }
-    100% { transform: translateX(60%); opacity:0; }
-  }
+    bottom:40px;
+    width:100%;
+}
 
-  /* Líneas tipo transmisión */
-  .scanlines{
-    position:absolute;
-    inset:0;
-    background:
-      repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,.05) 0px,
-        rgba(255,255,255,.05) 1px,
-        rgba(0,0,0,0) 3px,
-        rgba(0,0,0,0) 6px
-      );
-    opacity:.10;
-    mix-blend-mode: overlay;
-    pointer-events:none;
-  }
+.info h2{
+    font-size:28px;
+    margin:10px 0;
+}
 
-  /* ======= Logo encima (IMAGEN REAL) ======= */
-  .logo-badge{
-    position:absolute;
-    top:14px;
-    left:14px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 12px;
-    border-radius: 16px;
-    background: rgba(8,12,22,.60);
-    border: 1px solid rgba(255,255,255,.14);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,.35);
-  }
+.countdown{
+    font-size:26px;
+    font-weight:bold;
+    margin-top:15px;
+}
 
-  .logo-badge img{
-    width:54px;
-    height:54px;
-    border-radius: 12px;
-    object-fit:cover;
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow: 0 0 18px rgba(0,0,0,.35);
-    display:block;
-  }
+.card{
+    padding:30px;
+    background:#111a33;
+}
 
-  .logo-stack{ text-align:left; line-height:1.1; }
-  .logo-text{
-    font-weight: 900;
-    letter-spacing: .06em;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-  .logo-sub{
-    font-size: 11px;
-    color: var(--muted);
-    margin-top:2px;
-  }
-
-  /* ======= Etiqueta "MAÑANA" ======= */
-  .tag{
-    position:absolute;
-    top:14px;
-    right:14px;
-    padding:10px 12px;
-    border-radius: 12px;
-    background: rgba(255,59,107,.14);
-    border:1px solid rgba(255,59,107,.30);
-    font-weight:900;
-    letter-spacing:.06em;
-    text-transform: uppercase;
-    font-size: 12px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    backdrop-filter: blur(10px);
-  }
-  .dot{
-    width:10px; height:10px; border-radius:50%;
-    background: var(--danger);
-    box-shadow: 0 0 0 0 rgba(255,59,107,.6);
-    animation: pulse 1.4s infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(255,59,107,.55)}
-    70%{box-shadow:0 0 0 10px rgba(255,59,107,0)}
-    100%{box-shadow:0 0 0 0 rgba(255,59,107,0)}
-  }
-
-  /* ======= Tarjeta info ======= */
-  .card{
-    margin:18px auto 0;
-    max-width:980px;
-    background: rgba(17,26,51,.75);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius: var(--radius);
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+footer{
     padding:20px;
-    text-align:left;
-  }
-
-  .headline h2{
-    margin:0;
-    font-size:22px;
-  }
-  .match{
-    margin:10px 0 0;
-    font-size:18px;
-    color: rgba(255,255,255,.95);
-    font-weight: 800;
-  }
-
-  .times{
-    margin-top:14px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:12px;
-  }
-  .timebox{
-    background: rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius: 12px;
-    padding:12px 14px;
-  }
-  .label{
-    font-size:12px;
-    color: var(--muted);
-    text-transform:uppercase;
-    letter-spacing:.08em;
-  }
-  .value{
-    margin-top:6px;
-    font-weight: 900;
-    font-size: 18px;
-    color: var(--accent);
-  }
-
-  /* Countdown */
-  .countdown{
-    margin-top:16px;
-    background: rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius: 12px;
-    padding:14px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-  .count-title{
-    font-size:12px;
-    color: var(--muted);
-    letter-spacing:.08em;
-    text-transform:uppercase;
-  }
-  .count-time{
-    font-variant-numeric: tabular-nums;
-    font-weight: 900;
-    font-size: 22px;
-    letter-spacing:.06em;
-  }
-  .small{
-    font-size:12px;
-    color: var(--muted);
-    margin-top:10px;
-    line-height:1.35;
-  }
-
-  footer{
-    margin-top:26px;
-    padding:16px;
-    font-size:13px;
-    opacity:0.7;
-  }
-
-  @media (max-width: 700px){
-    header{font-size:20px}
-    .times{grid-template-columns: 1fr}
-    .count-time{font-size:20px}
-    .logo-badge img{ width:46px; height:46px; }
-  }
+    opacity:0.6;
+}
 </style>
 </head>
 
 <body>
 
-<header>⚽ ELDESMARQUEDELFUTBOL</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
-<div class="container">
+<div class="banner">
 
-  <div class="banner">
-    <!-- FOTO DEL ESTADIO (archivo en tu repo) -->
-    <img class="bg" src="techo.jpg" alt="techo.jpg">
-    <div class="overlay"></div>
-    <div class="scanlines"></div>
+    <!-- FOTO ESTADIO DESDE URL DIRECTA -->
+    <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Estadio_Metropolitano_de_Techo.jpg">
 
-    <!-- LOGO (archivo en tu repo) -->
-    <div class="logo-badge">
-      <img src="logo.png" alt="logo.png">
-      <div class="logo-stack">
-        <div class="logo-text">EL DESMARQUE DEL FÚTBOL</div>
-        <div class="logo-sub">@ELDESMARQUEDELFUTBOL</div>
-      </div>
+    <!-- LOGO DESDE URL DIRECTA -->
+    <img class="logo" src="https://i.imgur.com/6XKQX8H.png">
+
+    <div class="info">
+        <h2>📡 MAÑANA EN VIVO</h2>
+        <h2>Internacional de Bogotá 🆚 Millonarios</h2>
+        <h2>Partido: 8:30 PM</h2>
+        <h2>Nuestra transmisión: 7:30 PM</h2>
+        <div class="countdown" id="countdown"></div>
     </div>
-
-    <div class="tag"><span class="dot"></span> MAÑANA 7:30 PM</div>
-  </div>
-
-  <div class="card">
-    <div class="headline">
-      <h2>📡 PRÓXIMA TRANSMISIÓN EN VIVO</h2>
-      <div class="match">Internacional de Bogotá 🆚 Millonarios</div>
-    </div>
-
-    <div class="times">
-      <div class="timebox">
-        <div class="label">Partido</div>
-        <div class="value">8:30 PM</div>
-      </div>
-      <div class="timebox">
-        <div class="label">Nuestra transmisión comienza</div>
-        <div class="value">7:30 PM</div>
-      </div>
-    </div>
-
-    <div class="countdown">
-      <div>
-        <div class="count-title">Faltan</div>
-        <div class="count-time" id="count">--:--:--:--</div>
-      </div>
-      <div class="small" id="countNote">Hora Colombia (Bogotá). Mañana a las 7:30 PM empezamos la previa.</div>
-    </div>
-
-    <div class="small">
-      Entra mañana unos minutos antes para no perderte la previa. Si estás en otra zona horaria, guíate por el contador.
-    </div>
-  </div>
 
 </div>
 
-<footer>© 2026 El Desmarque del Futbol — Todos los derechos reservados</footer>
+<div class="card">
+    Activa las notificaciones y entra mañana minutos antes para no perderte la previa.
+</div>
+
+<footer>© 2026 El Desmarque del Fútbol</footer>
 
 <script>
-  // Contador regresivo: MAÑANA 7:30 PM hora Colombia/Bogotá (-05:00)
-  // (Si cambia la fecha, solo cambia este ISO)
-  const targetISO = "2026-02-21T19:30:00-05:00";
-  const target = new Date(targetISO).getTime();
+const target = new Date("2026-02-21T19:30:00-05:00").getTime();
+const el = document.getElementById("countdown");
 
-  const el = document.getElementById("count");
-  const note = document.getElementById("countNote");
+function update(){
+    const now = new Date().getTime();
+    let diff = target - now;
 
-  function pad(n){ return String(n).padStart(2, "0"); }
-
-  function tick(){
-    const now = Date.now();
-    let diff = Math.max(0, target - now);
-
-    if(diff === 0){
-      el.textContent = "¡YA EMPEZAMOS!";
-      note.textContent = "Ya puedes entrar: la transmisión está por comenzar.";
-      return;
+    if(diff <= 0){
+        el.innerHTML = "¡YA COMENZAMOS!";
+        return;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / (3600*24));
-    const hours = Math.floor((totalSeconds % (3600*24)) / 3600);
-    const mins = Math.floor((totalSeconds % 3600) / 60);
-    const secs = totalSeconds % 60;
+    let days = Math.floor(diff / (1000*60*60*24));
+    let hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    let mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    let secs = Math.floor((diff % (1000*60)) / 1000);
 
-    el.textContent = `${pad(days)}d : ${pad(hours)}h : ${pad(mins)}m : ${pad(secs)}s`;
-  }
+    el.innerHTML = days+"d : "+hours+"h : "+mins+"m : "+secs+"s";
+}
 
-  tick();
-  setInterval(tick, 1000);
+setInterval(update,1000);
 </script>
 
 </body>
