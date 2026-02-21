@@ -57,8 +57,8 @@
     aspect-ratio: 16/9;
   }
 
-  /* Imagen del banner */
-  .banner img{
+  /* Foto del estadio */
+  .banner img.bg{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -67,10 +67,17 @@
     animation: kenburns 9s ease-in-out infinite alternate;
     filter: contrast(1.05) saturate(1.05);
   }
-
   @keyframes kenburns{
     from{ transform: scale(1.03) translateY(0px); }
     to  { transform: scale(1.08) translateY(-8px); }
+  }
+
+  /* Oscurecer un poquito la foto para que el texto/logo resalten */
+  .banner .overlay{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
+    pointer-events:none;
   }
 
   /* Brillo diagonal animado */
@@ -80,21 +87,20 @@
     inset:-30%;
     background: linear-gradient(120deg,
       rgba(255,255,255,0) 35%,
-      rgba(255,255,255,.15) 45%,
+      rgba(255,255,255,.16) 45%,
       rgba(255,255,255,0) 55%);
     transform: translateX(-60%);
     animation: shine 3.8s ease-in-out infinite;
     pointer-events:none;
   }
-
   @keyframes shine{
-    0%   { transform: translateX(-60%) rotate(0deg); opacity:.0; }
+    0%   { transform: translateX(-60%); opacity:.0; }
     15%  { opacity:.35; }
     55%  { opacity:.35; }
-    100% { transform: translateX(60%) rotate(0deg); opacity:0; }
+    100% { transform: translateX(60%); opacity:0; }
   }
 
-  /* Líneas sutiles tipo transmisión */
+  /* Líneas tipo transmisión */
   .scanlines{
     position:absolute;
     inset:0;
@@ -111,7 +117,7 @@
     pointer-events:none;
   }
 
-  /* ======= Logo sobre el banner ======= */
+  /* ======= Logo encima (IMAGEN REAL) ======= */
   .logo-badge{
     position:absolute;
     top:14px;
@@ -120,24 +126,24 @@
     align-items:center;
     gap:10px;
     padding:10px 12px;
-    border-radius: 999px;
-    background: rgba(8,12,22,.58);
+    border-radius: 16px;
+    background: rgba(8,12,22,.60);
     border: 1px solid rgba(255,255,255,.14);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 25px rgba(0,0,0,.35);
   }
 
-  /* Si luego pones imagen de logo */
   .logo-badge img{
-    width:34px;
-    height:34px;
-    border-radius: 10px;
+    width:54px;
+    height:54px;
+    border-radius: 12px;
     object-fit:cover;
-    display:none; /* <-- cambia a block cuando pongas logo real */
     border:1px solid rgba(255,255,255,.18);
+    box-shadow: 0 0 18px rgba(0,0,0,.35);
+    display:block;
   }
 
-  /* Logo de texto por defecto */
+  .logo-stack{ text-align:left; line-height:1.1; }
   .logo-text{
     font-weight: 900;
     letter-spacing: .06em;
@@ -148,9 +154,7 @@
     font-size: 11px;
     color: var(--muted);
     margin-top:2px;
-    text-align:left;
   }
-  .logo-stack{ text-align:left; line-height:1.1; }
 
   /* ======= Etiqueta "MAÑANA" ======= */
   .tag{
@@ -182,7 +186,7 @@
     100%{box-shadow:0 0 0 0 rgba(255,59,107,0)}
   }
 
-  /* ======= Tarjeta de info ======= */
+  /* ======= Tarjeta info ======= */
   .card{
     margin:18px auto 0;
     max-width:980px;
@@ -194,22 +198,12 @@
     text-align:left;
   }
 
-  .headline{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:12px;
-    align-items:flex-start;
-    margin-bottom:14px;
-  }
-
   .headline h2{
     margin:0;
     font-size:22px;
   }
-
   .match{
-    margin:8px 0 0;
+    margin:10px 0 0;
     font-size:18px;
     color: rgba(255,255,255,.95);
     font-weight: 800;
@@ -240,7 +234,7 @@
     color: var(--accent);
   }
 
-  /* ======= Countdown ======= */
+  /* Countdown */
   .countdown{
     margin-top:16px;
     background: rgba(0,0,0,.25);
@@ -268,7 +262,7 @@
   .small{
     font-size:12px;
     color: var(--muted);
-    margin-top:8px;
+    margin-top:10px;
     line-height:1.35;
   }
 
@@ -283,46 +277,39 @@
     header{font-size:20px}
     .times{grid-template-columns: 1fr}
     .count-time{font-size:20px}
-    .card{text-align:left}
+    .logo-badge img{ width:46px; height:46px; }
   }
 </style>
 </head>
 
 <body>
 
-<header>
-  ⚽ ELDESMARQUEDELFUTBOL
-</header>
+<header>⚽ ELDESMARQUEDELFUTBOL</header>
 
 <div class="container">
 
-  <!-- Banner -->
   <div class="banner">
-    <!-- CAMBIA ESTA URL por tu miniatura real cuando la tengas -->
-    <img src="https://i.imgur.com/8Km9tLL.jpeg" alt="Próxima transmisión">
-
+    <!-- FOTO DEL ESTADIO (archivo en tu repo) -->
+    <img class="bg" src="techo.jpg" alt="Estadio de Techo">
+    <div class="overlay"></div>
     <div class="scanlines"></div>
 
-    <!-- Logo encima: por ahora texto. Si luego pones logo imagen, activa el <img> -->
+    <!-- LOGO (archivo en tu repo) -->
     <div class="logo-badge">
-      <!-- Ejemplo: pon tu logo aquí y cambia display:none a display:block en CSS -->
-      <!-- <img src="https://TU-LOGO.png" alt="Logo"> -->
+      <img src="logo.png" alt="Logo El Desmarque del Fútbol">
       <div class="logo-stack">
-        <div class="logo-text">@ELDESMARQUEDELFUTBOL</div>
-        <div class="logo-sub">Transmisión deportiva</div>
+        <div class="logo-text">EL DESMARQUE DEL FÚTBOL</div>
+        <div class="logo-sub">@ELDESMARQUEDELFUTBOL</div>
       </div>
     </div>
 
     <div class="tag"><span class="dot"></span> MAÑANA 7:30 PM</div>
   </div>
 
-  <!-- Info -->
   <div class="card">
     <div class="headline">
-      <div>
-        <h2>📡 PRÓXIMA TRANSMISIÓN EN VIVO</h2>
-        <div class="match">Internacional de Bogotá 🆚 Millonarios</div>
-      </div>
+      <h2>📡 PRÓXIMA TRANSMISIÓN EN VIVO</h2>
+      <div class="match">Internacional de Bogotá 🆚 Millonarios</div>
     </div>
 
     <div class="times">
@@ -341,31 +328,21 @@
         <div class="count-title">Faltan</div>
         <div class="count-time" id="count">--:--:--:--</div>
       </div>
-      <div class="small" id="countNote">
-        Hora Colombia (Bogotá). Mañana a las 7:30 PM empezamos la previa.
-      </div>
+      <div class="small" id="countNote">Hora Colombia (Bogotá). Mañana a las 7:30 PM empezamos la previa.</div>
     </div>
 
     <div class="small">
-      Entra mañana unos minutos antes para no perderte la previa. Si estás en otra zona horaria, te conviene abrir la página y guiarte por el contador.
+      Entra mañana unos minutos antes para no perderte la previa. Si estás en otra zona horaria, guíate por el contador.
     </div>
   </div>
 
 </div>
 
-<footer>
-  © 2026 El Desmarque del Futbol — Todos los derechos reservados
-</footer>
+<footer>© 2026 El Desmarque del Futbol — Todos los derechos reservados</footer>
 
 <script>
-  // =========================
-  // CONTADOR REGRESIVO
-  // Objetivo: MAÑANA 7:30 PM hora Colombia/Bogotá
-  // Hoy (según tu contexto): 20 Feb 2026 -> Mañana: 21 Feb 2026
-  // =========================
-
-  // Ajusta aquí si cambia la fecha/hora del evento:
-  // Formato: "YYYY-MM-DDTHH:mm:ss-05:00" (Bogotá es -05:00)
+  // Contador regresivo: MAÑANA 7:30 PM hora Colombia/Bogotá (-05:00)
+  // (Si cambia la fecha, solo cambia este ISO)
   const targetISO = "2026-02-21T19:30:00-05:00";
   const target = new Date(targetISO).getTime();
 
