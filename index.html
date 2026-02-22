@@ -1,345 +1,544 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>EL DESMARQUE DEL FÚTBOL — EN VIVO</title>
 
-<title>Santa Fe vs Junior EN VIVO | El Desmarque del Fútbol</title>
+  <!-- SEO básico -->
+  <meta name="description" content="Transmisión en vivo: Internacional de Bogotá vs Millonarios. Partido 8:30 PM. Nuestra transmisión 7:30 PM. El Desmarque del Fútbol." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://eldesmarquedelfutbol.com/" />
 
-<meta name="description" content="Transmisión en vivo Internacional de Bogotá vs Millonarios hoy. Previa desde las 3:00 PM por El Desmarque del Fútbol.">
-<meta name="keywords" content="Internacional de Bogotá vs Millonarios en vivo, Millonarios hoy, fútbol colombiano en vivo">
+  <!-- Open Graph (para compartir bonito en WhatsApp/Facebook) -->
+  <meta property="og:title" content="Internacional de Bogotá vs Millonarios — EN VIVO | El Desmarque del Fútbol" />
+  <meta property="og:description" content="Partido 8:30 PM. Nuestra transmisión 7:30 PM. Entra minutos antes para la previa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eldesmarquedelfutbol.com/" />
+  <meta property="og:image" content="https://eldesmarquedelfutbol.com/promo.png" />
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:white;
-  background:black;
-}
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --panel:rgba(18, 26, 45, .72);
+      --panel2:rgba(10, 14, 24, .55);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.75);
+      --accent:#ff8a00;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.45);
+    }
 
-/* Fondo estadio */
-.bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-1;
-  filter:brightness(0.35);
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(22,42,85,.75) 0%, rgba(0,0,0,.55) 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(26,42,82,.75) 0%, rgba(0,0,0,.55) 55%),
+        var(--bg);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
 
-.header{
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(6px);
-  padding:15px;
-  font-size:22px;
-  font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-}
+    /* Fondo promo */
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background: url("promo.png") center/cover no-repeat;
+      filter: blur(10px) brightness(.65);
+      transform: scale(1.06);
+    }
+    .bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(5,8,15,.55), rgba(5,8,15,.80));
+    }
 
-.header img{ width:35px; }
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      padding:14px 16px;
+      background: rgba(10,16,30,.55);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .header-inner{
+      max-width: 980px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .logo{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      object-fit:cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    h1{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:.6px;
+      text-transform: uppercase;
+    }
 
-.container{
-  width:95%;
-  max-width:1100px;
-  margin:20px auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
+    main{
+      max-width: 980px;
+      margin: 18px auto 26px;
+      padding: 0 14px;
+    }
 
-.card{
-  background:rgba(0,0,0,0.65);
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-}
+    .card{
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
 
-.logo{
-  width:90px;
-  margin-bottom:15px;
-}
+    /* Banner animado */
+    .ticker{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 10px 12px;
+      background: linear-gradient(90deg, rgba(255,138,0,.16), rgba(255,138,0,.06), rgba(255,138,0,.16));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .ticker::before{
+      content:"";
+      position:absolute;
+      inset:-40px -80px;
+      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.18) 40%, transparent 60%);
+      animation: shine 3.2s linear infinite;
+      transform: translateX(-40%);
+    }
+    @keyframes shine{
+      0%{ transform: translateX(-60%); }
+      100%{ transform: translateX(60%); }
+    }
+    .pill{
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.30);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight: 800;
+      letter-spacing:.8px;
+      text-transform: uppercase;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(255,138,0,.85);
+    }
 
-.badge{
-  background:rgba(255,255,255,0.15);
-  padding:8px 15px;
-  border-radius:20px;
-  display:inline-block;
-  margin-bottom:15px;
-  font-weight:bold;
-}
+    .content{
+      padding: 16px;
+    }
 
-.vs{
-  background:#ff7a00;
-  padding:5px 10px;
-  border-radius:8px;
-  font-weight:bold;
-}
+    .match{
+      text-align:center;
+      padding: 14px 10px 8px;
+    }
+    .match h2{
+      margin: 10px 0 0;
+      font-size: 34px;
+      line-height:1.12;
+    }
+    .vs{
+      display:inline-block;
+      padding: 6px 12px;
+      border-radius: 10px;
+      background: rgba(255,138,0,.18);
+      border:1px solid rgba(255,138,0,.45);
+      margin: 0 8px;
+      font-weight: 900;
+    }
+    .meta{
+      margin-top: 14px;
+      font-size: 22px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .meta b{ color: #fff; }
 
-.countdown{
-  font-size:24px;
-  margin-top:15px;
-  font-weight:bold;
-}
+    .talent{
+      margin-top: 10px;
+      font-size: 16px;
+      color: rgba(255,255,255,.86);
+    }
 
-.viewer{
-  margin-top:10px;
-  font-weight:bold;
-  background:rgba(255,255,255,0.1);
-  padding:8px;
-  border-radius:10px;
-  display:inline-block;
-}
+    /* Contador */
+    .countdown{
+      margin-top: 16px;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
 
-.player{
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:14px;
-  overflow:hidden;
-  background:black;
-}
+    /* Reproductor */
+    .player-wrap{
+      margin-top: 16px;
+      background: var(--panel2);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      overflow:hidden;
+      position:relative;
+    }
 
-.player iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
+    /* 16:9 responsive */
+    .video-box{
+      position:relative;
+      width:100%;
+      padding-bottom: 56.25%;
+      background:#000;
+    }
+    .video-box iframe,
+    .video-box img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-.btn{
-  margin-top:15px;
-  padding:10px 20px;
-  background:#ff7a00;
-  border:none;
-  border-radius:10px;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
+    /* Capa anti-click: evita que toque el video y lo mande a FB/Reels */
+    .click-blocker{
+      position:absolute;
+      inset:0;
+      z-index:10;
+      background: transparent;
+    }
 
-/* Responsive */
-@media(max-width:900px){
-  .container{ grid-template-columns:1fr; }
-}
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .btn{
+      cursor:pointer;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      color:#fff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      letter-spacing:.4px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(0,0,0,.35); }
+    .btn.primary{
+      border-color: rgba(255,138,0,.45);
+      background: rgba(255,138,0,.18);
+    }
 
-/* =========================================================
-   FULLSCREEN COMPACTO (para móvil, sin recortes)
-   ========================================================= */
-#fullscreenContainer{
-  display:none;
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  background:#000;
-  z-index:9999;
-  flex-direction:column;
-}
+    .note{
+      margin-top: 14px;
+      text-align:center;
+      padding: 14px 12px;
+      background: rgba(10,16,30,.45);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      color: rgba(255,255,255,.86);
+      font-size: 15px;
+    }
 
-.fullscreenHeader{
-  background:rgba(0,0,0,0.82);
-  backdrop-filter: blur(6px);
-  padding:10px 12px;
-  font-size:14px;
-  font-weight:800;
-  text-align:center;
-  border-bottom:1px solid rgba(255,255,255,0.12);
-}
+    /* FULLSCREEN (propio) */
+    .fs-overlay{
+      position:fixed;
+      inset:0;
+      background:#000;
+      z-index:9999;
+      display:none;
+      flex-direction:column;
+    }
+    .fs-overlay.active{ display:flex; }
 
-.fullscreenPlayer{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    .fs-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 10px 12px;
+      background: rgba(0,0,0,.45);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .fs-title{
+      font-weight:900;
+      letter-spacing:.4px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size: 14px;
+      color: rgba(255,255,255,.9);
+    }
+    .fs-close{
+      cursor:pointer;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-weight: 900;
+    }
 
-.fullscreenPlayer iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
+    /* Área FULLSCREEN: que SIEMPRE muestre todo (sin recorte) */
+    .fs-body{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
+    }
+    .fs-stage{
+      width: 100%;
+      height: 100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .fs-stage iframe,
+    .fs-stage img{
+      /* Clave: no recorta. Se ajusta a la pantalla completa mostrando TODO */
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      background:#000;
+    }
 
-.exitBtn{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:rgba(255,0,0,0.9);
-  color:#fff;
-  border:none;
-  padding:8px 10px;
-  border-radius:10px;
-  font-weight:900;
-  cursor:pointer;
-  z-index:10000;
-}
-
-</style>
+    /* Mobile ajustes */
+    @media (max-width: 520px){
+      h1{ font-size: 18px; }
+      .match h2{ font-size: 28px; }
+      .meta{ font-size: 18px; }
+      .countdown{ font-size: 30px; }
+      .logo{ width:32px; height:32px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="bg"></div>
 
-<img class="bg" src="ESTADIO DE TECHO.jpg" alt="Estadio de Techo">
+  <header>
+    <div class="header-inner">
+      <img class="logo" src="logo.png" alt="Logo El Desmarque del Fútbol">
+      <h1>EL DESMARQUE DEL FÚTBOL</h1>
+    </div>
+  </header>
 
-<div class="header">
-  <img src="EJEMPLO LOGO 2 (2).png" alt="Logo">
-  EL DESMARQUE DEL FÚTBOL
-</div>
+  <main>
+    <section class="card">
+      <div class="ticker">
+        <span class="pill"><span class="dot"></span> EN VIVO / PREVIA</span>
+        <span class="pill">Internacional de Bogotá <span class="vs">VS</span> Millonarios</span>
+      </div>
 
-<div class="container">
+      <div class="content">
+        <div class="match">
+          <div class="pill" style="display:inline-flex;"><span class="dot"></span> HOY EN VIVO</div>
+          <h2>Internacional de Bogotá <span class="vs">VS</span> Millonarios</h2>
 
-  <!-- INFO -->
-  <div class="card">
-    <img class="logo" src="EJEMPLO LOGO 2 (2).png" alt="Logo">
+          <div class="meta">Partido: <b>8:30 PM</b> &nbsp;|&nbsp; Nuestra transmisión: <b>7:30 PM</b></div>
 
-    <div class="badge">📡 HOY EN VIVO</div>
+          <div class="talent">
+            Narra Álvaro Malkún con el análisis de Mauricio Guerrero y de Jaime Vélez.
+          </div>
 
-    <h2>Santa Fe <span class="vs">VS</span> Junior</h2>
+          <div class="countdown" id="countdown">Cargando contador…</div>
+        </div>
 
-    <p>Partido: <strong>4:00 PM</strong></p>
-    <p>Transmisión: <strong>3:00 PM</strong></p>
+        <!-- REPRODUCTOR -->
+        <div class="player-wrap" id="playerWrap">
+          <div class="video-box" id="videoBox">
 
-    <p>
-      Narra Álvaro Malkún<br>
-      con el análisis de Mauricio Guerrero y Jaime Vélez
-    </p>
+            <!-- PREVIA (imagen) -->
+            <img id="promoImg" src="promo.png" alt="Promoción transmisión" />
 
-    <div class="countdown" id="countdown"></div>
+            <!-- IFRAME LIVE (se activa cuando pongas el link) -->
+            <iframe
+              id="fbFrame"
+              style="display:none;"
+              src=""
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
 
-    <div class="viewer">
-      👀 <span id="viewers">0</span> personas viendo
+            <!-- Capa anti-click SOLO cuando está el live -->
+            <div class="click-blocker" id="clickBlocker" style="display:none;"></div>
+
+          </div>
+
+          <div class="controls">
+            <button class="btn primary" id="btnFullscreen">⛶ Pantalla completa</button>
+            <button class="btn" id="btnToggleMode">🔁 Cambiar (Previa / En vivo)</button>
+          </div>
+        </div>
+
+        <div class="note">
+          Activa las notificaciones y entra minutos antes para no perderte la previa.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FULLSCREEN overlay propio -->
+  <div class="fs-overlay" id="fsOverlay" aria-hidden="true">
+    <div class="fs-top">
+      <div class="fs-title">EL DESMARQUE DEL FÚTBOL — Pantalla completa</div>
+      <button class="fs-close" id="fsClose">Salir ✕</button>
+    </div>
+    <div class="fs-body">
+      <div class="fs-stage" id="fsStage"></div>
     </div>
   </div>
 
-  <!-- PLAYER -->
-  <div class="card">
-    <div class="player" id="playerBox">
-      <iframe id="fbPlayer" allowfullscreen></iframe>
-    </div>
+  <script>
+    /***************
+     * 1) SOLO CAMBIA ESTO cuando tengas el live real:
+     ***************/
+    const FACEBOOK_VIDEO_URL = ""; 
+    // EJEMPLO (cuando ya esté el live):
+    // const FACEBOOK_VIDEO_URL = "https://www.facebook.com/100063705559520/videos/2721277258226717";
 
-    <button class="btn" onclick="openCompactFullscreen()">VER EN PANTALLA COMPLETA</button>
-    <button class="btn" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.14);"
-            onclick="reloadPlayer()">RECARGAR EN VIVO</button>
-  </div>
+    /***************
+     * 2) HORA DEL EVENTO (Colombia): hoy 7:30 PM (tu transmisión)
+     ***************/
+    // Ajusta la fecha aquí si cambia el día:
+    const EVENT_DATE_LOCAL = new Date();
+    EVENT_DATE_LOCAL.setHours(19, 30, 0, 0); // 7:30 PM
 
-</div>
+    // --- CONTADOR ---
+    const cd = document.getElementById("countdown");
+    function pad(n){ return String(n).padStart(2,"0"); }
 
-<!-- =========================================================
-     FULLSCREEN COMPACTO (Overlay)
-     ========================================================= -->
-<div id="fullscreenContainer">
-  <button class="exitBtn" onclick="exitCompactFullscreen()">X</button>
+    function tick(){
+      const now = new Date();
+      let diff = EVENT_DATE_LOCAL - now;
+      if(diff < 0) diff = 0;
 
-  <div class="fullscreenHeader">
-    Santa Fe vs Junior • EL DESMARQUE DEL FÚTBOL
-  </div>
+      const s = Math.floor(diff/1000);
+      const d = Math.floor(s/86400);
+      const h = Math.floor((s%86400)/3600);
+      const m = Math.floor((s%3600)/60);
+      const sec = s%60;
 
-  <div class="fullscreenPlayer">
-    <iframe id="fullscreenFrame" allowfullscreen></iframe>
-  </div>
-</div>
+      cd.textContent = `${d}d : ${pad(h)}h : ${pad(m)}m : ${pad(sec)}s`;
+    }
+    tick();
+    setInterval(tick, 1000);
 
-<script>
-/* =========================================================
-   1) SOLO CAMBIA ESTE LINK cuando tengas el live
-   ========================================================= */
-const FACEBOOK_LIVE_URL = "https://www.facebook.com/100063705559520/videos/3291895620985346?locale=es_LA";
+    // --- PLAYER CONTROL ---
+    const promoImg = document.getElementById("promoImg");
+    const fbFrame  = document.getElementById("fbFrame");
+    const blocker  = document.getElementById("clickBlocker");
 
-/* =========================================================
-   2) Contador HOY hasta 7:30 PM
-   ========================================================= */
-const startStream = new Date();
-startStream.setHours(19,30,0,0); // 7:30 PM hoy
+    function fbEmbedSrc(videoUrl){
+      const encoded = encodeURIComponent(videoUrl);
+      return `https://www.facebook.com/plugins/video.php?href=${encoded}&show_text=false&autoplay=true&mute=0`;
+    }
 
-function updateCountdown(){
-  const now = new Date();
-  const diff = startStream - now;
+    let isLiveMode = false;
 
-  if(diff <= 0){
-    document.getElementById("countdown").innerHTML = "";
-    return;
-  }
+    function setMode(live){
+      isLiveMode = live;
 
-  const total = Math.floor(diff/1000);
-  const h = Math.floor(total/3600);
-  const m = Math.floor((total%3600)/60);
-  const s = total%60;
+      if(live && FACEBOOK_VIDEO_URL){
+        promoImg.style.display = "none";
+        fbFrame.style.display = "block";
+        fbFrame.src = fbEmbedSrc(FACEBOOK_VIDEO_URL);
 
-  document.getElementById("countdown").innerHTML =
-    `Faltan: ${h}h ${m}m ${s}s`;
-}
+        // Activa bloqueo de clicks para que no mande a FB/Reels
+        blocker.style.display = "block";
+      } else {
+        // Previa
+        fbFrame.style.display = "none";
+        fbFrame.src = "";
+        promoImg.style.display = "block";
+        blocker.style.display = "none";
+      }
+    }
 
-setInterval(updateCountdown,1000);
-updateCountdown();
+    // Por defecto: si hay URL, entra en vivo. Si no, previa.
+    setMode(!!FACEBOOK_VIDEO_URL);
 
-/* =========================================================
-   3) Cargar reproductor Facebook
-   ========================================================= */
-function loadPlayer(){
-  if(!FACEBOOK_LIVE_URL) return;
-  const encoded = encodeURIComponent(FACEBOOK_LIVE_URL);
-  document.getElementById("fbPlayer").src =
-    `https://www.facebook.com/plugins/video.php?href=${encoded}&show_text=0&autoplay=0`;
-}
-loadPlayer();
+    document.getElementById("btnToggleMode").addEventListener("click", () => {
+      if(isLiveMode){
+        setMode(false);
+      } else {
+        if(!FACEBOOK_VIDEO_URL){
+          alert("Aún no has pegado el link del video en vivo en el código (FACEBOOK_VIDEO_URL).");
+          return;
+        }
+        setMode(true);
+      }
+    });
 
-function reloadPlayer(){
-  const frame = document.getElementById("fbPlayer");
-  const old = frame.src;
-  frame.src = "";
-  setTimeout(()=>{ frame.src = old; }, 200);
-}
+    // --- FULLSCREEN PROPIO (compacto, sin recortar) ---
+    const fsOverlay = document.getElementById("fsOverlay");
+    const fsStage   = document.getElementById("fsStage");
 
-/* =========================================================
-   4) Viewers fake
-   ========================================================= */
-let viewers = Math.floor(200 + Math.random()*400);
+    function openFS(){
+      fsStage.innerHTML = "";
 
-function updateViewers(){
-  viewers += Math.floor(Math.random()*20 - 8);
-  if(viewers < 50) viewers = 50;
-  if(Math.random() < 0.06) viewers += Math.floor(40 + Math.random()*140);
-  document.getElementById("viewers").innerText = viewers;
-}
-setInterval(updateViewers,3000);
-updateViewers();
+      if(isLiveMode && FACEBOOK_VIDEO_URL){
+        const iframe = document.createElement("iframe");
+        iframe.src = fbEmbedSrc(FACEBOOK_VIDEO_URL);
+        iframe.setAttribute("frameborder","0");
+        iframe.setAttribute("allow","autoplay; encrypted-media");
+        iframe.setAttribute("allowfullscreen","true");
+        fsStage.appendChild(iframe);
+      } else {
+        const img = document.createElement("img");
+        img.src = "promo.png";
+        img.alt = "Promoción transmisión";
+        fsStage.appendChild(img);
+      }
 
-/* =========================================================
-   5) FULLSCREEN COMPACTO (mejor para móvil)
-   ========================================================= */
-function openCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
+      fsOverlay.classList.add("active");
+      fsOverlay.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
 
-  // Copia el src del player actual
-  const currentSrc = document.getElementById("fbPlayer").src;
-  f.src = currentSrc;
+    function closeFS(){
+      fsOverlay.classList.remove("active");
+      fsOverlay.setAttribute("aria-hidden","true");
+      fsStage.innerHTML = "";
+      document.body.style.overflow = "";
+    }
 
-  container.style.display = "flex";
+    document.getElementById("btnFullscreen").addEventListener("click", openFS);
+    document.getElementById("fsClose").addEventListener("click", closeFS);
 
-  // Evita scroll detrás
-  document.body.style.overflow = "hidden";
-}
-
-function exitCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
-
-  container.style.display = "none";
-  f.src = ""; // libera recursos
-  document.body.style.overflow = "";
-}
-
-// Cierra con ESC en PC
-document.addEventListener("keydown", (e) => {
-  if(e.key === "Escape"){
-    const c = document.getElementById("fullscreenContainer");
-    if(c.style.display === "flex") exitCompactFullscreen();
-  }
-});
-</script>
-
+    // cerrar con ESC
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && fsOverlay.classList.contains("active")) closeFS();
+    });
+  </script>
 </body>
 </html>
