@@ -2,308 +2,72 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<title>Santa Fe vs Nacional EN VIVO | El Desmarque del Fútbol</title>
-
-<!-- SEO -->
-<meta name="description" content="Transmisión en vivo Santa Fe vs Nacional. Miércoles 25 de febrero 7:00 PM desde el Estadio El Campín. El Desmarque del Fútbol.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
-
-<meta property="og:title" content="Santa Fe vs Nacional EN VIVO | El Desmarque del Fútbol">
-<meta property="og:description" content="Miércoles 25 de febrero · 7:00 PM · Estadio El Campín.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://eldesmarquedelfutbol.com/">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/promo.png">
+<title>ELDESMARQUEDELFUTBOL EN VIVO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --bg:#0b0f19;
-  --panel:rgba(18,26,45,.75);
-  --text:#fff;
-  --accent:#ff8a00;
-}
-
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:var(--bg);
-  color:#fff;
+  background:#0b0f19;
+  color:white;
+  text-align:center;
 }
 
-/* Fondo promo blur */
-.bg{
-  position:fixed;
-  inset:0;
-  background:url("promo.png") center/cover no-repeat;
-  filter:blur(10px) brightness(.5);
-  z-index:-1;
-}
-
-/* Header */
 header{
-  padding:14px;
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(8px);
-  text-align:center;
-}
-header img{
-  width:36px;
-  vertical-align:middle;
-}
-header h1{
-  display:inline-block;
-  margin:0 0 0 8px;
-  font-size:22px;
-}
-
-/* Card */
-.container{
-  max-width:900px;
-  margin:20px auto;
-  padding:10px;
-}
-
-.card{
-  background:var(--panel);
-  border-radius:18px;
+  background:#111a33;
   padding:18px;
-  text-align:center;
-}
-
-/* Partido */
-.match h2{
-  font-size:34px;
-  margin:10px 0;
-}
-.vs{
-  background:var(--accent);
-  padding:4px 10px;
-  border-radius:8px;
-  margin:0 8px;
+  font-size:26px;
   font-weight:bold;
-}
-.meta{
-  font-size:20px;
-  margin-top:10px;
-}
-.stadium{
-  margin-top:6px;
-  font-size:16px;
-  opacity:.9;
+  letter-spacing:1px;
 }
 
-/* Player */
-.player{
-  margin-top:18px;
-  position:relative;
-  border-radius:14px;
-  overflow:hidden;
-  background:#000;
+.live{
+  color:red;
 }
 
-.video-box{
-  position:relative;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+iframe{
   width:100%;
-  padding-bottom:56.25%;
-}
-
-.video-box iframe,
-.video-box img{
-  position:absolute;
-  width:100%;
-  height:100%;
-  inset:0;
-  object-fit:cover;
-}
-
-/* Bloqueo clicks */
-.blocker{
-  position:absolute;
-  inset:0;
-  z-index:5;
-  display:none;
-}
-
-/* Botones */
-.controls{
-  margin-top:10px;
-}
-button{
-  padding:10px 14px;
-  margin:5px;
+  height:600px;
   border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-.full{ background:#ff8a00; color:#000; }
-.toggle{ background:#222; color:#fff; }
-
-/* Fullscreen propio */
-.fs{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:none;
-  flex-direction:column;
-  z-index:9999;
-}
-.fs.active{ display:flex; }
-
-.fs video,
-.fs iframe,
-.fs img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
+  border-radius:12px;
 }
 
-.close{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:#000;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
+footer{
+  margin-top:20px;
+  padding:12px;
+  background:#111a33;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
-
 <header>
-  <img src="logo.png">
-  <h1>EL DESMARQUE DEL FÚTBOL</h1>
+⚽ ELDESMARQUEDELFUTBOL — <span class="live">EN VIVO</span>
 </header>
 
 <div class="container">
-  <div class="card">
 
-    <div class="match">
-      <h2>Santa Fe <span class="vs">VS</span> Nacional</h2>
+<h2>Transmisión oficial</h2>
 
-      <div class="meta">
-        Miércoles 25 de Febrero · 7:00 PM
-      </div>
+<!-- PEGA AQUÍ EL IFRAME DE FACEBOOK -->
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=URL_DEL_LIVE"
+allowfullscreen>
+</iframe>
 
-      <div class="stadium">
-        Estadio El Campín · Bogotá
-      </div>
-    </div>
-
-    <!-- PLAYER -->
-    <div class="player">
-      <div class="video-box">
-
-        <!-- Imagen previa -->
-        <img id="promo" src="promo.png">
-
-        <!-- Video -->
-        <iframe id="live" style="display:none;" frameborder="0" allowfullscreen></iframe>
-
-        <!-- Bloqueo clicks -->
-        <div class="blocker" id="blocker"></div>
-
-      </div>
-    </div>
-
-    <div class="controls">
-      <button class="full" onclick="openFS()">Pantalla completa</button>
-      <button class="toggle" onclick="toggleMode()">Cambiar Previa / En vivo</button>
-    </div>
-
-  </div>
 </div>
 
-<!-- FULLSCREEN -->
-<div class="fs" id="fs">
-  <div class="close" onclick="closeFS()">Salir ✕</div>
-  <div id="fsContent"></div>
-</div>
-
-<script>
-
-/************ PEGA AQUÍ EL LINK CUANDO ESTÉ EL LIVE ************/
-const FACEBOOK_VIDEO_URL = "";
-// Ejemplo:
-// const FACEBOOK_VIDEO_URL = "https://www.facebook.com/.../videos/123";
-
-/***************************************************************/
-
-const promo = document.getElementById("promo");
-const live  = document.getElementById("live");
-const block = document.getElementById("blocker");
-
-function fbEmbed(url){
-  return "https://www.facebook.com/plugins/video.php?href=" +
-  encodeURIComponent(url) +
-  "&show_text=false&autoplay=true";
-}
-
-let isLive=false;
-
-function toggleMode(){
-
-  if(!isLive){
-    if(!FACEBOOK_VIDEO_URL){
-      alert("Aún no has pegado el link del live.");
-      return;
-    }
-
-    promo.style.display="none";
-    live.style.display="block";
-    live.src=fbEmbed(FACEBOOK_VIDEO_URL);
-    block.style.display="block";
-    isLive=true;
-
-  }else{
-
-    live.style.display="none";
-    live.src="";
-    promo.style.display="block";
-    block.style.display="none";
-    isLive=false;
-  }
-}
-
-/* Fullscreen propio */
-function openFS(){
-
-  const fs=document.getElementById("fs");
-  const content=document.getElementById("fsContent");
-
-  content.innerHTML="";
-
-  if(isLive && FACEBOOK_VIDEO_URL){
-    const iframe=document.createElement("iframe");
-    iframe.src=fbEmbed(FACEBOOK_VIDEO_URL);
-    iframe.style.width="100%";
-    iframe.style.height="100%";
-    iframe.frameBorder="0";
-    content.appendChild(iframe);
-  }else{
-    const img=document.createElement("img");
-    img.src="promo.png";
-    img.style.width="100%";
-    img.style.height="100%";
-    img.style.objectFit="contain";
-    content.appendChild(img);
-  }
-
-  fs.classList.add("active");
-}
-
-function closeFS(){
-  document.getElementById("fs").classList.remove("active");
-}
-
-</script>
+<footer>
+© 2026 — eldesmarquedelfutbol.com
+</footer>
 
 </body>
 </html>
