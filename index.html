@@ -3,105 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELDESMARQUEDELFUTBOL — Próxima Transmisión</title>
+<title>ELDESMARQUEDELFUTBOL — EN VIVO</title>
 
 <style>
-:root{
-  --bg:#0b0f19;
-  --panel:#111a33;
-  --text:#ffffff;
-  --muted:rgba(255,255,255,.75);
-  --accent:#00d4ff;
-  --danger:#ff3b6b;
-  --radius:14px;
-}
-
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:radial-gradient(900px 600px at 20% 0%, #162a55 0%, rgba(0,0,0,0) 60%),
-             radial-gradient(900px 600px at 90% 10%, #1a2a52 0%, rgba(0,0,0,0) 55%),
-             var(--bg);
+  background:#0b0f19;
   color:white;
   text-align:center;
 }
 
+/* HEADER */
 header{
   background:#111a33;
   padding:18px;
   font-size:24px;
   font-weight:900;
-  letter-spacing:1px;
 }
 
+/* CONTENEDOR */
 .container{
   max-width:1100px;
-  margin:30px auto;
+  margin:auto;
   padding:20px;
 }
 
-/* Banner */
+/* BANNER */
 .banner{
   position:relative;
   width:100%;
-  max-width:980px;
-  margin:auto;
-  border-radius:var(--radius);
-  overflow:hidden;
   aspect-ratio:16/9;
-  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  overflow:hidden;
+  border-radius:14px;
 }
 
-.banner img.bg{
+.banner img{
   width:100%;
   height:100%;
   object-fit:cover;
-  animation:zoom 8s ease-in-out infinite alternate;
 }
 
-@keyframes zoom{
-  from{transform:scale(1.02);}
-  to{transform:scale(1.07);}
-}
-
-.overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6));
-}
-
-/* Logo */
+/* LOGO */
 .logo{
   position:absolute;
   top:15px;
   left:15px;
   background:rgba(0,0,0,.6);
   padding:10px;
-  border-radius:12px;
+  border-radius:10px;
 }
 
 .logo img{
   width:60px;
-  height:60px;
-  object-fit:contain;
 }
 
-/* Etiqueta */
+/* FECHA */
 .tag{
   position:absolute;
   top:15px;
   right:15px;
-  background:rgba(255,59,107,.2);
-  border:1px solid rgba(255,59,107,.5);
+  background:red;
   padding:8px 12px;
-  border-radius:12px;
+  border-radius:10px;
   font-weight:bold;
-  font-size:13px;
 }
 
-/* Info */
+/* INFO */
 .card{
   margin-top:20px;
   background:#111a33;
@@ -112,13 +80,11 @@ header{
 .match{
   font-size:22px;
   font-weight:bold;
-  margin-bottom:10px;
 }
 
 .time{
-  color:var(--accent);
+  color:#00d4ff;
   font-weight:bold;
-  font-size:18px;
 }
 
 .countdown{
@@ -127,11 +93,17 @@ header{
   font-weight:bold;
 }
 
-footer{
-  margin-top:25px;
-  padding:15px;
-  font-size:13px;
-  opacity:.7;
+/* PLAYER */
+.player{
+  display:none;
+  margin-top:20px;
+  aspect-ratio:16/9;
+}
+
+.player iframe{
+  width:100%;
+  height:100%;
+  border:0;
 }
 </style>
 </head>
@@ -139,72 +111,90 @@ footer{
 <body>
 
 <header>
-⚽ ELDESMARQUEDELFUTBOL
+⚽ ELDESMARQUEDELFUTBOL — EN VIVO
 </header>
 
 <div class="container">
 
-<div class="banner">
-  <img class="bg" src="EL CAMPIN SANTA FE.jpg" alt="Estadio El Campín">
-  <div class="overlay"></div>
+<!-- BANNER PREVIO -->
+<div id="prelive">
 
+<div class="banner">
+  <img src="EL CAMPIN SANTA FE.jpg">
+  
   <div class="logo">
-    <img src="EJEMPLO LOGO 2 (2).png" alt="Logo El Desmarque del Fútbol">
+    <img src="EJEMPLO LOGO 2 (2).png">
   </div>
 
-  <div class="tag">MIÉRCOLES 25 • 7:00 PM</div>
+  <div class="tag">
+    MIÉRCOLES 25 FEBRERO • 7:00 PM
+  </div>
 </div>
 
 <div class="card">
+
   <div class="match">
     SANTA FE 🆚 NACIONAL
   </div>
 
-  <div>
+  <p>
     🕖 Partido: <span class="time">7:00 PM</span>
-  </div>
+  </p>
 
-  <div>
-    🎙️ Nuestra transmisión comienza: <span class="time">6:30 PM</span>
-  </div>
+  <p>
+    🎙️ Transmisión comienza: <span class="time">6:00 PM</span>
+  </p>
 
-  <div class="countdown" id="countdown">
-    Cargando contador...
-  </div>
+  <div class="countdown" id="countdown"></div>
+
+</div>
+</div>
+
+<!-- PLAYER EN VIVO -->
+<div class="player" id="player">
+  <iframe
+    src="https://www.facebook.com/plugins/video.php?href=PEGAR_LINK_FACEBOOK_AQUI&show_text=false&autoplay=true"
+    allowfullscreen>
+  </iframe>
 </div>
 
 </div>
-
-<footer>
-© 2026 El Desmarque del Futbol — Todos los derechos reservados
-</footer>
 
 <script>
-// Fecha objetivo: 25 Febrero 2026 6:30 PM (inicio transmisión)
-const targetDate = new Date("2026-02-25T18:30:00-05:00").getTime();
+
+/* ===========================
+   ⏰ FECHA INICIO TRANSMISIÓN
+   =========================== */
+
+const liveDate = new Date("2026-02-25T18:00:00-05:00").getTime();
 
 const countdown = document.getElementById("countdown");
+const player = document.getElementById("player");
+const prelive = document.getElementById("prelive");
 
 function updateCountdown(){
+
   const now = new Date().getTime();
-  const distance = targetDate - now;
+  const distance = liveDate - now;
 
   if(distance <= 0){
-    countdown.innerHTML = "🔴 ¡YA ESTAMOS EN VIVO!";
+    prelive.style.display="none";
+    player.style.display="block";
     return;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const d = Math.floor(distance / (1000*60*60*24));
+  const h = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((distance % (1000*60*60))/(1000*60));
+  const s = Math.floor((distance % (1000*60))/1000);
 
-  countdown.innerHTML = 
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  countdown.innerHTML =
+    "Faltan: " + d+"d "+h+"h "+m+"m "+s+"s";
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
+
 </script>
 
 </body>
