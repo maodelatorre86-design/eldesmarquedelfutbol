@@ -13,17 +13,23 @@ body{
   color:white;
   text-align:center;
 }
+
+/* HEADER */
 header{
   background:#111a33;
   padding:18px;
   font-size:24px;
   font-weight:900;
 }
+
+/* CONTENEDOR */
 .container{
   max-width:1100px;
   margin:auto;
   padding:20px;
 }
+
+/* BANNER */
 .banner{
   position:relative;
   width:100%;
@@ -31,11 +37,14 @@ header{
   overflow:hidden;
   border-radius:14px;
 }
+
 .banner img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
+/* TEXTO PROXIMA */
 .proxima{
   position:absolute;
   top:50%;
@@ -49,6 +58,8 @@ header{
   letter-spacing:2px;
   box-shadow:0 0 20px rgba(0,0,0,.8);
 }
+
+/* LOGO */
 .logo{
   position:absolute;
   top:15px;
@@ -57,7 +68,12 @@ header{
   padding:10px;
   border-radius:10px;
 }
-.logo img{ width:60px; }
+
+.logo img{
+  width:60px;
+}
+
+/* FECHA */
 .tag{
   position:absolute;
   top:15px;
@@ -68,153 +84,171 @@ header{
   font-weight:bold;
   font-size:14px;
 }
+
+/* INFO */
 .card{
   margin-top:20px;
   background:#111a33;
   padding:20px;
   border-radius:14px;
 }
-.match{ font-size:22px; font-weight:bold; }
-.time{ color:#00d4ff; font-weight:bold; }
-.countdown{ margin-top:15px; font-size:20px; font-weight:bold; }
 
-.actions{
-  margin-top:14px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.btn{
-  appearance:none;
-  border:1px solid rgba(255,255,255,.18);
-  background: rgba(0,0,0,.25);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:800;
-  cursor:pointer;
-}
-.btn.primary{
-  background:#00d4ff;
-  border-color:#00d4ff;
-  color:#07101a;
+.match{
+  font-size:22px;
+  font-weight:bold;
 }
 
+.time{
+  color:#00d4ff;
+  font-weight:bold;
+}
+
+.countdown{
+  margin-top:15px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* PLAYER */
 .player{
   display:none;
   margin-top:20px;
   aspect-ratio:16/9;
-  border-radius:14px;
-  overflow:hidden;
 }
+
 .player iframe{
   width:100%;
   height:100%;
   border:0;
-  display:block;
 }
 
-/* 📱 Ajustes móvil */
+/* =========================
+   📱 AJUSTES MÓVIL
+   ========================= */
 @media(max-width:768px){
-  header{ font-size:18px; padding:12px; }
-  .logo img{ width:45px; }
-  .tag{ font-size:11px; padding:6px 8px; top:10px; right:10px; }
-  .proxima{ font-size:14px; padding:8px 12px; letter-spacing:1px; }
-  .match{ font-size:18px; }
-  .countdown{ font-size:16px; }
+
+  header{
+    font-size:18px;
+    padding:12px;
+  }
+
+  .logo img{
+    width:45px;
+  }
+
+  .tag{
+    font-size:11px;
+    padding:6px 8px;
+    top:10px;
+    right:10px;
+  }
+
+  .proxima{
+    font-size:15px;   /* MÁS PEQUEÑO EN CELULAR */
+    padding:8px 12px;
+    letter-spacing:1px;
+  }
+
+  .match{
+    font-size:18px;
+  }
+
+  .countdown{
+    font-size:16px;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>⚽ ELDESMARQUEDELFUTBOL — EN VIVO</header>
+<header>
+⚽ ELDESMARQUEDELFUTBOL — EN VIVO
+</header>
 
 <div class="container">
 
 <div id="prelive">
 
-  <div class="banner">
-    <img src="EL CAMPIN SANTA FE.jpg" alt="Estadio">
-    <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+<div class="banner">
 
-    <div class="logo">
-      <img src="EJEMPLO LOGO 2 (2).png" alt="Logo">
-    </div>
+  <img src="EL CAMPIN SANTA FE.jpg">
 
-    <div class="tag">MIÉRCOLES 25 FEBRERO • 7:00 PM</div>
+  <div class="proxima">
+    PRÓXIMA TRANSMISIÓN
   </div>
 
-  <div class="card">
-    <div class="match">SANTA FE 🆚 NACIONAL</div>
-
-    <p>🕖 Partido: <span class="time">7:00 PM</span></p>
-    <p>🎙️ Transmisión comienza: <span class="time">6:00 PM</span></p>
-
-    <div class="countdown" id="countdown"></div>
-
-    <div class="actions">
-      <button class="btn primary" id="testBtn">PROBAR VIDEO AHORA</button>
-      <button class="btn" id="hideBtn">OCULTAR VIDEO</button>
-    </div>
+  <div class="logo">
+    <img src="EJEMPLO LOGO 2 (2).png">
   </div>
 
+  <div class="tag">
+    MIÉRCOLES 25 FEBRERO • 7:00 PM
+  </div>
+
+</div>
+
+<div class="card">
+
+  <div class="match">
+    SANTA FE 🆚 NACIONAL
+  </div>
+
+  <p>
+    🕖 Partido: <span class="time">7:00 PM</span>
+  </p>
+
+  <p>
+    🎙️ Transmisión comienza: <span class="time">6:00 PM</span>
+  </p>
+
+  <div class="countdown" id="countdown"></div>
+
+</div>
 </div>
 
 <!-- PLAYER EN VIVO -->
 <div class="player" id="player">
   <iframe
     src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/941977801591163&show_text=false&autoplay=true"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-    allowfullscreen="true">
+    allowfullscreen>
   </iframe>
 </div>
 
 </div>
 
 <script>
-  // Hora Colombia/Bogotá (-05:00)
-  const liveDate = new Date("2026-02-25T18:00:00-05:00").getTime();
 
-  const countdown = document.getElementById("countdown");
-  const player = document.getElementById("player");
-  const prelive = document.getElementById("prelive");
-  const testBtn = document.getElementById("testBtn");
-  const hideBtn = document.getElementById("hideBtn");
+const liveDate = new Date("2026-02-25T18:00:00-05:00").getTime();
 
-  function showPlayer(){
-    player.style.display = "block";
-    // No oculto prelive para que puedas ver banner + video cuando estés probando
-  }
-  function hidePlayer(){
-    player.style.display = "none";
-  }
+const countdown = document.getElementById("countdown");
+const player = document.getElementById("player");
+const prelive = document.getElementById("prelive");
 
-  testBtn.addEventListener("click", showPlayer);
-  hideBtn.addEventListener("click", hidePlayer);
+function updateCountdown(){
 
-  function updateCountdown(){
-    const now = Date.now();
-    const distance = liveDate - now;
+  const now = new Date().getTime();
+  const distance = liveDate - now;
 
-    if(distance <= 0){
-      // Ya es hora: ahora sí cambia automático al modo "en vivo"
-      prelive.style.display = "none";
-      player.style.display = "block";
-      return;
-    }
-
-    const d = Math.floor(distance / (1000*60*60*24));
-    const h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-    const m = Math.floor((distance % (1000*60*60)) / (1000*60));
-    const s = Math.floor((distance % (1000*60)) / 1000);
-
-    countdown.textContent = `Faltan: ${d}d ${h}h ${m}m ${s}s`;
+  if(distance <= 0){
+    prelive.style.display="none";
+    player.style.display="block";
+    return;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  const d = Math.floor(distance / (1000*60*60*24));
+  const h = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((distance % (1000*60*60))/(1000*60));
+  const s = Math.floor((distance % (1000*60))/1000);
+
+  countdown.innerHTML =
+    "Faltan: " + d+"d "+h+"h "+m+"m "+s+"s";
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
 </script>
 
 </body>
