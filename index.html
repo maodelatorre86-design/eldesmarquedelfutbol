@@ -2,343 +2,307 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Santa Fe vs Junior EN VIVO | El Desmarque del Fútbol</title>
+<title>Santa Fe vs Nacional EN VIVO | El Desmarque del Fútbol</title>
 
-<meta name="description" content="Transmisión en vivo Internacional de Bogotá vs Millonarios hoy. Previa desde las 3:30 PM por El Desmarque del Fútbol.">
-<meta name="keywords" content="Internacional de Bogotá vs Millonarios en vivo, Millonarios hoy, fútbol colombiano en vivo">
+<!-- SEO -->
+<meta name="description" content="Transmisión en vivo Santa Fe vs Nacional. Miércoles 25 de febrero 7:00 PM desde el Estadio El Campín. El Desmarque del Fútbol.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
+
+<meta property="og:title" content="Santa Fe vs Nacional EN VIVO | El Desmarque del Fútbol">
+<meta property="og:description" content="Miércoles 25 de febrero · 7:00 PM · Estadio El Campín.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eldesmarquedelfutbol.com/">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/promo.png">
 
 <style>
+:root{
+  --bg:#0b0f19;
+  --panel:rgba(18,26,45,.75);
+  --text:#fff;
+  --accent:#ff8a00;
+}
+
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  color:white;
-  background:black;
+  background:var(--bg);
+  color:#fff;
 }
 
-/* Fondo estadio */
+/* Fondo promo blur */
 .bg{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  inset:0;
+  background:url("promo.png") center/cover no-repeat;
+  filter:blur(10px) brightness(.5);
   z-index:-1;
-  filter:brightness(0.35);
 }
 
-.header{
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(6px);
-  padding:15px;
+/* Header */
+header{
+  padding:14px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(8px);
+  text-align:center;
+}
+header img{
+  width:36px;
+  vertical-align:middle;
+}
+header h1{
+  display:inline-block;
+  margin:0 0 0 8px;
   font-size:22px;
-  font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
 }
 
-.header img{ width:35px; }
-
+/* Card */
 .container{
-  width:95%;
-  max-width:1100px;
+  max-width:900px;
   margin:20px auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  padding:10px;
 }
 
 .card{
-  background:rgba(0,0,0,0.65);
-  padding:25px;
+  background:var(--panel);
   border-radius:18px;
+  padding:18px;
   text-align:center;
 }
 
-.logo{
-  width:90px;
-  margin-bottom:15px;
+/* Partido */
+.match h2{
+  font-size:34px;
+  margin:10px 0;
 }
-
-.badge{
-  background:rgba(255,255,255,0.15);
-  padding:8px 15px;
-  border-radius:20px;
-  display:inline-block;
-  margin-bottom:15px;
-  font-weight:bold;
-}
-
 .vs{
-  background:#ff7a00;
-  padding:5px 10px;
+  background:var(--accent);
+  padding:4px 10px;
   border-radius:8px;
+  margin:0 8px;
   font-weight:bold;
 }
-
-.countdown{
-  font-size:24px;
-  margin-top:15px;
-  font-weight:bold;
-}
-
-.viewer{
+.meta{
+  font-size:20px;
   margin-top:10px;
-  font-weight:bold;
-  background:rgba(255,255,255,0.1);
-  padding:8px;
-  border-radius:10px;
-  display:inline-block;
+}
+.stadium{
+  margin-top:6px;
+  font-size:16px;
+  opacity:.9;
 }
 
+/* Player */
 .player{
-  width:100%;
-  aspect-ratio:16/9;
+  margin-top:18px;
+  position:relative;
   border-radius:14px;
   overflow:hidden;
-  background:black;
+  background:#000;
 }
 
-.player iframe{
+.video-box{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+}
+
+.video-box iframe,
+.video-box img{
+  position:absolute;
   width:100%;
   height:100%;
-  border:0;
+  inset:0;
+  object-fit:cover;
 }
 
-.btn{
-  margin-top:15px;
-  padding:10px 20px;
-  background:#ff7a00;
+/* Bloqueo clicks */
+.blocker{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  display:none;
+}
+
+/* Botones */
+.controls{
+  margin-top:10px;
+}
+button{
+  padding:10px 14px;
+  margin:5px;
   border:none;
   border-radius:10px;
-  color:white;
   font-weight:bold;
   cursor:pointer;
 }
+.full{ background:#ff8a00; color:#000; }
+.toggle{ background:#222; color:#fff; }
 
-/* Responsive */
-@media(max-width:900px){
-  .container{ grid-template-columns:1fr; }
-}
-
-/* =========================================================
-   FULLSCREEN COMPACTO (para móvil, sin recortes)
-   ========================================================= */
-#fullscreenContainer{
-  display:none;
+/* Fullscreen propio */
+.fs{
   position:fixed;
   inset:0;
-  width:100%;
-  height:100%;
   background:#000;
-  z-index:9999;
+  display:none;
   flex-direction:column;
+  z-index:9999;
 }
+.fs.active{ display:flex; }
 
-.fullscreenHeader{
-  background:rgba(0,0,0,0.82);
-  backdrop-filter: blur(6px);
-  padding:10px 12px;
-  font-size:14px;
-  font-weight:800;
-  text-align:center;
-  border-bottom:1px solid rgba(255,255,255,0.12);
-}
-
-.fullscreenPlayer{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.fullscreenPlayer iframe{
+.fs video,
+.fs iframe,
+.fs img{
   width:100%;
   height:100%;
-  border:0;
+  object-fit:contain;
 }
 
-.exitBtn{
+.close{
   position:absolute;
   top:10px;
   right:10px;
-  background:rgba(255,0,0,0.9);
+  background:#000;
   color:#fff;
-  border:none;
-  padding:8px 10px;
-  border-radius:10px;
-  font-weight:900;
+  padding:8px 12px;
+  border-radius:8px;
   cursor:pointer;
-  z-index:10000;
 }
-
 </style>
 </head>
 
 <body>
 
-<img class="bg" src="ESTADIO DE TECHO.jpg" alt="Estadio de Techo">
+<div class="bg"></div>
 
-<div class="header">
-  <img src="EJEMPLO LOGO 2 (2).png" alt="Logo">
-  EL DESMARQUE DEL FÚTBOL
-</div>
+<header>
+  <img src="logo.png">
+  <h1>EL DESMARQUE DEL FÚTBOL</h1>
+</header>
 
 <div class="container">
-
-  <!-- INFO -->
   <div class="card">
-    <img class="logo" src="EJEMPLO LOGO 2 (2).png" alt="Logo">
 
-    <div class="badge">📡 HOY EN VIVO</div>
+    <div class="match">
+      <h2>Santa Fe <span class="vs">VS</span> Nacional</h2>
 
-    <h2>Santa Fe <span class="vs">VS</span> Junior</h2>
+      <div class="meta">
+        Miércoles 25 de Febrero · 7:00 PM
+      </div>
 
-    <p>Partido: <strong>4:00 PM</strong></p>
-    <p>Transmisión: <strong>3:30 PM</strong></p>
-
-    <p>
-      Narra Álvaro Malkún<br>
-      con el análisis de Mauricio Guerrero y Jaime Vélez
-    </p>
-
-    <div class="countdown" id="countdown"></div>
-
-    <div class="viewer">
-      👀 <span id="viewers">0</span> personas viendo
-    </div>
-  </div>
-
-  <!-- PLAYER -->
-  <div class="card">
-    <div class="player" id="playerBox">
-      <iframe id="fbPlayer" allowfullscreen></iframe>
+      <div class="stadium">
+        Estadio El Campín · Bogotá
+      </div>
     </div>
 
-    <button class="btn" onclick="openCompactFullscreen()">VER EN PANTALLA COMPLETA</button>
-    <button class="btn" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.14);"
-            onclick="reloadPlayer()">RECARGAR EN VIVO</button>
-  </div>
+    <!-- PLAYER -->
+    <div class="player">
+      <div class="video-box">
 
+        <!-- Imagen previa -->
+        <img id="promo" src="promo.png">
+
+        <!-- Video -->
+        <iframe id="live" style="display:none;" frameborder="0" allowfullscreen></iframe>
+
+        <!-- Bloqueo clicks -->
+        <div class="blocker" id="blocker"></div>
+
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="full" onclick="openFS()">Pantalla completa</button>
+      <button class="toggle" onclick="toggleMode()">Cambiar Previa / En vivo</button>
+    </div>
+
+  </div>
 </div>
 
-<!-- =========================================================
-     FULLSCREEN COMPACTO (Overlay)
-     ========================================================= -->
-<div id="fullscreenContainer">
-  <button class="exitBtn" onclick="exitCompactFullscreen()">X</button>
-
-  <div class="fullscreenHeader">
-    Santa Fe vs Junior • EL DESMARQUE DEL FÚTBOL
-  </div>
-
-  <div class="fullscreenPlayer">
-    <iframe id="fullscreenFrame" allowfullscreen></iframe>
-  </div>
+<!-- FULLSCREEN -->
+<div class="fs" id="fs">
+  <div class="close" onclick="closeFS()">Salir ✕</div>
+  <div id="fsContent"></div>
 </div>
 
 <script>
-/* =========================================================
-   1) SOLO CAMBIA ESTE LINK cuando tengas el live
-   ========================================================= */
-const FACEBOOK_LIVE_URL = "https://www.facebook.com/100063705559520/videos/941977801591163";
 
-/* =========================================================
-   2) Contador HOY hasta 7:30 PM
-   ========================================================= */
-const startStream = new Date();
-startStream.setHours(19,30,0,0); // 7:30 PM hoy
+/************ PEGA AQUÍ EL LINK CUANDO ESTÉ EL LIVE ************/
+const FACEBOOK_VIDEO_URL = "";
+// Ejemplo:
+// const FACEBOOK_VIDEO_URL = "https://www.facebook.com/.../videos/123";
 
-function updateCountdown(){
-  const now = new Date();
-  const diff = startStream - now;
+/***************************************************************/
 
-  if(diff <= 0){
-    document.getElementById("countdown").innerHTML = "🔴 YA ESTAMOS EN VIVO";
-    return;
+const promo = document.getElementById("promo");
+const live  = document.getElementById("live");
+const block = document.getElementById("blocker");
+
+function fbEmbed(url){
+  return "https://www.facebook.com/plugins/video.php?href=" +
+  encodeURIComponent(url) +
+  "&show_text=false&autoplay=true";
+}
+
+let isLive=false;
+
+function toggleMode(){
+
+  if(!isLive){
+    if(!FACEBOOK_VIDEO_URL){
+      alert("Aún no has pegado el link del live.");
+      return;
+    }
+
+    promo.style.display="none";
+    live.style.display="block";
+    live.src=fbEmbed(FACEBOOK_VIDEO_URL);
+    block.style.display="block";
+    isLive=true;
+
+  }else{
+
+    live.style.display="none";
+    live.src="";
+    promo.style.display="block";
+    block.style.display="none";
+    isLive=false;
+  }
+}
+
+/* Fullscreen propio */
+function openFS(){
+
+  const fs=document.getElementById("fs");
+  const content=document.getElementById("fsContent");
+
+  content.innerHTML="";
+
+  if(isLive && FACEBOOK_VIDEO_URL){
+    const iframe=document.createElement("iframe");
+    iframe.src=fbEmbed(FACEBOOK_VIDEO_URL);
+    iframe.style.width="100%";
+    iframe.style.height="100%";
+    iframe.frameBorder="0";
+    content.appendChild(iframe);
+  }else{
+    const img=document.createElement("img");
+    img.src="promo.png";
+    img.style.width="100%";
+    img.style.height="100%";
+    img.style.objectFit="contain";
+    content.appendChild(img);
   }
 
-  const total = Math.floor(diff/1000);
-  const h = Math.floor(total/3600);
-  const m = Math.floor((total%3600)/60);
-  const s = total%60;
-
-  document.getElementById("countdown").innerHTML =
-    `Faltan: ${h}h ${m}m ${s}s`;
+  fs.classList.add("active");
 }
 
-setInterval(updateCountdown,1000);
-updateCountdown();
-
-/* =========================================================
-   3) Cargar reproductor Facebook
-   ========================================================= */
-function loadPlayer(){
-  if(!FACEBOOK_LIVE_URL) return;
-  const encoded = encodeURIComponent(FACEBOOK_LIVE_URL);
-  document.getElementById("fbPlayer").src =
-    `https://www.facebook.com/plugins/video.php?href=${encoded}&show_text=0&autoplay=0`;
-}
-loadPlayer();
-
-function reloadPlayer(){
-  const frame = document.getElementById("fbPlayer");
-  const old = frame.src;
-  frame.src = "";
-  setTimeout(()=>{ frame.src = old; }, 200);
+function closeFS(){
+  document.getElementById("fs").classList.remove("active");
 }
 
-/* =========================================================
-   4) Viewers fake
-   ========================================================= */
-let viewers = Math.floor(200 + Math.random()*400);
-
-function updateViewers(){
-  viewers += Math.floor(Math.random()*20 - 8);
-  if(viewers < 50) viewers = 50;
-  if(Math.random() < 0.06) viewers += Math.floor(40 + Math.random()*140);
-  document.getElementById("viewers").innerText = viewers;
-}
-setInterval(updateViewers,3000);
-updateViewers();
-
-/* =========================================================
-   5) FULLSCREEN COMPACTO (mejor para móvil)
-   ========================================================= */
-function openCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
-
-  // Copia el src del player actual
-  const currentSrc = document.getElementById("fbPlayer").src;
-  f.src = currentSrc;
-
-  container.style.display = "flex";
-
-  // Evita scroll detrás
-  document.body.style.overflow = "hidden";
-}
-
-function exitCompactFullscreen(){
-  const container = document.getElementById("fullscreenContainer");
-  const f = document.getElementById("fullscreenFrame");
-
-  container.style.display = "none";
-  f.src = ""; // libera recursos
-  document.body.style.overflow = "";
-}
-
-// Cierra con ESC en PC
-document.addEventListener("keydown", (e) => {
-  if(e.key === "Escape"){
-    const c = document.getElementById("fullscreenContainer");
-    if(c.style.display === "flex") exitCompactFullscreen();
-  }
-});
 </script>
 
 </body>
