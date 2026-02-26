@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ELDESMARQUEDELFUTBOL — EN VIVO</title>
 
+<!-- 🔥 FAVICON (LOGO EN GOOGLE Y PESTAÑA) -->
+<link rel="icon" type="image/png" href="EJEMPLO LOGO 2 (2).png">
+<link rel="shortcut icon" href="EJEMPLO LOGO 2 (2).png">
+<link rel="apple-touch-icon" href="EJEMPLO LOGO 2 (2).png">
+
 <style>
 body{
   margin:0;
@@ -122,9 +127,7 @@ header{
   border:0;
 }
 
-/* =========================
-   📱 AJUSTES MÓVIL
-   ========================= */
+/* 📱 MÓVIL */
 @media(max-width:768px){
 
   header{
@@ -144,7 +147,7 @@ header{
   }
 
   .proxima{
-    font-size:15px;   /* MÁS PEQUEÑO EN CELULAR */
+    font-size:15px;
     padding:8px 12px;
     letter-spacing:1px;
   }
@@ -172,7 +175,6 @@ header{
 
 <div class="banner">
 
-  <!-- FOTO NUEVA -->
   <img src="ESTADIO MILLONARIOS 1.JPG">
 
   <div class="proxima">
@@ -183,7 +185,6 @@ header{
     <img src="EJEMPLO LOGO 2 (2).png">
   </div>
 
-  <!-- HOY: partido 7:30 PM -->
   <div class="tag">
     HOY • 7:30 PM
   </div>
@@ -192,7 +193,6 @@ header{
 
 <div class="card">
 
-  <!-- PARTIDO NUEVO -->
   <div class="match">
     MILLONARIOS 🆚 PEREIRA
   </div>
@@ -210,7 +210,7 @@ header{
 </div>
 </div>
 
-<!-- PLAYER EN VIVO (se muestra a las 6:45 PM) -->
+<!-- PLAYER -->
 <div class="player" id="player">
   <iframe
     src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/941977801591163&show_text=false&autoplay=true"
@@ -222,9 +222,6 @@ header{
 </div>
 
 <script>
-  // IMPORTANTE: Ajusta la fecha del evento "HOY" en tu zona (-05:00 Bogotá).
-  // Como no tengo el día exacto aquí, usé la fecha de hoy según tu mensaje:
-  // Si hoy NO es 2026-02-26, cambia solo esta línea.
   const liveDate = new Date("2026-02-26T18:45:00-05:00").getTime();
 
   const countdown = document.getElementById("countdown");
