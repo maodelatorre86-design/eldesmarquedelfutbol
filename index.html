@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELDESMARQUEDELFUTBOL — EN VIVO</title>
 
-<!-- 🔥 FAVICON (LOGO EN GOOGLE Y PESTAÑA) -->
+<!-- 🧠 SEO PARTIDO DE HOY -->
+<title>Millonarios vs Pereira EN VIVO hoy 7:30 PM | El Desmarque del Fútbol</title>
+
+<meta name="description" content="Transmisión en vivo de Millonarios vs Pereira hoy a las 7:30 PM. La transmisión comienza a las 6:45 PM en eldesmarquedelfutbol.com.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+
+<!-- 🔥 FAVICON -->
 <link rel="icon" type="image/png" href="EJEMPLO LOGO 2 (2).png">
 <link rel="shortcut icon" href="EJEMPLO LOGO 2 (2).png">
 <link rel="apple-touch-icon" href="EJEMPLO LOGO 2 (2).png">
@@ -119,15 +124,19 @@ header{
   display:none;
   margin-top:20px;
   aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+  background:#000;
 }
 
 .player iframe{
   width:100%;
   height:100%;
   border:0;
+  display:block;
 }
 
-/* 📱 MÓVIL */
+/* 📱 AJUSTES MÓVIL */
 @media(max-width:768px){
 
   header{
@@ -173,47 +182,49 @@ header{
 
 <div id="prelive">
 
-<div class="banner">
+  <div class="banner">
 
-  <img src="ESTADIO MILLONARIOS 1.JPG">
+    <img src="ESTADIO MILLONARIOS 1.JPG" alt="Estadio Millonarios">
 
-  <div class="proxima">
-    PRÓXIMA TRANSMISIÓN
+    <div class="proxima">
+      PRÓXIMA TRANSMISIÓN
+    </div>
+
+    <div class="logo">
+      <img src="EJEMPLO LOGO 2 (2).png" alt="El Desmarque del Fútbol">
+    </div>
+
+    <div class="tag">
+      HOY • 7:30 PM
+    </div>
+
   </div>
 
-  <div class="logo">
-    <img src="EJEMPLO LOGO 2 (2).png">
-  </div>
+  <div class="card">
 
-  <div class="tag">
-    HOY • 7:30 PM
+    <div class="match">
+      MILLONARIOS 🆚 PEREIRA
+    </div>
+
+    <p>
+      🕢 Partido: <span class="time">7:30 PM</span>
+    </p>
+
+    <p>
+      🎙️ Transmisión comienza: <span class="time">6:45 PM</span>
+    </p>
+
+    <div class="countdown" id="countdown"></div>
+
   </div>
 
 </div>
 
-<div class="card">
-
-  <div class="match">
-    MILLONARIOS 🆚 PEREIRA
-  </div>
-
-  <p>
-    🕢 Partido: <span class="time">7:30 PM</span>
-  </p>
-
-  <p>
-    🎙️ Transmisión comienza: <span class="time">7:00 PM</span>
-  </p>
-
-  <div class="countdown" id="countdown"></div>
-
-</div>
-</div>
-
-<!-- PLAYER -->
+<!-- PLAYER (FACEBOOK EMBED CORRECTO) -->
 <div class="player" id="player">
   <iframe
-    src="https://www.facebook.com/100063705559520/videos/2404338080056576?locale=es_LA&show_text=false&autoplay=true"
+    id="fbFrame"
+    src=""
     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
     allowfullscreen="true">
   </iframe>
@@ -222,11 +233,23 @@ header{
 </div>
 
 <script>
+  // ⏰ Hora de inicio transmisión (Bogotá -05:00)
+  // Si hoy es otra fecha, cambia SOLO la fecha; la hora es 18:45 (6:45 PM)
   const liveDate = new Date("2026-02-26T18:45:00-05:00").getTime();
 
   const countdown = document.getElementById("countdown");
+  const fbFrame = document.getElementById("fbFrame");
   const player = document.getElementById("player");
   const prelive = document.getElementById("prelive");
+
+  // ✅ LINK DEL LIVE (EL QUE ME PASASTE)
+  const FB_LIVE_URL = "https://www.facebook.com/100063705559520/videos/2404338080056576?locale=es_LA";
+
+  // ✅ EMBED CORRECTO (href CODIFICADO)
+  const FB_EMBED_URL =
+    "https://www.facebook.com/plugins/video.php?href=" +
+    encodeURIComponent(FB_LIVE_URL) +
+    "&show_text=false&autoplay=true&mute=0";
 
   function updateCountdown(){
     const now = Date.now();
@@ -235,6 +258,10 @@ header{
     if(distance <= 0){
       prelive.style.display = "none";
       player.style.display = "block";
+      // Cargar iframe solo al momento de mostrarlo (mejor en rendimiento)
+      if(!fbFrame.src || fbFrame.src === "about:blank"){
+        fbFrame.src = FB_EMBED_URL;
+      }
       return;
     }
 
