@@ -7,7 +7,7 @@
 
 <title>Junior vs Nacional EN VIVO | Narración en vivo hoy</title>
 
-<meta name="description" content="Junior vs Nacional EN VIVO hoy. Narración del partido minuto a minuto desde las 7:45 PM. Partido comienza 8:30 PM.">
+<meta name="description" content="Junior vs Nacional EN VIVO hoy. Narración del partido desde las 7:45 PM. Partido comienza 8:30 PM.">
 
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/junior-vs-nacional-en-vivo.html">
 
@@ -25,7 +25,7 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#0b0f19;
 color:white;
 text-align:center;
@@ -35,7 +35,7 @@ header{
 background:#111a33;
 padding:18px;
 font-size:24px;
-font-weight:bold;
+font-weight:900;
 }
 
 .container{
@@ -51,7 +51,7 @@ position:relative;
 width:100%;
 aspect-ratio:16/9;
 overflow:hidden;
-border-radius:12px;
+border-radius:14px;
 }
 
 .banner img{
@@ -59,6 +59,8 @@ width:100%;
 height:100%;
 object-fit:cover;
 }
+
+/* PROXIMA */
 
 .proxima{
 position:absolute;
@@ -69,8 +71,36 @@ background:rgba(0,0,0,.65);
 padding:15px 25px;
 font-size:28px;
 font-weight:900;
-border-radius:10px;
+border-radius:12px;
 letter-spacing:2px;
+}
+
+/* LOGO */
+
+.logo{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(0,0,0,.6);
+padding:10px;
+border-radius:10px;
+}
+
+.logo img{
+width:60px;
+}
+
+/* FECHA */
+
+.tag{
+position:absolute;
+top:15px;
+right:15px;
+background:red;
+padding:8px 12px;
+border-radius:10px;
+font-weight:bold;
+font-size:14px;
 }
 
 /* CARD */
@@ -100,6 +130,24 @@ font-weight:bold;
 margin-top:10px;
 }
 
+@media(max-width:768px){
+
+.logo img{
+width:45px;
+}
+
+.proxima{
+font-size:16px;
+padding:8px 12px;
+}
+
+.tag{
+font-size:11px;
+padding:6px 8px;
+}
+
+}
+
 </style>
 
 </head>
@@ -107,7 +155,7 @@ margin-top:10px;
 <body>
 
 <header>
-EL DESMARQUE DEL FÚTBOL
+⚽ ELDESMARQUEDELFUTBOL — EN VIVO
 </header>
 
 <div class="container">
@@ -120,6 +168,14 @@ EL DESMARQUE DEL FÚTBOL
 
 <div class="proxima">
 PRÓXIMA TRANSMISIÓN
+</div>
+
+<div class="logo">
+<img src="/EJEMPLO LOGO 2 (2).png" alt="Logo El Desmarque del Fútbol">
+</div>
+
+<div class="tag">
+MARTES 10 MAR • 8:30 PM
 </div>
 
 </div>
@@ -163,7 +219,7 @@ const distance = liveDate - now;
 
 if(distance <= 0){
 
-player.style.display = "block";
+player.style.display="block";
 
 countdown.innerHTML="TRANSMISIÓN EN VIVO";
 
@@ -171,11 +227,9 @@ return;
 
 }
 
-const h = Math.floor(distance / (1000*60*60));
-
-const m = Math.floor((distance % (1000*60*60)) / (1000*60));
-
-const s = Math.floor((distance % (1000*60)) / 1000);
+const h=Math.floor(distance/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
 
 countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
 
