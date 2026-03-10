@@ -9,14 +9,14 @@
 
 <meta name="description" content="Junior vs Nacional EN VIVO hoy. Narración del partido minuto a minuto desde las 7:45 PM. Partido comienza 8:30 PM.">
 
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/junior-vs-nacional-en-vivo">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/junior-vs-nacional-en-vivo.html">
 
 <meta name="robots" content="index,follow">
 
 <meta property="og:title" content="Junior vs Nacional EN VIVO">
 <meta property="og:description" content="Narración en vivo de Junior vs Nacional hoy desde las 7:45 PM">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://eldesmarquedelfutbol.com/junior-vs-nacional-en-vivo">
+<meta property="og:url" content="https://eldesmarquedelfutbol.com/junior-vs-nacional-en-vivo.html">
 <meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20ROMELIO%20MARTINEZ.jpg">
 
 <link rel="icon" href="/EJEMPLO LOGO 2 (2).png">
@@ -44,10 +44,36 @@ margin:auto;
 padding:20px;
 }
 
-.banner img{
+/* BANNER */
+
+.banner{
+position:relative;
 width:100%;
+aspect-ratio:16/9;
+overflow:hidden;
 border-radius:12px;
 }
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.proxima{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.65);
+padding:15px 25px;
+font-size:28px;
+font-weight:900;
+border-radius:10px;
+letter-spacing:2px;
+}
+
+/* CARD */
 
 .card{
 background:#111a33;
@@ -59,6 +85,7 @@ margin-top:20px;
 .player{
 margin-top:20px;
 aspect-ratio:16/9;
+display:none;
 }
 
 .player iframe{
@@ -88,7 +115,13 @@ EL DESMARQUE DEL FÚTBOL
 <h1>Junior vs Nacional EN VIVO</h1>
 
 <div class="banner">
-<img src="/ESTADIO ROMELIO MARTINEZ.jpg">
+
+<img src="/ESTADIO ROMELIO MARTINEZ.jpg" alt="Estadio Romelio Martínez">
+
+<div class="proxima">
+PRÓXIMA TRANSMISIÓN
+</div>
+
 </div>
 
 <div class="card">
@@ -103,10 +136,10 @@ EL DESMARQUE DEL FÚTBOL
 
 </div>
 
-<div id="player" class="player" style="display:none">
+<div id="player" class="player">
 
 <iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/2404338080056576"
+src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
 allowfullscreen>
 </iframe>
 
