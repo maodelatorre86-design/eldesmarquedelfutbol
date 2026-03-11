@@ -44,8 +44,6 @@ margin:auto;
 padding:20px;
 }
 
-/* BANNER */
-
 .banner{
 position:relative;
 width:100%;
@@ -60,8 +58,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* TEXTO PROXIMA */
-
 .proxima{
 position:absolute;
 top:50%;
@@ -74,8 +70,6 @@ font-weight:900;
 border-radius:12px;
 letter-spacing:2px;
 }
-
-/* LOGO */
 
 .logo{
 position:absolute;
@@ -90,8 +84,6 @@ border-radius:10px;
 width:60px;
 }
 
-/* FECHA */
-
 .tag{
 position:absolute;
 top:15px;
@@ -102,8 +94,6 @@ border-radius:10px;
 font-weight:bold;
 font-size:14px;
 }
-
-/* CARD */
 
 .card{
 background:#111a33;
@@ -195,7 +185,7 @@ MARTES 10 MAR • 8:30 PM
 <div id="player" class="player">
 
 <iframe
-src="https://www.youtube.com/embed/DiJWiMZS-oQ?autoplay=1&mute=1&rel=0"
+src="https://www.youtube.com/embed/DiJWiMZS-oQ"
 title="Junior vs Nacional en vivo"
 allow="autoplay; encrypted-media; picture-in-picture"
 allowfullscreen>
@@ -210,23 +200,17 @@ allowfullscreen>
 const liveDate = new Date("2026-03-10T19:45:00-05:00").getTime();
 
 const countdown = document.getElementById("countdown");
-
 const player = document.getElementById("player");
 
 function updateCountdown(){
 
 const now = new Date().getTime();
-
 const distance = liveDate - now;
 
 if(distance <= 0){
-
 player.style.display="block";
-
 countdown.innerHTML="TRANSMISIÓN EN VIVO";
-
 return;
-
 }
 
 const h=Math.floor(distance/(1000*60*60));
@@ -238,7 +222,6 @@ countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
 }
 
 setInterval(updateCountdown,1000);
-
 updateCountdown();
 
 </script>
