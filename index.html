@@ -38,6 +38,7 @@ background:rgba(0,0,0,.65);padding:15px 25px;font-size:28px;font-weight:900;bord
 
 <div class="banner">
 <img id="imagen">
+
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="logo">
@@ -45,18 +46,15 @@ background:rgba(0,0,0,.65);padding:15px 25px;font-size:28px;font-weight:900;bord
 </div>
 
 <div class="tag" id="fecha"></div>
-
 </div>
 
 <div class="card">
-
 <h2 id="equipos"></h2>
 
 <p>🕕 Partido: <b id="horaPartido"></b></p>
 <p>🎙️ Transmisión: <b id="horaTransmision"></b></p>
 
 <div id="countdown" class="countdown"></div>
-
 </div>
 
 </div>
@@ -76,10 +74,10 @@ const partido = {
   fechaBanner: "HOY • 8:30 PM",
   imagen: "ESTADIO CALI.jpg",
   liveDate: "2026-03-17T19:45:00-05:00",
-  facebook: "LINK_FACEBOOK_AQUI"
+  facebook: "https://www.facebook.com/100063705559520/videos/1301825362092694/"
 };
 
-// Rellenar contenido
+// CONTENIDO
 document.getElementById("equipos").innerText = partido.equipos;
 document.getElementById("horaPartido").innerText = partido.horaPartido;
 document.getElementById("horaTransmision").innerText = partido.horaTransmision;
@@ -87,11 +85,13 @@ document.getElementById("fecha").innerText = partido.fechaBanner;
 document.getElementById("imagen").src = partido.imagen;
 document.getElementById("title").innerText = partido.equipos + " EN VIVO | El Desmarque del Fútbol";
 
-// Facebook player
+// 🔥 CORRECCIÓN CLAVE (encodeURIComponent)
 document.getElementById("iframe").src =
-"https://www.facebook.com/plugins/video.php?href=" + partido.facebook + "&show_text=false&autoplay=true&mute=0";
+"https://www.facebook.com/plugins/video.php?href=" +
+encodeURIComponent(partido.facebook) +
+"&show_text=false&autoplay=true&mute=0";
 
-// Countdown
+// COUNTDOWN
 const liveDate = new Date(partido.liveDate).getTime();
 
 function updateCountdown(){
