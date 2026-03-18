@@ -5,13 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deportivo Cali vs Santa Fe EN VIVO | El Desmarque del Fútbol</title>
-
-<meta name="description" content="Deportivo Cali vs Santa Fe en vivo hoy. Narración desde las 7:45 PM. Partido 8:30 PM.">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
-
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20CALI.jpg">
+<title id="title">EN VIVO | El Desmarque del Fútbol</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -19,31 +13,15 @@
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 .container{max-width:1100px;margin:auto;padding:20px}
-
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
-
-.proxima{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,.65);
-padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
-
-.logo{
-position:absolute;top:15px;left:15px;
-background:rgba(0,0,0,.6);
-padding:10px;border-radius:10px}
-
+.proxima{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+background:rgba(0,0,0,.65);padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
+.logo{position:absolute;top:15px;left:15px;background:rgba(0,0,0,.6);padding:10px;border-radius:10px}
 .logo img{width:60px}
-
-.tag{
-position:absolute;top:15px;right:15px;
-background:red;padding:8px 12px;
-border-radius:10px;font-weight:bold}
-
+.tag{position:absolute;top:15px;right:15px;background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 .card{margin-top:20px;background:#111a33;padding:20px;border-radius:14px}
 .countdown{margin-top:15px;font-size:20px;font-weight:bold}
-
 .player{display:none;margin-top:20px;aspect-ratio:16/9}
 .player iframe{width:100%;height:100%;border:0}
 </style>
@@ -52,36 +30,30 @@ border-radius:10px;font-weight:bold}
 
 <body>
 
-<header>
-⚽ ELDESMARQUEDELFUTBOL — EN VIVO
-</header>
+<header>⚽ ELDESMARQUEDELFUTBOL — EN VIVO</header>
 
 <div class="container">
 
 <div id="prelive">
 
 <div class="banner">
-
-<img src="ESTADIO CALI.jpg">
-
+<img id="imagen">
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">
-HOY • 8:30 PM
-</div>
+<div class="tag" id="fecha"></div>
 
 </div>
 
 <div class="card">
 
-<h2>DEPORTIVO CALI 🆚 SANTA FE</h2>
+<h2 id="equipos"></h2>
 
-<p>🕕 Partido: <b>8:30 PM</b></p>
-<p>🎙️ Transmisión: <b>7:45 PM</b></p>
+<p>🕕 Partido: <b id="horaPartido"></b></p>
+<p>🎙️ Transmisión: <b id="horaTransmision"></b></p>
 
 <div id="countdown" class="countdown"></div>
 
@@ -90,33 +62,45 @@ HOY • 8:30 PM
 </div>
 
 <div id="player" class="player">
-
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=LINK_FACEBOOK_AQUI&show_text=false&autoplay=true&mute=0"
-allowfullscreen
-allow="autoplay; encrypted-media; picture-in-picture">
-</iframe>
-
+<iframe id="iframe" allowfullscreen allow="autoplay; encrypted-media"></iframe>
 </div>
 
 </div>
 
 <script>
 
-const liveDate = new Date("2026-03-17T19:45:00-05:00").getTime();
+const partido = {
+  equipos: "DEPORTIVO CALI 🆚 SANTA FE",
+  horaPartido: "8:30 PM",
+  horaTransmision: "7:45 PM",
+  fechaBanner: "HOY • 8:30 PM",
+  imagen: "ESTADIO CALI.jpg",
+  liveDate: "2026-03-17T19:45:00-05:00",
+  facebook: "LINK_FACEBOOK_AQUI"
+};
 
-const countdown=document.getElementById("countdown");
-const player=document.getElementById("player");
-const prelive=document.getElementById("prelive");
+// Rellenar contenido
+document.getElementById("equipos").innerText = partido.equipos;
+document.getElementById("horaPartido").innerText = partido.horaPartido;
+document.getElementById("horaTransmision").innerText = partido.horaTransmision;
+document.getElementById("fecha").innerText = partido.fechaBanner;
+document.getElementById("imagen").src = partido.imagen;
+document.getElementById("title").innerText = partido.equipos + " EN VIVO | El Desmarque del Fútbol";
+
+// Facebook player
+document.getElementById("iframe").src =
+"https://www.facebook.com/plugins/video.php?href=" + partido.facebook + "&show_text=false&autoplay=true&mute=0";
+
+// Countdown
+const liveDate = new Date(partido.liveDate).getTime();
 
 function updateCountdown(){
+const now = new Date().getTime();
+const distance = liveDate - now;
 
-const now=new Date().getTime();
-const distance=liveDate-now;
-
-if(distance<=0){
-prelive.style.display="none";
-player.style.display="block";
+if(distance <= 0){
+document.getElementById("prelive").style.display="none";
+document.getElementById("player").style.display="block";
 return;
 }
 
@@ -124,8 +108,8 @@ const h=Math.floor(distance/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
 const s=Math.floor((distance%(1000*60))/1000);
 
-countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
-
+document.getElementById("countdown").innerHTML =
+"Empieza en: "+h+"h "+m+"m "+s+"s";
 }
 
 setInterval(updateCountdown,1000);
