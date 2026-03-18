@@ -43,6 +43,14 @@ border-radius:10px;font-weight:bold}
 
 .countdown{font-size:20px;font-weight:bold}
 
+/* 🔽 AJUSTE PARA CELULAR */
+@media (max-width:600px){
+.proxima{
+font-size:18px;
+padding:10px 15px;
+}
+}
+
 </style>
 
 </head>
@@ -56,6 +64,8 @@ EL DESMARQUE DEL FÚTBOL
 <div class="container">
 
 <h1>Deportivo Cali vs Santa Fe EN VIVO</h1>
+
+<div id="promo">
 
 <div class="banner">
 
@@ -82,34 +92,45 @@ HOY • 8:30 PM
 
 </div>
 
-<div id="player" class="player">
+</div>
 
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=LINK_FACEBOOK_AQUI&show_text=false&autoplay=1&mute=1"
+<div id="player" class="player">
+<iframe id="videoFrame"
 allowfullscreen
 allow="autoplay; encrypted-media; picture-in-picture">
 </iframe>
-
 </div>
 
 </div>
 
 <script>
 
-// HOY 18 DE MARZO 2026 - 7:45 PM (hora Colombia)
+const videoURL = ""; // 👉 pega aquí el live
+
 const liveDate=new Date("2026-03-18T19:45:00-05:00").getTime();
 
 const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
+const promo=document.getElementById("promo");
+const frame=document.getElementById("videoFrame");
 
 function updateCountdown(){
 
 const now=new Date().getTime();
 const distance=liveDate-now;
 
+if(videoURL===""){
 if(distance<=0){
+countdown.innerHTML="YA ESTAMOS EN VIVO";
+}
+return;
+}
+
+frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&show_text=false&autoplay=1&mute=1";
+
+if(distance<=0){
+promo.style.display="none";
 player.style.display="block";
-countdown.innerHTML="TRANSMISIÓN EN VIVO";
 return;
 }
 
