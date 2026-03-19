@@ -5,15 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deportivo Cali vs Santa Fe EN VIVO HOY ⚽ Liga BetPlay 2026</title>
-
-<meta name="description" content="Ver Deportivo Cali vs Santa Fe EN VIVO hoy. Transmisión desde las 7:45 PM. Partido 8:30 PM.">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/deportivo-cali-vs-santafe-en-vivo.html">
-
-<meta property="og:title" content="Cali vs Santa Fe EN VIVO HOY">
-<meta property="og:description" content="Mira el partido en vivo desde las 7:45 PM">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20CALI.jpg">
+<title>Deportivo Cali vs Santa Fe EN VIVO</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -21,7 +13,6 @@
 
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
-
 .container{max-width:1000px;margin:auto;padding:20px}
 
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
@@ -42,7 +33,8 @@ padding:10px;border-radius:10px}
 
 .tag{
 position:absolute;top:15px;right:15px;
-background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
+background:red;padding:8px 12px;
+border-radius:10px;font-weight:bold}
 
 .card{margin-top:20px;background:#111a33;padding:20px;border-radius:12px}
 
@@ -61,67 +53,68 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
 <body>
 
-<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
+<header>
+EL DESMARQUE DEL FÚTBOL
+</header>
 
 <div class="container">
 
-<h1>Deportivo Cali vs Santa Fe EN VIVO HOY</h1>
+<h1>Deportivo Cali vs Santa Fe EN VIVO</h1>
 
 <div id="promo">
 
 <div class="banner">
-<img src="ESTADIO CALI.jpg" alt="Cali vs Santa Fe en vivo">
+
+<img src="ESTADIO CALI.jpg">
+
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">HOY • 8:30 PM</div>
+<div class="tag">
+HOY • 8:30 PM
+</div>
+
 </div>
 
 <div class="card">
-<p>⚽ Liga BetPlay 2026</p>
+
 <p>🕕 Partido: <b>8:30 PM</b></p>
 <p>🎙️ Transmisión: <b>7:45 PM</b></p>
+
 <div id="countdown" class="countdown"></div>
+
 </div>
 
 </div>
 
 <div id="player" class="player">
-<iframe id="videoFrame"
+
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/4357030204625206/&show_text=false&autoplay=1&mute=1"
 allowfullscreen
 allow="autoplay; encrypted-media; picture-in-picture">
 </iframe>
+
 </div>
 
 </div>
 
 <script>
 
-const videoURL = ""; // pega el live aquí
-
+// HOY 18 DE MARZO 2026 - 7:45 PM
 const liveDate=new Date("2026-03-18T19:45:00-05:00").getTime();
 
 const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
 const promo=document.getElementById("promo");
-const frame=document.getElementById("videoFrame");
 
 function updateCountdown(){
 
 const now=new Date().getTime();
 const distance=liveDate-now;
-
-if(videoURL===""){
-if(distance<=0){
-countdown.innerHTML="YA ESTAMOS EN VIVO";
-}
-return;
-}
-
-frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&autoplay=1&mute=1";
 
 if(distance<=0){
 promo.style.display="none";
