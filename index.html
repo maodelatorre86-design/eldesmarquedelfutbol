@@ -5,59 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deportivo Cali vs Santa Fe EN VIVO HOY ⚽ Liga BetPlay 2026</title>
+<title>Fútbol EN VIVO HOY ⚽ | El Desmarque</title>
 
-<meta name="description" content="Ver Deportivo Cali vs Santa Fe EN VIVO hoy. Transmisión online desde las 7:45 PM. Partido 8:30 PM Liga BetPlay 2026.">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/deportivo-cali-vs-santafe-en-vivo.html">
-
-<meta property="og:title" content="Cali vs Santa Fe EN VIVO HOY ⚽">
-<meta property="og:description" content="Mira el partido Deportivo Cali vs Santa Fe en vivo hoy desde las 7:45 PM.">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20CALI.jpg">
-<meta property="og:type" content="website">
+<meta name="description" content="Ver fútbol en vivo hoy gratis. Liga BetPlay y partidos en directo.">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
 
-body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
-header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
-.container{max-width:1000px;margin:auto;padding:20px}
+body{margin:0;font-family:Arial;background:#0b0f19;color:white}
+header{background:#111a33;padding:15px;font-size:22px;font-weight:900;text-align:center}
+.container{max-width:1100px;margin:auto;padding:20px}
+h1{text-align:center}
 
-.banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
-.banner img{width:100%;height:100%;object-fit:cover}
-
-.proxima{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,.65);
-padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
-
-.logo{
-position:absolute;top:15px;left:15px;
-background:rgba(0,0,0,.6);
-padding:10px;border-radius:10px}
-
-.logo img{width:60px}
-
-.tag{
-position:absolute;top:15px;right:15px;
-background:red;padding:8px 12px;
-border-radius:10px;font-weight:bold}
-
-.card{margin-top:20px;background:#111a33;padding:20px;border-radius:12px}
-
-.player{margin-top:20px;aspect-ratio:16/9;display:none}
-.player iframe{width:100%;height:100%;border:0}
-
-.countdown{font-size:20px;font-weight:bold}
-
-/* MÓVIL */
-@media (max-width:600px){
-.proxima{
-font-size:18px;
-padding:10px 15px;
+.match{
+background:#111a33;
+padding:15px;
+border-radius:12px;
+margin-top:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
+
+.match a{
+color:white;
+text-decoration:none;
+background:red;
+padding:8px 12px;
+border-radius:8px;
+font-weight:bold;
 }
 
 </style>
@@ -66,96 +43,21 @@ padding:10px 15px;
 
 <body>
 
-<header>
-⚽ EL DESMARQUE DEL FÚTBOL
-</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
 <div class="container">
 
-<h1>Deportivo Cali vs Santa Fe EN VIVO HOY</h1>
+<h1>Fútbol EN VIVO HOY</h1>
 
-<div id="promo">
-
-<div class="banner">
-
-<img src="ESTADIO CALI.jpg" alt="Cali vs Santa Fe en vivo">
-
-<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
-
-<div class="logo">
-<img src="EJEMPLO LOGO 2 (2).png">
+<div class="match">
+<div>
+<b>Deportivo Cali 🆚 Santa Fe</b><br>
+Hoy • 8:30 PM
 </div>
-
-<div class="tag">
-HOY • 8:30 PM
+<a href="deportivo-cali-vs-santafe-en-vivo.html">VER PARTIDO</a>
 </div>
 
 </div>
-
-<div class="card">
-
-<p>⚽ Liga BetPlay 2026</p>
-<p>🕕 Partido: <b>8:30 PM</b></p>
-<p>🎙️ Transmisión: <b>7:45 PM</b></p>
-
-<div id="countdown" class="countdown"></div>
-
-</div>
-
-</div>
-
-<div id="player" class="player">
-<iframe id="videoFrame"
-allowfullscreen
-allow="autoplay; encrypted-media; picture-in-picture">
-</iframe>
-</div>
-
-</div>
-
-<script>
-
-const videoURL = ""; // pega aquí el live
-
-const liveDate=new Date("2026-03-18T19:45:00-05:00").getTime();
-
-const countdown=document.getElementById("countdown");
-const player=document.getElementById("player");
-const promo=document.getElementById("promo");
-const frame=document.getElementById("videoFrame");
-
-function updateCountdown(){
-
-const now=new Date().getTime();
-const distance=liveDate-now;
-
-if(videoURL===""){
-if(distance<=0){
-countdown.innerHTML="YA ESTAMOS EN VIVO";
-}
-return;
-}
-
-frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&show_text=false&autoplay=1&mute=1";
-
-if(distance<=0){
-promo.style.display="none";
-player.style.display="block";
-return;
-}
-
-const h=Math.floor(distance/(1000*60*60));
-const m=Math.floor((distance%(1000*60*60))/(1000*60));
-const s=Math.floor((distance%(1000*60))/1000);
-
-countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
-
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
-</script>
 
 </body>
 </html>
