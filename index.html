@@ -5,9 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Once Caldas vs Millonarios EN VIVO | El Desmarque del Fútbol</title>
-
-<meta name="description" content="Once Caldas vs Millonarios en vivo hoy. Transmisión desde las 5:45 PM. Partido 6:20 PM.">
+<title>Once Caldas vs Millonarios EN VIVO HOY</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -15,10 +13,29 @@
 
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
-.container{max-width:1100px;margin:auto;padding:20px}
+.container{max-width:1000px;margin:auto;padding:20px}
 
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
+
+/* 🔴 EN VIVO */
+.live-badge{
+position:absolute;
+top:15px;
+left:15px;
+background:red;
+padding:8px 14px;
+border-radius:10px;
+font-weight:bold;
+display:none;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
 
 .proxima{
 position:absolute;top:50%;left:50%;
@@ -27,26 +44,26 @@ background:rgba(0,0,0,.65);
 padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
 
 .logo{
-position:absolute;top:15px;left:15px;
+position:absolute;top:15px;right:15px;
 background:rgba(0,0,0,.6);
 padding:10px;border-radius:10px}
 
 .logo img{width:60px}
 
 .tag{
-position:absolute;top:15px;right:15px;
-background:red;padding:8px 12px;
-border-radius:10px;font-weight:bold}
+position:absolute;bottom:15px;left:50%;
+transform:translateX(-50%);
+background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
-.card{margin-top:20px;background:#111a33;padding:20px;border-radius:14px}
-.countdown{margin-top:15px;font-size:20px;font-weight:bold}
+.card{margin-top:20px;background:#111a33;padding:20px;border-radius:12px}
 
-/* MÓVIL */
+.player{margin-top:20px;aspect-ratio:16/9;display:none}
+.player iframe{width:100%;height:100%;border:0}
+
+.countdown{font-size:20px;font-weight:bold}
+
 @media (max-width:600px){
-.proxima{
-font-size:18px;
-padding:10px 15px;
-}
+.proxima{font-size:18px;padding:10px 15px;}
 }
 
 </style>
@@ -55,31 +72,29 @@ padding:10px 15px;
 
 <body>
 
-<header>
-⚽ ELDESMARQUEDELFUTBOL — EN VIVO
-</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
 <div class="container">
 
-<div class="banner">
+<h1>Once Caldas vs Millonarios EN VIVO HOY</h1>
 
+<div id="promo">
+
+<div class="banner">
 <img src="ESTADIO PALO GRANDE.jpg">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="live-badge" id="liveBadge">🔴 EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">
-HOY • 6:20 PM
-</div>
-
+<div class="tag">HOY • 6:20 PM</div>
 </div>
 
 <div class="card">
-
-<h2>ONCE CALDAS 🆚 MILLONARIOS</h2>
 
 <p>📍 Manizales</p>
 <p>🕕 Partido: <b>6:20 PM</b></p>
@@ -91,20 +106,52 @@ HOY • 6:20 PM
 
 </div>
 
+<div id="player" class="player">
+<iframe id="videoFrame"
+allowfullscreen
+allow="autoplay; encrypted-media; picture-in-picture">
+</iframe>
+</div>
+
+</div>
+
 <script>
 
-// HOY - 5:45 PM (hora Colombia)
-const liveDate = new Date("2026-03-18T17:45:00-05:00").getTime();
+const videoURL = ""; // 👉 pega aquí el live
+
+const liveDate=new Date("2026-03-18T17:45:00-05:00").getTime();
+const startingSoon = liveDate - (5 * 60 * 1000);
 
 const countdown=document.getElementById("countdown");
+const player=document.getElementById("player");
+const promo=document.getElementById("promo");
+const frame=document.getElementById("videoFrame");
+const liveBadge=document.getElementById("liveBadge");
 
 function updateCountdown(){
 
 const now=new Date().getTime();
 const distance=liveDate-now;
 
+// 🔴 5 min antes
+if(now >= startingSoon && now < liveDate){
+countdown.innerHTML="🔴 TRANSMISIÓN INICIANDO...";
+return;
+}
+
+// ⛔ SIN LINK
+if(videoURL===""){
+return;
+}
+
+// ✅ CON LINK
+frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&autoplay=1&mute=1";
+
+liveBadge.style.display="block";
+
 if(distance<=0){
-countdown.innerHTML="YA ESTAMOS EN VIVO";
+promo.style.display="none";
+player.style.display="block";
 return;
 }
 
