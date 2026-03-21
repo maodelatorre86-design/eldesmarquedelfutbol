@@ -5,15 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Once Caldas vs Millonarios EN VIVO HOY ⚽ Liga BetPlay</title>
-
-<meta name="description" content="Ver Once Caldas vs Millonarios en vivo hoy. Transmisión desde las 5:45 PM. Partido 6:20 PM.">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/once-caldas-vs-millonarios-en-vivo.html">
-
-<meta property="og:title" content="Once Caldas vs Millonarios EN VIVO HOY">
-<meta property="og:description" content="Mira el partido en vivo desde las 5:45 PM">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20PALO%20GRANDE.jpg">
+<title>Once Caldas vs Millonarios EN VIVO HOY</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -26,6 +18,25 @@ header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
 
+/* 🔴 EN VIVO */
+.live-badge{
+position:absolute;
+top:15px;
+left:15px;
+background:red;
+padding:8px 14px;
+border-radius:10px;
+font-weight:bold;
+display:none;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
 .proxima{
 position:absolute;top:50%;left:50%;
 transform:translate(-50%,-50%);
@@ -33,14 +44,15 @@ background:rgba(0,0,0,.65);
 padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
 
 .logo{
-position:absolute;top:15px;left:15px;
+position:absolute;top:15px;right:15px;
 background:rgba(0,0,0,.6);
 padding:10px;border-radius:10px}
 
 .logo img{width:60px}
 
 .tag{
-position:absolute;top:15px;right:15px;
+position:absolute;bottom:15px;left:50%;
+transform:translateX(-50%);
 background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
 .card{margin-top:20px;background:#111a33;padding:20px;border-radius:12px}
@@ -60,9 +72,7 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
 <body>
 
-<header>
-⚽ EL DESMARQUE DEL FÚTBOL
-</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
 <div class="container">
 
@@ -71,19 +81,17 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 <div id="promo">
 
 <div class="banner">
-
-<img src="ESTADIO PALO GRANDE.jpg" alt="Once Caldas vs Millonarios">
+<img src="ESTADIO PALO GRANDE.jpg">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="live-badge" id="liveBadge">🔴 EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">
-HOY • 6:20 PM
-</div>
-
+<div class="tag">HOY • 6:20 PM</div>
 </div>
 
 <div class="card">
@@ -109,32 +117,37 @@ allow="autoplay; encrypted-media; picture-in-picture">
 
 <script>
 
-// 👉 PEGA AQUÍ EL LINK DEL LIVE CUANDO LO TENGAS
-const videoURL = "";
+const videoURL = ""; // 👉 pega aquí el live
 
-// Hora transmisión
 const liveDate=new Date("2026-03-18T17:45:00-05:00").getTime();
+const startingSoon = liveDate - (5 * 60 * 1000);
 
 const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
 const promo=document.getElementById("promo");
 const frame=document.getElementById("videoFrame");
+const liveBadge=document.getElementById("liveBadge");
 
 function updateCountdown(){
 
 const now=new Date().getTime();
 const distance=liveDate-now;
 
-// SIN LINK → SOLO PROMO
-if(videoURL===""){
-if(distance<=0){
-countdown.innerHTML="YA ESTAMOS EN VIVO";
-}
+// 🔴 5 min antes
+if(now >= startingSoon && now < liveDate){
+countdown.innerHTML="🔴 TRANSMISIÓN INICIANDO...";
 return;
 }
 
-// CON LINK → ACTIVA VIDEO
+// ⛔ SIN LINK
+if(videoURL===""){
+return;
+}
+
+// ✅ CON LINK
 frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&autoplay=1&mute=1";
+
+liveBadge.style.display="block";
 
 if(distance<=0){
 promo.style.display="none";
