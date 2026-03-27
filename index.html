@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Santa Fe vs Medellín EN VIVO | El Desmarque</title>
+<title>Bucaramanga vs Santa Fe EN VIVO | El Desmarque</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -72,7 +72,7 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 <div id="promo">
 
 <div class="banner">
-<img src="EL CAMPIN SANTA FE.jpg">
+<img src="ESTADIO BUCARAMANGA.jpg">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 <div class="live-badge" id="liveBadge">🔴 EN VIVO</div>
@@ -81,16 +81,16 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">HOY • 4:10 PM</div>
+<div class="tag">HOY • 8:10 PM</div>
 </div>
 
 <div class="card">
 
-<h2>SANTA FE 🆚 MEDELLÍN</h2>
+<h2>BUCARAMANGA 🆚 SANTA FE</h2>
 
-<p>📍 Bogotá</p>
-<p>🕕 Partido: <b>4:10 PM</b></p>
-<p>🎙️ Transmisión: <b>3:30 PM</b></p>
+<p>📍 Bucaramanga</p>
+<p>🕕 Partido: <b>8:10 PM</b></p>
+<p>🎙️ Transmisión: <b>7:30 PM</b></p>
 
 <div id="countdown" class="countdown"></div>
 
@@ -100,7 +100,7 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
 <div id="player" class="player">
 <iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/722829047487476/&autoplay=1&mute=1"
+src=""
 allowfullscreen
 allow="autoplay; encrypted-media; picture-in-picture">
 </iframe>
@@ -110,13 +110,16 @@ allow="autoplay; encrypted-media; picture-in-picture">
 
 <script>
 
-const liveDate=new Date("2026-03-23T15:30:00-05:00").getTime();
+const videoURL = ""; // pega aquí el live
+
+const liveDate=new Date("2026-03-27T19:30:00-05:00").getTime();
 const startingSoon = liveDate - (5 * 60 * 1000);
 
 const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
 const promo=document.getElementById("promo");
 const liveBadge=document.getElementById("liveBadge");
+const frame=document.querySelector("iframe");
 
 function updateCountdown(){
 
@@ -128,6 +131,11 @@ countdown.innerHTML="🔴 TRANSMISIÓN INICIANDO...";
 return;
 }
 
+if(videoURL===""){
+return;
+}
+
+frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&autoplay=1&mute=1";
 liveBadge.style.display="block";
 
 if(distance<=0){
