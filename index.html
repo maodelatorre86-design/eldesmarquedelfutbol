@@ -82,6 +82,7 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 </div>
 
 <div class="tag">HOY • 8:10 PM</div>
+
 </div>
 
 <div class="card">
@@ -100,7 +101,7 @@ background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
 
 <div id="player" class="player">
 <iframe
-src=""
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1316295420414315/&autoplay=1&mute=1"
 allowfullscreen
 allow="autoplay; encrypted-media; picture-in-picture">
 </iframe>
@@ -110,8 +111,6 @@ allow="autoplay; encrypted-media; picture-in-picture">
 
 <script>
 
-const videoURL = ""; // pega aquí el live
-
 const liveDate=new Date("2026-03-27T19:30:00-05:00").getTime();
 const startingSoon = liveDate - (5 * 60 * 1000);
 
@@ -119,23 +118,19 @@ const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
 const promo=document.getElementById("promo");
 const liveBadge=document.getElementById("liveBadge");
-const frame=document.querySelector("iframe");
 
 function updateCountdown(){
 
 const now=new Date().getTime();
 const distance=liveDate-now;
 
+// 🔴 5 min antes
 if(now >= startingSoon && now < liveDate){
 countdown.innerHTML="🔴 TRANSMISIÓN INICIANDO...";
 return;
 }
 
-if(videoURL===""){
-return;
-}
-
-frame.src="https://www.facebook.com/plugins/video.php?href="+videoURL+"&autoplay=1&mute=1";
+// 🔴 EN VIVO visible
 liveBadge.style.display="block";
 
 if(distance<=0){
@@ -144,6 +139,7 @@ player.style.display="block";
 return;
 }
 
+// ⏳ contador
 const h=Math.floor(distance/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
 const s=Math.floor((distance%(1000*60))/1000);
