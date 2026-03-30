@@ -6,14 +6,11 @@
 
 <title>Millonarios vs Fortaleza EN VIVO HOY ⚽ Liga BetPlay 2026 Gratis</title>
 
-<meta name="description" content="Ver Millonarios vs Fortaleza EN VIVO hoy gratis. Partido de Liga BetPlay 2026 online con narración desde las 7:30 PM.">
+<meta name="description" content="Ver Millonarios vs Fortaleza EN VIVO hoy gratis.">
 
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/millonarios-vs-fortaleza-en-vivo.html">
 
-<meta property="og:title" content="Millonarios vs Fortaleza EN VIVO HOY">
-<meta property="og:description" content="Mira el partido Millonarios vs Fortaleza en vivo gratis.">
 <meta property="og:image" content="estadio-millonarios.jpg">
 
 <link rel="preload" as="image" href="estadio-millonarios.jpg">
@@ -25,15 +22,81 @@ body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .container{max-width:1000px;margin:auto;padding:15px}
 
-h1{font-size:26px;margin-top:10px}
+/* 🔥 BANNER IGUAL AL PRINCIPAL */
+.banner{
+position:relative;
+aspect-ratio:16/9;
+border-radius:14px;
+overflow:hidden;
+background:#000
+}
 
-.banner{margin-top:15px;border-radius:12px;overflow:hidden}
-.banner img{width:100%;height:auto}
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover
+}
 
-.player{margin-top:20px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
-.player iframe{width:100%;height:100%;border:0}
+/* TEXTO CENTRO */
+.proxima{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.65);
+padding:15px 25px;
+font-size:28px;
+font-weight:900;
+border-radius:12px
+}
 
-.info{margin-top:15px;background:#111a33;padding:15px;border-radius:12px}
+/* LOGO */
+.logo{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(0,0,0,.6);
+padding:10px;
+border-radius:10px
+}
+
+.logo img{width:60px}
+
+/* TAG ROJO */
+.tag{
+position:absolute;
+top:15px;
+right:15px;
+background:red;
+padding:8px 12px;
+border-radius:10px;
+font-weight:bold
+}
+
+.player{
+margin-top:20px;
+aspect-ratio:16/9;
+display:none
+}
+
+.player iframe{
+width:100%;
+height:100%;
+border:0
+}
+
+.info{
+margin-top:15px;
+background:#111a33;
+padding:15px;
+border-radius:12px
+}
+
+.estado{
+margin-top:10px;
+font-weight:bold;
+color:#00ffcc
+}
 
 .boton{
 display:inline-block;
@@ -43,21 +106,9 @@ color:#000;
 padding:10px 14px;
 border-radius:8px;
 text-decoration:none;
-font-weight:bold}
-
-.estado{margin-top:10px;font-weight:bold;color:#00ffcc}
-</style>
-
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "SportsEvent",
-"name": "Millonarios vs Fortaleza",
-"startDate": "2026-03-30T20:20:00-05:00",
-"description": "Partido Millonarios vs Fortaleza en vivo hoy",
-"eventStatus": "https://schema.org/EventScheduled"
+font-weight:bold
 }
-</script>
+</style>
 
 </head>
 
@@ -67,47 +118,59 @@ font-weight:bold}
 
 <div class="container">
 
-<h1>Millonarios vs Fortaleza EN VIVO HOY ⚽</h1>
+<!-- 🔥 BANNER PRO -->
+<div id="prelive" class="banner">
 
-<div class="banner">
-<img src="estadio-millonarios.jpg" alt="Millonarios vs Fortaleza en vivo">
+<img src="estadio-millonarios.jpg" alt="Millonarios estadio">
+
+<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="logo">
+<img src="EJEMPLO LOGO 2 (2).png">
+</div>
+
+<div class="tag">HOY • 8:20 PM</div>
+
+</div>
+
+<!-- PLAYER -->
+<div id="player" class="player">
+<iframe id="liveFrame" src="" allowfullscreen></iframe>
 </div>
 
 <div class="estado">🔴 Señal disponible pronto</div>
-
-<div class="player">
-<iframe id="liveFrame" src="" allowfullscreen></iframe>
-</div>
 
 <div class="info">
 <p>🕗 Hora del partido: <b>8:20 PM</b></p>
 <p>🎙️ Transmisión desde: <b>7:30 PM</b></p>
 
 <p>
-Estás viendo <b>Millonarios vs Fortaleza en vivo</b> hoy por la Liga BetPlay.
-Disfruta el partido completamente online con narración en directo en <b>EL DESMARQUE DEL FÚTBOL</b>.
+Estás viendo <b>Millonarios vs Fortaleza en vivo</b> por 
+<b>EL DESMARQUE DEL FÚTBOL</b>.
 </p>
 
 <div style="display:none">
 millonarios vs fortaleza en vivo hoy,
 ver millonarios gratis,
 liga betplay en vivo,
-partido millonarios hoy online,
-transmision millonarios fortaleza en directo
+partido millonarios hoy online
 </div>
 
-<a class="boton" href="/">
-⬅ Volver al inicio
-</a>
-
+<a class="boton" href="/">⬅ Volver al inicio</a>
 </div>
 
 </div>
 
 <script>
+// ACTIVACIÓN MANUAL
 function activarLive(link){
+document.getElementById("prelive").style.display="none";
+const player=document.getElementById("player");
 const frame=document.getElementById("liveFrame");
+
 frame.src = link;
+player.style.display="block";
+
 document.querySelector(".estado").innerHTML="🔴 EN VIVO AHORA";
 }
 </script>
