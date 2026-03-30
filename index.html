@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Millonarios vs Fortaleza EN VIVO | El Desmarque del Fútbol</title>
 
-<meta name="description" content="Millonarios vs Fortaleza en vivo hoy. Narración desde las 7:30 PM.">
+<title>Millonarios vs Fortaleza EN VIVO HOY ⚽ | El Desmarque</title>
+
+<meta name="description" content="Millonarios vs Fortaleza en vivo hoy. Transmisión desde las 7:30 PM.">
 
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/">
 
-<meta property="og:image" content="ESTADIO MILLONARIOS 1.jpg">
+<meta property="og:image" content="ESTADIO%20MILLONARIOS%201.jpg">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
+
+<meta name="robots" content="index, follow">
 
 <style>
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
@@ -69,7 +72,9 @@ header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 
 <div id="prelive">
 <div class="banner">
-<img src="ESTADIO MILLONARIOS 1.jpg">
+
+<!-- IMPORTANTE: nombre corregido -->
+<img src="ESTADIO%20MILLONARIOS%201.jpg">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
@@ -88,35 +93,31 @@ header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 
 <div id="countdown" class="countdown"></div>
 
+<p style="margin-top:10px;color:#00ffcc;font-weight:bold">
+🔴 EN VIVO PRONTO
+</p>
+
 <a class="boton" href="/millonarios-vs-fortaleza-en-vivo.html">
 VER PÁGINA DEL PARTIDO
 </a>
 </div>
 </div>
 
+<!-- PLAYER SOLO SE ACTIVARÁ CUANDO PONGAS EL LINK -->
 <div id="player" class="player">
-<iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI?autoplay=1&mute=1" allowfullscreen>
-</iframe>
+<iframe id="liveFrame" src="" allowfullscreen></iframe>
 </div>
 
 </div>
 
 <script>
+// ⏱️ SOLO CONTADOR (NO CAMBIA A PLAYER AUTOMÁTICO)
 const liveDate = new Date("2026-03-30T19:30:00-05:00").getTime();
-
 const countdown=document.getElementById("countdown");
-const player=document.getElementById("player");
-const prelive=document.getElementById("prelive");
 
 function updateCountdown(){
 const now=new Date().getTime();
 const distance=liveDate-now;
-
-if(distance<=0){
- prelive.style.display="none";
- player.style.display="block";
- return;
-}
 
 const h=Math.floor(distance/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
@@ -127,6 +128,30 @@ countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
 
 setInterval(updateCountdown,1000);
 updateCountdown();
+
+
+// 🎯 ACTIVACIÓN MANUAL DEL LIVE
+// SOLO pega tu link aquí cuando empiece el partido
+function activarLive(link){
+document.getElementById("prelive").style.display="none";
+const player=document.getElementById("player");
+const frame=document.getElementById("liveFrame");
+
+frame.src = link;
+player.style.display="block";
+}
+
+/*
+👉 CUANDO TENGAS EL LINK DE FACEBOOK O YOUTUBE:
+
+Abre la consola del navegador (F12) y pega:
+
+activarLive("AQUI_TU_LINK")
+
+Ejemplo:
+activarLive("https://www.facebook.com/plugins/video.php?href=TU_VIDEO")
+
+*/
 </script>
 
 </body>
