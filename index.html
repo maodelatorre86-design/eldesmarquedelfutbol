@@ -1,156 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millonarios vs Fortaleza EN VIVO | El Desmarque del Fútbol</title>
 
-<title>Bucaramanga vs Santa Fe EN VIVO | El Desmarque</title>
+<meta name="description" content="Millonarios vs Fortaleza en vivo hoy. Narración desde las 7:30 PM.">
+
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
+
+<meta property="og:image" content="ESTADIO MILLONARIOS 1.jpg">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 .container{max-width:1100px;margin:auto;padding:20px}
-
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
-
-.live-badge{
-position:absolute;top:15px;left:15px;
-background:red;padding:8px 14px;border-radius:10px;
-font-weight:bold;display:none;animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
-}
-
 .proxima{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,.65);
-padding:15px 25px;font-size:28px;font-weight:900;border-radius:12px}
-
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ background:rgba(0,0,0,.65);
+ padding:15px 25px;
+ font-size:28px;
+ font-weight:900;
+ border-radius:12px}
 .logo{
-position:absolute;top:15px;right:15px;
-background:rgba(0,0,0,.6);
-padding:10px;border-radius:10px}
-
+ position:absolute;
+ top:15px;
+ left:15px;
+ background:rgba(0,0,0,.6);
+ padding:10px;
+ border-radius:10px}
 .logo img{width:60px}
-
 .tag{
-position:absolute;bottom:15px;left:50%;
-transform:translateX(-50%);
-background:red;padding:8px 12px;border-radius:10px;font-weight:bold}
-
-.card{margin-top:20px;background:#111a33;padding:20px;border-radius:12px}
-
+ position:absolute;
+ top:15px;
+ right:15px;
+ background:red;
+ padding:8px 12px;
+ border-radius:10px;
+ font-weight:bold}
+.card{margin-top:20px;background:#111a33;padding:20px;border-radius:14px}
+.countdown{margin-top:15px;font-size:20px;font-weight:bold}
 .player{display:none;margin-top:20px;aspect-ratio:16/9}
 .player iframe{width:100%;height:100%;border:0}
-
-.countdown{font-size:20px;font-weight:bold}
-
-@media (max-width:600px){
-.proxima{font-size:18px;padding:10px 15px;}
-}
-
+.boton{
+ display:inline-block;
+ margin-top:15px;
+ background:#00d4ff;
+ color:#000;
+ padding:10px 16px;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:bold}
 </style>
-
 </head>
 
 <body>
 
-<header>⚽ ELDESMARQUEDELFUTBOL — EN VIVO</header>
+<header> ⚽ ELDESMARQUEDELFUTBOL — EN VIVO </header>
 
 <div class="container">
 
-<div id="promo">
-
+<div id="prelive">
 <div class="banner">
-<img src="ESTADIO BUCARAMANGA.jpg">
+<img src="ESTADIO MILLONARIOS 1.jpg">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
-<div class="live-badge" id="liveBadge">🔴 EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">HOY • 8:10 PM</div>
-
+<div class="tag"> HOY • 8:20 PM </div>
 </div>
 
 <div class="card">
+<h2>MILLONARIOS 🆚 FORTALEZA</h2>
 
-<h2>BUCARAMANGA 🆚 SANTA FE</h2>
-
-<p>📍 Bucaramanga</p>
-<p>🕕 Partido: <b>8:10 PM</b></p>
+<p>🕗 Partido: <b>8:20 PM</b></p>
 <p>🎙️ Transmisión: <b>7:30 PM</b></p>
 
 <div id="countdown" class="countdown"></div>
 
+<a class="boton" href="/millonarios-vs-fortaleza-en-vivo.html">
+VER PÁGINA DEL PARTIDO
+</a>
 </div>
-
 </div>
 
 <div id="player" class="player">
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1316295420414315/&autoplay=1&mute=1"
-allowfullscreen
-allow="autoplay; encrypted-media; picture-in-picture">
+<iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI?autoplay=1&mute=1" allowfullscreen>
 </iframe>
 </div>
 
 </div>
 
 <script>
-
-const liveDate=new Date("2026-03-27T19:30:00-05:00").getTime();
-const startingSoon = liveDate - (5 * 60 * 1000);
+const liveDate = new Date("2026-03-30T19:30:00-05:00").getTime();
 
 const countdown=document.getElementById("countdown");
 const player=document.getElementById("player");
-const promo=document.getElementById("promo");
-const liveBadge=document.getElementById("liveBadge");
+const prelive=document.getElementById("prelive");
 
 function updateCountdown(){
-
 const now=new Date().getTime();
 const distance=liveDate-now;
 
-// 🔴 5 min antes
-if(now >= startingSoon && now < liveDate){
-countdown.innerHTML="🔴 TRANSMISIÓN INICIANDO...";
-return;
-}
-
-// 🔴 EN VIVO visible
-liveBadge.style.display="block";
-
 if(distance<=0){
-promo.style.display="none";
-player.style.display="block";
-return;
+ prelive.style.display="none";
+ player.style.display="block";
+ return;
 }
 
-// ⏳ contador
 const h=Math.floor(distance/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
 const s=Math.floor((distance%(1000*60))/1000);
 
 countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
-
 }
 
 setInterval(updateCountdown,1000);
 updateCountdown();
-
 </script>
 
 </body>
