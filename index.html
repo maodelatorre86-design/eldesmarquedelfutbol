@@ -10,7 +10,8 @@
 
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/">
 
-<meta property="og:image" content="ESTADIO%20MILLONARIOS%201.jpg">
+<!-- IMAGEN CORREGIDA -->
+<meta property="og:image" content="ESTADIO%20MILLONARIOS%201.JPG">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -73,8 +74,8 @@ header{background:#111a33;padding:18px;font-size:24px;font-weight:900}
 <div id="prelive">
 <div class="banner">
 
-<!-- IMPORTANTE: nombre corregido -->
-<img src="ESTADIO%20MILLONARIOS%201.jpg">
+<!-- IMAGEN CORREGIDA -->
+<img src="ESTADIO%20MILLONARIOS%201.JPG">
 
 <div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
@@ -103,7 +104,7 @@ VER PÁGINA DEL PARTIDO
 </div>
 </div>
 
-<!-- PLAYER SOLO SE ACTIVARÁ CUANDO PONGAS EL LINK -->
+<!-- PLAYER MANUAL -->
 <div id="player" class="player">
 <iframe id="liveFrame" src="" allowfullscreen></iframe>
 </div>
@@ -111,7 +112,7 @@ VER PÁGINA DEL PARTIDO
 </div>
 
 <script>
-// ⏱️ SOLO CONTADOR (NO CAMBIA A PLAYER AUTOMÁTICO)
+// SOLO CONTADOR (NO CAMBIA AUTOMÁTICO)
 const liveDate = new Date("2026-03-30T19:30:00-05:00").getTime();
 const countdown=document.getElementById("countdown");
 
@@ -130,8 +131,7 @@ setInterval(updateCountdown,1000);
 updateCountdown();
 
 
-// 🎯 ACTIVACIÓN MANUAL DEL LIVE
-// SOLO pega tu link aquí cuando empiece el partido
+// ACTIVACIÓN MANUAL DEL LIVE
 function activarLive(link){
 document.getElementById("prelive").style.display="none";
 const player=document.getElementById("player");
@@ -142,15 +142,16 @@ player.style.display="block";
 }
 
 /*
-👉 CUANDO TENGAS EL LINK DE FACEBOOK O YOUTUBE:
+CUANDO TENGAS EL LIVE:
 
-Abre la consola del navegador (F12) y pega:
+1. Abre tu página
+2. Presiona F12 → Consola
+3. Pega:
 
-activarLive("AQUI_TU_LINK")
+activarLive("TU_LINK")
 
 Ejemplo:
 activarLive("https://www.facebook.com/plugins/video.php?href=TU_VIDEO")
-
 */
 </script>
 
