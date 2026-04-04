@@ -26,15 +26,11 @@ header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .banner img{width:100%;height:100%;object-fit:cover}
 
 .proxima{
-position:absolute;
-top:50%;
-left:50%;
+position:absolute;top:50%;left:50%;
 transform:translate(-50%,-50%);
 background:rgba(0,0,0,.65);
-padding:15px 25px;
-font-size:28px;
-font-weight:900;
-border-radius:12px
+padding:15px 25px;font-size:28px;
+font-weight:900;border-radius:12px
 }
 
 .logo{
@@ -50,7 +46,6 @@ background:red;padding:8px 12px;
 border-radius:10px;font-weight:bold}
 
 .card{margin-top:15px;background:#111a33;padding:18px;border-radius:12px}
-.countdown{margin-top:10px;font-size:18px;font-weight:bold}
 
 .boton{
 display:inline-block;margin-top:12px;
@@ -58,12 +53,69 @@ background:#00d4ff;color:#000;
 padding:10px 14px;border-radius:8px;
 text-decoration:none;font-weight:bold}
 
-/* 📱 AJUSTE MÓVIL */
+/* 🔥 REPLAYS PRO */
+.replays{
+margin-top:25px;
+text-align:left
+}
+
+.replays h2{
+margin-bottom:15px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
+}
+
+.video-card{
+background:#111a33;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+position:relative
+}
+
+.video-card img{
+width:100%;
+display:block
+}
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+background:rgba(0,0,0,.6);
+border-radius:50%;
+padding:10px
+}
+
+.video-card h3{
+padding:10px;
+font-size:14px
+}
+
+.player{
+margin-top:20px;
+display:none;
+aspect-ratio:16/9
+}
+
+.player iframe{
+width:100%;
+height:100%;
+border:0;
+border-radius:12px
+}
+
+/* 📱 */
 @media (max-width:600px){
 .proxima{
 font-size:14px;
 padding:6px 10px;
-border-radius:8px;
 }
 .logo img{width:40px}
 .tag{font-size:12px;padding:4px 8px}
@@ -97,14 +149,53 @@ border-radius:8px;
 <p>🎙️ Transmisión: <b>7:00 PM</b></p>
 <p>🎤 Narración: <b>Álvaro Malkún Salazar</b></p>
 
-<div id="countdown" class="countdown"></div>
-
 <a class="boton" href="/tolima-vs-santafe-en-vivo.html">
 VER PARTIDO
 </a>
 </div>
 
+<!-- 🎬 PLAYER -->
+<div id="player" class="player"></div>
+
+<!-- 🔥 REPLAYS PRO -->
+<div class="replays">
+
+<h2>📺 PARTIDOS ANTERIORES</h2>
+
+<div class="grid">
+
+<!-- VIDEO 1 -->
+<div class="video-card" onclick="playVideo('1dXDBY6l7nbiuA7JQnXEuD4aS8qexuAJO')">
+<img src="estadio-mamut.JPG">
+<div class="play">▶</div>
+<h3>Jaguares vs Millonarios</h3>
 </div>
+
+<!-- DUPLICA ESTE BLOQUE PARA MÁS -->
+<!--
+<div class="video-card" onclick="playVideo('ID')">
+<img src="miniatura.jpg">
+<div class="play">▶</div>
+<h3>Otro partido</h3>
+</div>
+-->
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function playVideo(id){
+const player=document.getElementById("player");
+player.style.display="block";
+player.innerHTML = `
+<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>
+`;
+window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
