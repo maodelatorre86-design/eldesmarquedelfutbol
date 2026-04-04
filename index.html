@@ -59,10 +59,6 @@ margin-top:25px;
 text-align:left
 }
 
-.replays h2{
-margin-bottom:15px
-}
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -74,12 +70,17 @@ background:#111a33;
 border-radius:12px;
 overflow:hidden;
 cursor:pointer;
-position:relative
+position:relative;
+transition:transform 0.2s;
+}
+
+.video-card:hover{
+transform:scale(1.03);
 }
 
 .video-card img{
 width:100%;
-display:block
+display:block;
 }
 
 .play{
@@ -90,7 +91,7 @@ transform:translate(-50%,-50%);
 font-size:40px;
 background:rgba(0,0,0,.6);
 border-radius:50%;
-padding:10px
+padding:12px;
 }
 
 .video-card h3{
@@ -164,21 +165,12 @@ VER PARTIDO
 
 <div class="grid">
 
-<!-- VIDEO 1 -->
+<!-- VIDEO -->
 <div class="video-card" onclick="playVideo('1dXDBY6l7nbiuA7JQnXEuD4aS8qexuAJO')">
-<img src="estadio-mamut.JPG">
+<img src="repeticion-millonarios-fortaleza.JPG">
 <div class="play">▶</div>
-<h3>Jaguares vs Millonarios</h3>
+<h3>Millonarios vs Fortaleza</h3>
 </div>
-
-<!-- DUPLICA ESTE BLOQUE PARA MÁS -->
-<!--
-<div class="video-card" onclick="playVideo('ID')">
-<img src="miniatura.jpg">
-<div class="play">▶</div>
-<h3>Otro partido</h3>
-</div>
--->
 
 </div>
 
