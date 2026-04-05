@@ -4,13 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tolima vs Santa Fe EN VIVO HOY ⚽</title>
+<title>Tolima vs Santa Fe REPETICIÓN HOY ⚽ | EL DESMARQUE DEL FÚTBOL</title>
 
-<meta name="description" content="Ver Tolima vs Santa Fe en vivo hoy gratis.">
+<meta name="description" content="Ver Tolima vs Santa Fe repetición completa hoy.">
 
 <meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/tolima-vs-santafe-en-vivo.html">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
 
 <meta property="og:image" content="https://eldesmarquedelfutbol.com/estadio-mamut.JPG">
 
@@ -19,92 +18,76 @@
 <style>
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
-.container{max-width:1000px;margin:auto;padding:15px}
+.container{max-width:1100px;margin:auto;padding:15px}
 
-.banner{
-position:relative;
-aspect-ratio:16/9;
-border-radius:14px;
-overflow:hidden}
-
-.banner img{
+/* 🎬 VIDEO PRINCIPAL */
+.main-player{
+margin-top:15px;
+aspect-ratio:16/9
+}
+.main-player iframe{
 width:100%;
 height:100%;
-object-fit:cover}
+border:0;
+border-radius:12px
+}
 
-.proxima{
+.card{
+margin-top:15px;
+background:#111a33;
+padding:18px;
+border-radius:12px
+}
+
+/* 🎬 REPLAYS */
+.replays{margin-top:25px;text-align:left}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
+}
+
+.video-card{
+background:#111a33;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+position:relative;
+transition:transform 0.2s;
+}
+
+.video-card:hover{transform:scale(1.03)}
+
+.video-card img{width:100%}
+
+.play{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-background:rgba(0,0,0,.65);
-padding:15px 25px;
-font-size:28px;
-font-weight:900;
-border-radius:12px}
-
-.logo{
-position:absolute;
-top:15px;left:15px;
+font-size:40px;
 background:rgba(0,0,0,.6);
-padding:10px;border-radius:10px}
+border-radius:50%;
+padding:12px;
+}
 
-.logo img{width:60px}
-
-.tag{
-position:absolute;
-top:15px;right:15px;
-background:red;
-padding:8px 12px;
-border-radius:10px;
-font-weight:bold}
-
-.info{
-margin-top:15px;
-background:#111a33;
-padding:15px;
-border-radius:12px}
-
-.estado{
-margin-top:10px;
-color:#00ffcc;
-font-weight:bold}
+.video-card h3{
+padding:10px;
+font-size:14px
+}
 
 .player{
-margin-top:15px;
-border-radius:12px;
-overflow:hidden}
+margin-top:20px;
+display:none;
+aspect-ratio:16/9
+}
 
 .player iframe{
 width:100%;
-height:500px;
-border:none;
-border-radius:12px;
-}
-
-.boton{
-display:inline-block;
-margin-top:12px;
-background:#00d4ff;
-color:#000;
-padding:10px 14px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold}
-
-/* 📱 AJUSTE MÓVIL */
-@media (max-width:600px){
-.proxima{
-font-size:14px;
-padding:6px 10px;
-border-radius:8px;
-}
-.logo img{width:40px}
-.tag{font-size:12px;padding:4px 8px}
-
-.player iframe{
-height:220px;
-}
+height:100%;
+border:0;
+border-radius:12px
 }
 </style>
 
@@ -112,48 +95,84 @@ height:220px;
 
 <body>
 
-<header> ⚽ EL DESMARQUE DEL FÚTBOL — EN VIVO </header>
+<header> ⚽ EL DESMARQUE DEL FÚTBOL — REPETICIÓN </header>
 
 <div class="container">
 
-<div class="banner">
-
-<img src="estadio-mamut.JPG">
-
-<div class="proxima">EN VIVO</div>
-
-<div class="logo">
-<img src="EJEMPLO LOGO 2 (2).png">
-</div>
-
-<div class="tag">HOY • 7:30 PM</div>
-
-</div>
-
-<div class="estado">🔴 Transmisión en vivo</div>
-
-<!-- PLAYER FACEBOOK -->
-<div class="player">
+<!-- 🔥 VIDEO PRINCIPAL (HOY) -->
+<div class="main-player">
 <iframe 
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1048535618348876&show_text=false&width=560" 
-allowfullscreen="true" 
-allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+src="https://drive.google.com/file/d/ID_DEL_VIDEO_DE_HOY/preview"
+allowfullscreen>
 </iframe>
 </div>
 
-<div class="info">
-<p>🕢 Partido: <b>7:30 PM</b></p>
-<p>🎙️ Transmisión: <b>7:00 PM</b></p>
+<div class="card">
+<h2>🎬 TOLIMA 🆚 SANTA FE — REPETICIÓN COMPLETA</h2>
 <p>🎤 Narración: <b>Álvaro Malkún Salazar</b></p>
+</div>
 
-<p>
-Tolima vs Santa Fe en vivo por EL DESMARQUE DEL FÚTBOL.
-</p>
+<!-- PLAYER SECUNDARIO -->
+<div id="player" class="player"></div>
 
-<a class="boton" href="/">⬅ Volver al inicio</a>
+<!-- 🎬 REPLAYS -->
+<div class="replays">
+<h2>📺 PARTIDOS ANTERIORES</h2>
+
+<div class="grid">
+
+<div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
+<img src="repeticion-jaguares-millonarios.JPG">
+<div class="play">▶</div>
+<h3>Jaguares vs Millonarios</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
+<img src="repeticion-santafe-llaneros.JPG">
+<div class="play">▶</div>
+<h3>Santa Fe vs Llaneros</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
+<img src="repeticion-millonarios-fortaleza.JPG">
+<div class="play">▶</div>
+<h3>Millonarios vs Fortaleza</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
+<img src="repeticion-bucaramanga-santafe.JPG">
+<div class="play">▶</div>
+<h3>Bucaramanga vs Santa Fe</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
+<img src="repeticion-once-caldas-millonarios.JPG">
+<div class="play">▶</div>
+<h3>Once Caldas vs Millonarios</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
+<img src="repeticion-santafe-medellin.JPG">
+<div class="play">▶</div>
+<h3>Santa Fe vs Medellín</h3>
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+<script>
+function playVideo(id){
+const player=document.getElementById("player");
+player.style.display="block";
+player.innerHTML = `
+<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>
+`;
+window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
