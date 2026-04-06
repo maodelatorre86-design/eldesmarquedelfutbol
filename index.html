@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tolima vs Santa Fe REPETICIÓN HOY ⚽ | EL DESMARQUE DEL FÚTBOL</title>
+<title>O'Higgins vs Millonarios EN VIVO HOY ⚽ Copa Sudamericana | EL DESMARQUE DEL FÚTBOL</title>
 
-<meta name="description" content="Ver Tolima vs Santa Fe repetición completa hoy.">
+<meta name="description" content="O'Higgins vs Millonarios en vivo hoy. Transmisión desde las 6:00 PM. Partido 7:00 PM.">
 
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/">
 
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/estadio-mamut.JPG">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/estadio-el-teniente.jpg">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -20,16 +20,51 @@ body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .container{max-width:1100px;margin:auto;padding:15px}
 
-/* 🎬 VIDEO PRINCIPAL */
-.main-player{
-margin-top:15px;
-aspect-ratio:16/9
+.banner{
+position:relative;
+aspect-ratio:16/9;
+border-radius:14px;
+overflow:hidden;
+background:#000
 }
-.main-player iframe{
+
+.banner img{
 width:100%;
 height:100%;
-border:0;
+object-fit:cover
+}
+
+.proxima{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.7);
+padding:15px 25px;
+font-size:28px;
+font-weight:900;
 border-radius:12px
+}
+
+.logo{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(0,0,0,.6);
+padding:10px;
+border-radius:10px
+}
+
+.logo img{width:60px}
+
+.tag{
+position:absolute;
+top:15px;
+right:15px;
+background:red;
+padding:8px 12px;
+border-radius:10px;
+font-weight:bold
 }
 
 .card{
@@ -39,55 +74,31 @@ padding:18px;
 border-radius:12px
 }
 
-/* 🎬 REPLAYS */
-.replays{margin-top:25px;text-align:left}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px
+.countdown{
+margin-top:10px;
+font-size:18px;
+font-weight:bold
 }
 
-.video-card{
-background:#111a33;
-border-radius:12px;
-overflow:hidden;
-cursor:pointer;
-position:relative;
-transition:transform 0.2s;
+.boton{
+display:inline-block;
+margin-top:12px;
+background:#00d4ff;
+color:#000;
+padding:10px 14px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold
 }
 
-.video-card:hover{transform:scale(1.03)}
-
-.video-card img{width:100%}
-
-.play{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:40px;
-background:rgba(0,0,0,.6);
-border-radius:50%;
-padding:12px;
+/* 📱 MÓVIL */
+@media (max-width:600px){
+.proxima{
+font-size:14px;
+padding:6px 10px;
 }
-
-.video-card h3{
-padding:10px;
-font-size:14px
-}
-
-.player{
-margin-top:20px;
-display:none;
-aspect-ratio:16/9
-}
-
-.player iframe{
-width:100%;
-height:100%;
-border:0;
-border-radius:12px
+.logo img{width:40px}
+.tag{font-size:12px;padding:4px 8px}
 }
 </style>
 
@@ -95,83 +106,62 @@ border-radius:12px
 
 <body>
 
-<header> ⚽ EL DESMARQUE DEL FÚTBOL — REPETICIÓN </header>
+<header> ⚽ EL DESMARQUE DEL FÚTBOL — EN VIVO </header>
 
 <div class="container">
 
-<!-- 🔥 VIDEO PRINCIPAL (HOY - FACEBOOK) -->
-<div class="main-player">
-<iframe 
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1048535618348876"
-allowfullscreen>
-</iframe>
+<div class="banner">
+<img src="estadio-el-teniente.jpg">
+
+<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="logo">
+<img src="EJEMPLO LOGO 2 (2).png">
+</div>
+
+<div class="tag">HOY • 7:00 PM</div>
 </div>
 
 <div class="card">
-<h2>🎬 TOLIMA 🆚 SANTA FE — REPETICIÓN COMPLETA</h2>
-<p>🎤 Narración: <b>Álvaro Malkún Salazar</b></p>
-</div>
+<h2>O'HIGGINS 🆚 MILLONARIOS</h2>
 
-<!-- PLAYER SECUNDARIO -->
-<div id="player" class="player"></div>
+<p>🏆 Copa Sudamericana</p>
+<p>🕖 Partido: <b>7:00 PM</b></p>
+<p>🎙️ Transmisión: <b>6:00 PM</b></p>
 
-<!-- 🎬 REPLAYS -->
-<div class="replays">
-<h2>📺 PARTIDOS ANTERIORES</h2>
+<div id="countdown" class="countdown"></div>
 
-<div class="grid">
-
-<div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
-<img src="repeticion-jaguares-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Jaguares vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
-<img src="repeticion-santafe-llaneros.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Llaneros</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
-<img src="repeticion-millonarios-fortaleza.JPG">
-<div class="play">▶</div>
-<h3>Millonarios vs Fortaleza</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
-<img src="repeticion-bucaramanga-santafe.JPG">
-<div class="play">▶</div>
-<h3>Bucaramanga vs Santa Fe</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
-<img src="repeticion-once-caldas-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Once Caldas vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
-<img src="repeticion-santafe-medellin.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Medellín</h3>
-</div>
-
-</div>
-
+<a class="boton" href="/ohiggins-vs-millonarios-en-vivo.html">
+VER PARTIDO
+</a>
 </div>
 
 </div>
 
 <script>
-function playVideo(id){
-const player=document.getElementById("player");
-player.style.display="block";
-player.innerHTML = `
-<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>
-`;
-window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+const liveDate = new Date();
+liveDate.setHours(18,0,0,0); // 6:00 PM
+
+const countdown=document.getElementById("countdown");
+
+function updateCountdown(){
+const now=new Date().getTime();
+const distance=liveDate-now;
+
+if(distance<=0){
+countdown.innerHTML="🔴 EN VIVO AHORA";
+return;
 }
+
+const h=Math.floor(distance/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
+
+countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
 </script>
 
 </body>
