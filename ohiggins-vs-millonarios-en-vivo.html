@@ -59,6 +59,24 @@ padding:8px 12px;
 border-radius:10px;
 font-weight:bold}
 
+.player{
+margin-top:15px;
+position:relative;
+width:100%;
+padding-top:56.25%;
+border-radius:12px;
+overflow:hidden;
+}
+
+.player iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
+}
+
 .info{
 margin-top:15px;
 background:#111a33;
@@ -104,7 +122,7 @@ border-radius:8px;
 
 <img src="estadio-el-teniente.jpg">
 
-<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+<div class="proxima">EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
@@ -114,7 +132,16 @@ border-radius:8px;
 
 </div>
 
-<div class="estado">🔴 Señal disponible pronto</div>
+<div class="estado">🔴 Transmisión en vivo</div>
+
+<!-- PLAYER FACEBOOK -->
+<div class="player">
+<iframe 
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/2672267213155370&show_text=false" 
+allowfullscreen="true" 
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
+</div>
 
 <div class="info">
 <p>🏆 Copa Sudamericana</p>
