@@ -126,11 +126,11 @@ border-radius:12px
 
 <div class="container">
 
-<!-- 🔥 PARTIDO DE MAÑANA -->
+<!-- 🔥 PARTIDO DE HOY -->
 <div class="banner">
 <img src="estadio-el-teniente.jpg">
 
-<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+<div class="proxima">EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
@@ -146,7 +146,7 @@ border-radius:12px
 <p>🕖 Partido: <b>7:00 PM</b></p>
 <p>🎙️ Transmisión: <b>6:00 PM</b></p>
 
-<div id="countdown" class="countdown"></div>
+<div id="countdown" class="countdown">🔴 EN VIVO AHORA</div>
 
 <a class="boton" href="/ohiggins-vs-millonarios-en-vivo.html">
 VER PARTIDO
@@ -211,30 +211,6 @@ VER PARTIDO
 </div>
 
 <script>
-const liveDate = new Date();
-liveDate.setHours(18,0,0,0);
-
-const countdown=document.getElementById("countdown");
-
-function updateCountdown(){
-const now=new Date().getTime();
-const distance=liveDate-now;
-
-if(distance<=0){
-countdown.innerHTML="🔴 EN VIVO AHORA";
-return;
-}
-
-const h=Math.floor(distance/(1000*60*60));
-const m=Math.floor((distance%(1000*60*60))/(1000*60));
-const s=Math.floor((distance%(1000*60))/1000);
-
-countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
 function playVideo(id){
 const player=document.getElementById("player");
 player.style.display="block";
