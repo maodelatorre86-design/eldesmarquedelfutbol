@@ -98,7 +98,6 @@ padding:12px;
 
 .player{
 margin-top:20px;
-display:none;
 aspect-ratio:16/9
 }
 
@@ -113,7 +112,7 @@ border-radius:12px
 @media (max-width:600px){
 .proxima{font-size:14px;padding:6px 10px}
 .logo img{width:40px}
-tag{font-size:12px;padding:4px 8px}
+.tag{font-size:12px;padding:4px 8px}
 }
 </style>
 
@@ -128,7 +127,7 @@ tag{font-size:12px;padding:4px 8px}
 <div class="banner">
 <img src="ESTADIO MILLONARIOS 1.JPG">
 
-<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
+<div class="proxima">EN VIVO</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
@@ -144,17 +143,19 @@ tag{font-size:12px;padding:4px 8px}
 <p>🕑 Partido: <b>2:00 PM</b></p>
 <p>🎙️ Transmisión: <b>1:00 PM</b></p>
 
-<div id="countdown" class="countdown"></div>
+<div class="countdown">🔴 EN VIVO AHORA</div>
 
 <a class="boton" href="/millonarios-vs-santafe-en-vivo.html">
 VER PARTIDO
 </a>
 </div>
 
-<!-- PLAYER -->
-<div id="player" class="player"></div>
+<!-- PLAYER FACEBOOK -->
+<div class="player">
+<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/4343377415807998&show_text=false" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+</div>
 
-<!-- 🎬 REPLAYS -->
+<!-- 🎬 REPLAYS COMPLETO -->
 <div class="replays">
 <h2>📺 PARTIDOS ANTERIORES</h2>
 
@@ -209,33 +210,8 @@ VER PARTIDO
 </div>
 
 <script>
-const liveDate = new Date();
-liveDate.setHours(13,0,0,0);
-
-const countdown=document.getElementById("countdown");
-
-function updateCountdown(){
-const now=new Date().getTime();
-const distance=liveDate-now;
-
-if(distance<=0){
-countdown.innerHTML="🔴 EN VIVO AHORA";
-return;
-}
-
-const h=Math.floor(distance/(1000*60*60));
-const m=Math.floor((distance%(1000*60*60))/(1000*60));
-const s=Math.floor((distance%(1000*60))/1000);
-
-countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
 function playVideo(id){
-const player=document.getElementById("player");
-player.style.display="block";
+const player=document.querySelector(".player");
 player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
 window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
 }
