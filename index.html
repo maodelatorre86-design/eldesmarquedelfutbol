@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Millonarios vs Santa Fe EN VIVO HOY ⚽ Clásico Bogotano | EL DESMARQUE DEL FÚTBOL</title>
+<title>Corinthians vs Santa Fe EN VIVO HOY ⚽ Copa Libertadores | EL DESMARQUE DEL FÚTBOL</title>
 
-<meta name="description" content="Millonarios vs Santa Fe en vivo hoy. Transmisión desde la 1:00 PM.">
+<meta name="description" content="Corinthians vs Santa Fe en vivo hoy. Transmisión desde las 6:45 PM.">
 
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/">
 
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO MILLONARIOS 1.JPG">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/arena-corinthians.jpg">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -20,6 +20,7 @@ body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .container{max-width:1100px;margin:auto;padding:15px}
 
+/* BANNER */
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
 
@@ -61,7 +62,7 @@ padding:10px 14px;border-radius:8px;
 text-decoration:none;font-weight:bold
 }
 
-/* 🎬 REPLAYS */
+/* REPLAYS */
 .replays{margin-top:30px;text-align:left}
 
 .grid{
@@ -98,6 +99,7 @@ padding:12px;
 
 .player{
 margin-top:20px;
+display:none;
 aspect-ratio:16/9
 }
 
@@ -106,13 +108,6 @@ width:100%;
 height:100%;
 border:0;
 border-radius:12px
-}
-
-/* 📱 */
-@media (max-width:600px){
-.proxima{font-size:14px;padding:6px 10px}
-.logo img{width:40px}
-.tag{font-size:12px;padding:4px 8px}
 }
 </style>
 
@@ -125,37 +120,35 @@ border-radius:12px
 <div class="container">
 
 <div class="banner">
-<img src="ESTADIO MILLONARIOS 1.JPG">
+<img src="arena-corinthians.jpg">
 
-<div class="proxima">EN VIVO</div>
+<div class="proxima">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
 
-<div class="tag">HOY • 2:00 PM</div>
+<div class="tag">HOY • 7:30 PM</div>
 </div>
 
 <div class="card">
-<h2>MILLONARIOS 🆚 SANTA FE</h2>
+<h2>CORINTHIANS 🆚 SANTA FE</h2>
 
-<p>🏆 Clásico Bogotano</p>
-<p>🕑 Partido: <b>2:00 PM</b></p>
-<p>🎙️ Transmisión: <b>1:00 PM</b></p>
+<p>🏆 Copa Libertadores</p>
+<p>🕢 Partido: <b>7:30 PM</b></p>
+<p>🎙️ Transmisión: <b>6:45 PM</b></p>
 
-<div class="countdown">🔴 EN VIVO AHORA</div>
+<div id="countdown" class="countdown"></div>
 
-<a class="boton" href="/millonarios-vs-santafe-en-vivo.html">
+<a class="boton" href="/corinthians-vs-santafe-en-vivo.html">
 VER PARTIDO
 </a>
 </div>
 
-<!-- PLAYER FACEBOOK -->
-<div class="player">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/4343377415807998&show_text=false" allowfullscreen allow="autoplay; encrypted-media"></iframe>
-</div>
+<!-- PLAYER -->
+<div id="player" class="player"></div>
 
-<!-- 🎬 REPLAYS COMPLETO -->
+<!-- REPLAYS COMPLETOS -->
 <div class="replays">
 <h2>📺 PARTIDOS ANTERIORES</h2>
 
@@ -210,8 +203,33 @@ VER PARTIDO
 </div>
 
 <script>
+const liveDate = new Date();
+liveDate.setHours(18,45,0,0);
+
+const countdown=document.getElementById("countdown");
+
+function updateCountdown(){
+const now=new Date().getTime();
+const distance=liveDate-now;
+
+if(distance<=0){
+countdown.innerHTML="🔴 EN VIVO AHORA";
+return;
+}
+
+const h=Math.floor(distance/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
+
+countdown.innerHTML="Empieza en: "+h+"h "+m+"m "+s+"s";
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
 function playVideo(id){
-const player=document.querySelector(".player");
+const player=document.getElementById("player");
+player.style.display="block";
 player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
 window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
 }
