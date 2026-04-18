@@ -4,20 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>América vs Millonarios EN VIVO HOY ⚽ | Ver Partido Gratis</title>
+<title>América vs Millonarios EN VIVO ⚽ | Ver Partido Gratis</title>
 
 <meta name="description" content="Ver América vs Millonarios en vivo hoy gratis. Transmisión desde las 7:45 PM y partido a las 8:30 PM.">
 
-<meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/america-vs-millonarios-en-vivo.html">
-
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
 body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .container{max-width:1000px;margin:auto;padding:15px}
+
+.logo img{width:70px;margin-bottom:10px}
 
 .banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
@@ -66,18 +65,19 @@ border-radius:12px;
 
 <body>
 
-<header> ⚽ EL DESMARQUE DEL FÚTBOL — EN VIVO </header>
+<header>
+<div class="logo">
+<img src="EJEMPLO LOGO 2 (2).png">
+</div>
+⚽ EL DESMARQUE DEL FÚTBOL — EN VIVO
+</header>
 
 <div class="container">
 
 <div class="banner">
-
 <img src="estadio-pascual-america.jpg">
-
 <div class="estado" id="estado">PRÓXIMA TRANSMISIÓN</div>
-
 <div class="tag">8:30 PM</div>
-
 </div>
 
 <div class="player" id="player"></div>
@@ -86,7 +86,7 @@ border-radius:12px;
 
 <h1>AMÉRICA 🆚 MILLONARIOS EN VIVO ⚽</h1>
 
-<p>📅 Mañana</p>
+<p id="fecha"></p>
 <p>🕣 Partido: <b>8:30 PM</b></p>
 <p>🎙️ Transmisión: <b>7:45 PM</b></p>
 
@@ -101,16 +101,22 @@ border-radius:12px;
 </div>
 
 <script>
-const inicio = new Date();
-inicio.setHours(19,45,0,0);
+// 📅 FECHA
+const fechaEvento = new Date(2026,3,19);
+const ahora = new Date();
+
+document.getElementById("fecha").innerHTML =
+(ahora.getDate() === fechaEvento.getDate())
+? "📅 Hoy • Domingo 19 de abril"
+: "📅 Mañana • Domingo 19 de abril";
+
+// 🔴 ESTADO
+const inicio = new Date(2026,3,19,19,45);
 
 function actualizar(){
-const ahora = new Date().getTime();
-const estado = document.getElementById("estado");
-
-if(ahora >= inicio.getTime()){
-estado.innerHTML="🔴 EN VIVO";
-}
+const now = new Date().getTime();
+document.getElementById("estado").innerHTML =
+(now >= inicio.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
 }
 
 setInterval(actualizar,1000);
