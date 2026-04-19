@@ -37,10 +37,14 @@ font-weight:bold;
 .card{background:#111a33;padding:18px;border-radius:12px}
 
 .boton{
-display:inline-block;margin-top:12px;
-background:#00d4ff;color:#000;
-padding:10px 14px;border-radius:8px;
-text-decoration:none;font-weight:bold;
+display:inline-block;
+margin-top:12px;
+background:#00d4ff;
+color:#000;
+padding:10px 14px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* PLAYER */
@@ -56,7 +60,7 @@ border:0;
 border-radius:12px;
 }
 
-/* REPLAYS (ORIGINAL) */
+/* REPLAYS (NO TOCADO) */
 .replays{margin-top:30px;text-align:left}
 
 .grid{
@@ -89,7 +93,6 @@ padding:12px;
 }
 
 .video-card h3{padding:10px;font-size:14px}
-
 </style>
 </head>
 
@@ -128,36 +131,49 @@ padding:12px;
 <h2>SANTA FE 🆚 CÚCUTA</h2>
 <p id="fecha1"></p>
 <p>🕑 2:00 PM</p>
+
+<a class="boton" href="/santafe-vs-cucuta-en-vivo.html">
+🔴 VER PARTIDO EN VIVO
+</a>
 </div>
 
 <div class="card">
 <h2>AMÉRICA 🆚 MILLONARIOS</h2>
 <p id="fecha2"></p>
 <p>🕣 8:30 PM</p>
+
+<a class="boton" href="/america-vs-millonarios-en-vivo.html">
+🔴 VER PARTIDO
+</a>
 </div>
 
 </div>
 
-<!-- 🔴 LIVE PRINCIPAL -->
+<!-- 🔴 LIVE -->
 <div class="player">
 <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/983292894149383&show_text=false" allowfullscreen allow="autoplay"></iframe>
 </div>
 
-<!-- REPLAYS (SIN CAMBIOS) -->
+<!-- REPLAYS (ORIGINAL) -->
 <div class="replays">
 <h2>📺 PARTIDOS ANTERIORES</h2>
 
 <div class="grid">
 
 <div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
-<img src="repeticion-tolima-santa-fe.JPG"><div class="play">▶</div><h3>Tolima vs Santa Fe</h3>
+<img src="repeticion-tolima-santa-fe.JPG">
+<div class="play">▶</div>
+<h3>Tolima vs Santa Fe</h3>
 </div>
 
 <div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
-<img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div><h3>Jaguares vs Millonarios</h3>
+<img src="repeticion-jaguares-millonarios.JPG">
+<div class="play">▶</div>
+<h3>Jaguares vs Millonarios</h3>
 </div>
 
 </div>
+
 </div>
 
 </div>
@@ -190,6 +206,13 @@ document.getElementById("estado2").innerHTML =
 
 setInterval(actualizar,1000);
 actualizar();
+
+// PLAYER REPLAYS
+function playVideo(id){
+const player=document.querySelector(".player");
+player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
+window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+}
 </script>
 
 </body>
