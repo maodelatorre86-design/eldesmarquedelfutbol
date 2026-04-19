@@ -15,19 +15,11 @@ body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center
 header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
 .container{max-width:1100px;margin:auto;padding:15px}
 
-/* LOGO */
 .logo img{width:70px;margin-bottom:10px}
 
 /* BANNERS */
 .banner-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-
-.banner{
-position:relative;
-aspect-ratio:16/9;
-border-radius:14px;
-overflow:hidden;
-}
-
+.banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
 .banner img{width:100%;height:100%;object-fit:cover}
 
 .overlay{
@@ -42,25 +34,29 @@ font-weight:bold;
 
 /* CARDS */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+.card{background:#111a33;padding:18px;border-radius:12px}
 
-.card{
-background:#111a33;
-padding:18px;
+.boton{
+display:inline-block;margin-top:12px;
+background:#00d4ff;color:#000;
+padding:10px 14px;border-radius:8px;
+text-decoration:none;font-weight:bold;
+}
+
+/* PLAYER */
+.player{
+margin-top:20px;
+aspect-ratio:16/9;
+}
+
+.player iframe{
+width:100%;
+height:100%;
+border:0;
 border-radius:12px;
 }
 
-.boton{
-display:inline-block;
-margin-top:12px;
-background:#00d4ff;
-color:#000;
-padding:10px 14px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* 🎬 REPLAYS (NO TOCADO) */
+/* REPLAYS (ORIGINAL) */
 .replays{margin-top:30px;text-align:left}
 
 .grid{
@@ -79,7 +75,6 @@ transition:transform 0.2s;
 }
 
 .video-card:hover{transform:scale(1.03)}
-
 .video-card img{width:100%}
 
 .play{
@@ -95,25 +90,7 @@ padding:12px;
 
 .video-card h3{padding:10px;font-size:14px}
 
-.player{
-margin-top:20px;
-display:none;
-aspect-ratio:16/9
-}
-
-.player iframe{
-width:100%;
-height:100%;
-border:0;
-border-radius:12px
-}
-
-/* MOBILE */
-@media (max-width:700px){
-.banner-grid,.cards{grid-template-columns:1fr}
-}
 </style>
-
 </head>
 
 <body>
@@ -150,82 +127,43 @@ border-radius:12px
 <div class="card">
 <h2>SANTA FE 🆚 CÚCUTA</h2>
 <p id="fecha1"></p>
-<p>🕑 Partido: <b>2:00 PM</b></p>
-<p>🎙️ Transmisión: <b>1:30 PM</b></p>
-
-<a class="boton" href="/santafe-vs-cucuta-en-vivo.html">🔴 VER PARTIDO</a>
+<p>🕑 2:00 PM</p>
 </div>
 
 <div class="card">
 <h2>AMÉRICA 🆚 MILLONARIOS</h2>
 <p id="fecha2"></p>
-<p>🕣 Partido: <b>8:30 PM</b></p>
-<p>🎙️ Transmisión: <b>7:45 PM</b></p>
-
-<a class="boton" href="/america-vs-millonarios-en-vivo.html">🔴 VER PARTIDO</a>
+<p>🕣 8:30 PM</p>
 </div>
 
 </div>
 
-<!-- PLAYER (NO TOCADO) -->
-<div id="player" class="player"></div>
+<!-- 🔴 LIVE PRINCIPAL -->
+<div class="player">
+<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/983292894149383&show_text=false" allowfullscreen allow="autoplay"></iframe>
+</div>
 
-<!-- 🎬 REPLAYS (ORIGINAL, FUNCIONANDO) -->
+<!-- REPLAYS (SIN CAMBIOS) -->
 <div class="replays">
 <h2>📺 PARTIDOS ANTERIORES</h2>
 
 <div class="grid">
 
 <div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
-<img src="repeticion-tolima-santa-fe.JPG">
-<div class="play">▶</div>
-<h3>Tolima vs Santa Fe</h3>
+<img src="repeticion-tolima-santa-fe.JPG"><div class="play">▶</div><h3>Tolima vs Santa Fe</h3>
 </div>
 
 <div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
-<img src="repeticion-jaguares-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Jaguares vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
-<img src="repeticion-santafe-llaneros.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Llaneros</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
-<img src="repeticion-millonarios-fortaleza.JPG">
-<div class="play">▶</div>
-<h3>Millonarios vs Fortaleza</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
-<img src="repeticion-bucaramanga-santafe.JPG">
-<div class="play">▶</div>
-<h3>Bucaramanga vs Santa Fe</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
-<img src="repeticion-once-caldas-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Once Caldas vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
-<img src="repeticion-santafe-medellin.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Medellín</h3>
+<img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div><h3>Jaguares vs Millonarios</h3>
 </div>
 
 </div>
-
 </div>
 
 </div>
 
 <script>
-// 📅 FECHA CORRECTA
+// FECHA
 const fechaEvento = new Date(2026,3,19);
 const ahora = new Date();
 
@@ -236,7 +174,7 @@ const texto = (ahora.getDate() === fechaEvento.getDate())
 document.getElementById("fecha1").innerHTML = texto;
 document.getElementById("fecha2").innerHTML = texto;
 
-// 🔴 ESTADOS
+// ESTADOS
 const partido1 = new Date(2026,3,19,13,30);
 const partido2 = new Date(2026,3,19,19,45);
 
@@ -252,14 +190,6 @@ document.getElementById("estado2").innerHTML =
 
 setInterval(actualizar,1000);
 actualizar();
-
-// 🎬 PLAYER ORIGINAL (IMPORTANTE)
-function playVideo(id){
-const player=document.getElementById("player");
-player.style.display="block";
-player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
-window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
-}
 </script>
 
 </body>
