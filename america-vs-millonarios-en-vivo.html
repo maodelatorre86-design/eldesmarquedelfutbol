@@ -4,11 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>América vs Millonarios EN VIVO ⚽ | Ver Partido Gratis</title>
+<title>América vs Millonarios EN VIVO ⚽</title>
 
-<meta name="description" content="Ver América vs Millonarios en vivo hoy gratis. Transmisión desde las 7:45 PM y partido a las 8:30 PM.">
-
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/america-vs-millonarios-en-vivo.html">
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
@@ -31,18 +28,8 @@ border-radius:10px;
 font-weight:bold;
 }
 
-.tag{
-position:absolute;
-top:15px;right:15px;
-background:red;
-padding:8px 12px;
-border-radius:10px;
-font-weight:bold;
-}
-
 .player{
 margin-top:15px;
-display:none;
 aspect-ratio:16/9;
 }
 
@@ -77,31 +64,21 @@ border-radius:12px;
 <div class="banner">
 <img src="estadio-pascual-america.jpg">
 <div class="estado" id="estado">PRÓXIMA TRANSMISIÓN</div>
-<div class="tag">8:30 PM</div>
 </div>
 
-<div class="player" id="player"></div>
+<div class="player">
+<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/26419154254360501&show_text=false" allowfullscreen></iframe>
+</div>
 
 <div class="info">
-
-<h1>AMÉRICA 🆚 MILLONARIOS EN VIVO ⚽</h1>
-
+<h1>AMÉRICA 🆚 MILLONARIOS</h1>
 <p id="fecha"></p>
-<p>🕣 Partido: <b>8:30 PM</b></p>
-<p>🎙️ Transmisión: <b>7:45 PM</b></p>
-
-<p>Ver América vs Millonarios en vivo online gratis.</p>
-
-<a href="/" style="display:inline-block;margin-top:10px;background:#00d4ff;color:#000;padding:10px;border-radius:8px;text-decoration:none;">
-⬅ Volver al inicio
-</a>
-
+<p>🕣 8:30 PM</p>
 </div>
 
 </div>
 
 <script>
-// 📅 FECHA
 const fechaEvento = new Date(2026,3,19);
 const ahora = new Date();
 
@@ -110,7 +87,6 @@ document.getElementById("fecha").innerHTML =
 ? "📅 Hoy • Domingo 19 de abril"
 : "📅 Mañana • Domingo 19 de abril";
 
-// 🔴 ESTADO
 const inicio = new Date(2026,3,19,19,45);
 
 function actualizar(){
