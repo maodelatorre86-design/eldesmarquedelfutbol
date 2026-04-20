@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Partidos EN VIVO ⚽ Santa Fe vs Cúcuta y América vs Millonarios</title>
+<title>América vs Millonarios EN VIVO ⚽ | Partidos en vivo hoy</title>
 
-<meta name="description" content="Ver Santa Fe vs Cúcuta y América vs Millonarios en vivo hoy gratis.">
+<meta name="description" content="Ver América vs Millonarios en vivo hoy gratis.">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -98,19 +98,19 @@ padding:12px;
 
 <div class="container">
 
-<h1>Partidos en vivo ⚽ Santa Fe vs Cúcuta y América vs Millonarios</h1>
+<h1>América vs Millonarios EN VIVO ⚽</h1>
 
-<!-- BANNERS -->
+<!-- 🔥 BANNERS (AMÉRICA PRIMERO) -->
 <div class="banner-grid">
 
 <div class="banner">
-<img src="EL CAMPIN SANTA FE.jpg">
-<div class="overlay" id="estado1">PRÓXIMA TRANSMISIÓN</div>
+<img src="estadio-pascual-america.jpg">
+<div class="overlay">🔴 EN VIVO</div>
 </div>
 
 <div class="banner">
-<img src="estadio-pascual-america.jpg">
-<div class="overlay" id="estado2">PRÓXIMA TRANSMISIÓN</div>
+<img src="EL CAMPIN SANTA FE.jpg">
+<div class="overlay">FINALIZADO</div>
 </div>
 
 </div>
@@ -119,18 +119,8 @@ padding:12px;
 <div class="cards">
 
 <div class="card">
-<h2>SANTA FE 🆚 CÚCUTA</h2>
-<p id="fecha1"></p>
-<p>🕑 2:00 PM</p>
-
-<a class="boton" href="/santafe-vs-cucuta-en-vivo.html">
-🔴 VER PARTIDO
-</a>
-</div>
-
-<div class="card">
 <h2>AMÉRICA 🆚 MILLONARIOS</h2>
-<p id="fecha2"></p>
+<p>📅 Hoy • Domingo 19 de abril</p>
 <p>🕣 8:30 PM</p>
 
 <a class="boton" href="/america-vs-millonarios-en-vivo.html">
@@ -138,19 +128,24 @@ padding:12px;
 </a>
 </div>
 
+<div class="card">
+<h2>SANTA FE 🆚 CÚCUTA</h2>
+<p>📅 Hoy • Domingo 19 de abril</p>
+<p>🕑 2:00 PM</p>
+
+<a class="boton" href="/santafe-vs-cucuta-en-vivo.html">
+VER REPETICIÓN
+</a>
 </div>
 
-<!-- 🔴 LIVE SANTA FE -->
-<div class="player">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/983292894149383&show_text=false" allowfullscreen></iframe>
 </div>
 
-<!-- 🔴 LIVE AMÉRICA -->
+<!-- 🔴 LIVE PRINCIPAL (AMÉRICA) -->
 <div class="player">
 <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/26419154254360501&show_text=false" allowfullscreen></iframe>
 </div>
 
-<!-- REPLAYS -->
+<!-- REPLAYS (SIN CAMBIOS) -->
 <div class="replays">
 <h2>📺 PARTIDOS ANTERIORES</h2>
 
@@ -175,34 +170,6 @@ padding:12px;
 </div>
 
 <script>
-// FECHA
-const fechaEvento = new Date(2026,3,19);
-const ahora = new Date();
-
-const texto = (ahora.getDate() === fechaEvento.getDate())
-? "📅 Hoy • Domingo 19 de abril"
-: "📅 Mañana • Domingo 19 de abril";
-
-document.getElementById("fecha1").innerHTML = texto;
-document.getElementById("fecha2").innerHTML = texto;
-
-// ESTADOS
-const partido1 = new Date(2026,3,19,13,30);
-const partido2 = new Date(2026,3,19,19,45);
-
-function actualizar(){
-const now = new Date().getTime();
-
-document.getElementById("estado1").innerHTML =
-(now >= partido1.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
-
-document.getElementById("estado2").innerHTML =
-(now >= partido2.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
-}
-
-setInterval(actualizar,1000);
-actualizar();
-
 function playVideo(id){
 const player=document.querySelector(".player");
 player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
