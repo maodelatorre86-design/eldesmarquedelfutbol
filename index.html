@@ -11,52 +11,15 @@
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#0b0f19;
-color:white;
-}
-
-/* HEADER */
-header{
-background:#111a33;
-padding:14px;
-text-align:center;
-font-weight:800;
-font-size:18px;
-}
-
-.logo img{
-width:55px;
-}
-
-/* CONTAINER */
-.container{
-max-width:1100px;
-margin:auto;
-padding:12px;
-}
+body{margin:0;font-family:Arial;background:#0b0f19;color:white;}
+header{background:#111a33;padding:14px;text-align:center;font-weight:800;font-size:18px}
+.logo img{width:55px}
+.container{max-width:1100px;margin:auto;padding:12px}
 
 /* BANNERS */
-.banner-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.banner{
-position:relative;
-aspect-ratio:16/9;
-border-radius:14px;
-overflow:hidden;
-}
-
-.banner img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+.banner-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
+.banner img{width:100%;height:100%;object-fit:cover}
 
 .banner::after{
 content:"";
@@ -68,7 +31,6 @@ height:70%;
 background:linear-gradient(transparent,rgba(0,0,0,.9));
 }
 
-/* BADGE */
 .badge{
 position:absolute;
 top:10px;
@@ -79,18 +41,9 @@ border-radius:6px;
 font-size:11px;
 }
 
-.live{
-background:red;
-animation:pulse 1s infinite;
-}
+.live{background:red;animation:pulse 1s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
 
-@keyframes pulse{
-0%{opacity:1}
-50%{opacity:.5}
-100%{opacity:1}
-}
-
-/* TEXTO BANNER */
 .banner-text{
 position:absolute;
 bottom:10px;
@@ -98,14 +51,8 @@ left:10px;
 font-size:12px;
 }
 
-.banner-text h3{
-margin:0;
-font-size:14px;
-}
-
-.banner-text p{
-margin:2px 0;
-}
+.banner-text h3{margin:0;font-size:14px}
+.banner-text p{margin:2px 0}
 
 /* CARDS */
 .cards{
@@ -133,6 +80,13 @@ font-weight:bold;
 text-decoration:none;
 }
 
+/* FECHA */
+.fecha{
+margin-top:10px;
+font-size:13px;
+opacity:.8;
+}
+
 /* PLAYER */
 .player{
 margin-top:20px;
@@ -148,12 +102,7 @@ border-radius:12px;
 
 /* REPLAYS */
 .replays{margin-top:25px}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:12px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 
 .video-card{
 background:#111a33;
@@ -197,7 +146,9 @@ border-radius:50%;
 
 <h1>Pasto vs Santa Fe y Millonarios vs Tolima</h1>
 
-<!-- 🔥 BANNERS -->
+<p id="fechaGeneral" class="fecha"></p>
+
+<!-- BANNERS -->
 <div class="banner-grid">
 
 <div class="banner">
@@ -242,7 +193,7 @@ border-radius:50%;
 
 <div id="player" class="player"></div>
 
-<!-- 🎬 REPLAYS COMPLETOS -->
+<!-- REPLAYS -->
 <div class="replays">
 <h2>📺 Repeticiones</h2>
 
@@ -283,14 +234,24 @@ border-radius:50%;
 </div>
 
 <script>
-const fechaEvento = new Date();
-fechaEvento.setDate(fechaEvento.getDate()+1);
+// 📅 FECHA EVENTO: 23 ABRIL
+const fechaEvento = new Date(2026, 3, 23, 0, 0, 0);
+const ahora = new Date();
 
-const pasto = new Date(fechaEvento);
-pasto.setHours(17,30,0,0);
+// COMPARACIÓN CORRECTA
+const esMismoDia =
+ahora.getFullYear() === fechaEvento.getFullYear() &&
+ahora.getMonth() === fechaEvento.getMonth() &&
+ahora.getDate() === fechaEvento.getDate();
 
-const millos = new Date(fechaEvento);
-millos.setHours(19,45,0,0);
+document.getElementById("fechaGeneral").innerHTML =
+esMismoDia
+? "📅 Hoy • 23 de abril"
+: "📅 Mañana • 23 de abril";
+
+// HORARIOS
+const pasto = new Date(2026,3,23,17,30);
+const millos = new Date(2026,3,23,19,45);
 
 function actualizar(){
 const now = new Date().getTime();
@@ -309,6 +270,7 @@ document.getElementById("badge2").classList.add("live");
 setInterval(actualizar,1000);
 actualizar();
 
+// PLAYER
 function playVideo(id){
 const player=document.getElementById("player");
 player.style.display="block";
