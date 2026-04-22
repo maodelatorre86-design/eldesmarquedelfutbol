@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pasto vs Santa Fe EN VIVO</title>
+
+<link rel="icon" href="EJEMPLO LOGO 2 (2).png">
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#060b16;
+color:white;
+}
+
+/* HEADER */
+header{
+background:#0c162b;
+padding:15px;
+text-align:center;
+font-weight:bold;
+}
+
+/* CONTENEDOR */
+.container{
+max-width:1000px;
+margin:auto;
+padding:15px;
+}
+
+/* BANNER */
+.banner{
+position:relative;
+border-radius:16px;
+overflow:hidden;
+aspect-ratio:16/9;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.banner::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
+}
+
+/* BADGE */
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:#e50914;
+padding:6px 12px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+z-index:2;
+}
+
+/* CONTENIDO */
+.banner-content{
+position:absolute;
+bottom:15px;
+left:15px;
+z-index:2;
+}
+
+.match{
+font-size:32px;
+font-weight:900;
+}
+
+.match span{
+color:#ffb300;
+}
+
+.time{
+font-size:22px;
+color:#ffe600;
+font-weight:900;
+margin-top:8px;
+}
+
+/* PLAYER */
+.player{
+margin-top:15px;
+aspect-ratio:16/9;
+}
+
+.player iframe{
+width:100%;
+height:100%;
+border-radius:12px;
+border:0;
+}
+
+/* BOTÓN */
+.boton{
+display:block;
+margin-top:15px;
+background:#00d4ff;
+color:#000;
+padding:10px;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
+
+<div class="container">
+
+<div class="banner">
+<img src="Estadio-Libertad-Pasto.jpg">
+
+<div class="badge" id="estado">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="banner-content">
+<div class="match">PASTO <span>VS</span> SANTA FE</div>
+<div class="time">🎙️ 5:30 PM</div>
+<div class="time">🕕 6:00 PM</div>
+</div>
+</div>
+
+<!-- PLAYER -->
+<div class="player">
+<iframe src="AQUI_TU_LINK_FACEBOOK"></iframe>
+</div>
+
+<a class="boton" href="/">⬅ Volver</a>
+
+</div>
+
+<script>
+const inicio = new Date(2026,3,23,17,30);
+
+function actualizar(){
+const now = new Date().getTime();
+if(now >= inicio.getTime()){
+document.getElementById("estado").innerHTML="🔴 EN VIVO";
+}
+}
+
+setInterval(actualizar,1000);
+</script>
+
+</body>
+</html>
