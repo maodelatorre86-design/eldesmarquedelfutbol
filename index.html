@@ -4,28 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pasto vs Santa Fe EN VIVO hoy ⚽ Millonarios vs Tolima</title>
+<title>Pasto vs Santa Fe EN VIVO ⚽ Millonarios vs Tolima</title>
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{margin:0;font-family:Arial;background:#0b0f19;color:white;}
-header{background:#111a33;padding:14px;text-align:center;font-weight:800;font-size:18px}
-.logo img{width:55px}
-.container{max-width:1100px;margin:auto;padding:12px}
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#060b16;
+color:white;
+}
 
-/* BANNERS */
+/* HEADER */
+header{
+background:#0c162b;
+padding:15px;
+text-align:center;
+font-weight:bold;
+}
+
+/* CONTENEDOR */
+.container{
+max-width:1200px;
+margin:auto;
+padding:15px;
+}
+
+/* GRID */
 .banner-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px;
+gap:15px;
 }
 
+/* TARJETA */
 .banner{
 position:relative;
-aspect-ratio:16/9;
-border-radius:14px;
+border-radius:16px;
 overflow:hidden;
+aspect-ratio:16/9;
+box-shadow:0 10px 25px rgba(0,0,0,.6);
 }
 
 .banner img{
@@ -34,20 +53,20 @@ height:100%;
 object-fit:cover;
 }
 
-/* 🔥 CAPA OSCURA PARA CONTRASTE */
+/* OSCURECER */
 .banner::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2));
+background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
 }
 
-/* 🔴 BADGE */
+/* BADGE */
 .badge{
 position:absolute;
-top:10px;
-left:10px;
-background:#333;
+top:12px;
+left:12px;
+background:#e50914;
 padding:6px 12px;
 border-radius:6px;
 font-size:12px;
@@ -55,85 +74,73 @@ font-weight:bold;
 z-index:2;
 }
 
-.live{
-background:red;
-animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:1}
-50%{opacity:.6}
-100%{opacity:1}
-}
-
-/* 🔥 TEXTO MEJORADO */
-.banner-text{
+/* TEXTO PRINCIPAL */
+.banner-content{
 position:absolute;
-bottom:12px;
-left:12px;
+bottom:15px;
+left:15px;
 z-index:2;
-text-align:left;
 }
 
-/* TÍTULO */
-.banner-text h3{
-margin:0;
-font-size:18px;
+/* EQUIPOS */
+.match{
+font-size:34px;
 font-weight:900;
-color:#fff;
-text-shadow:0 2px 6px rgba(0,0,0,.9);
+line-height:1;
+}
+
+.match span{
+color:#ffb300;
 }
 
 /* HORAS */
-.banner-text p{
-margin:3px 0;
-font-size:14px;
-font-weight:bold;
-color:#fff;
-text-shadow:0 2px 6px rgba(0,0,0,.9);
-}
-
-/* 🔥 CAJA DE HORAS */
-.time-box{
-display:inline-block;
-background:rgba(0,0,0,.65);
-padding:4px 8px;
-border-radius:6px;
-margin-top:4px;
-}
-
-/* CARDS */
-.cards{
-margin-top:15px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.card{
-background:#111a33;
-border-radius:12px;
-padding:14px;
-}
-
-.boton{
-display:block;
+.times{
 margin-top:10px;
-background:#00d4ff;
-color:#000;
-padding:10px;
-border-radius:8px;
-text-align:center;
-font-weight:bold;
-text-decoration:none;
+}
+
+.time-row{
+display:flex;
+align-items:center;
+gap:10px;
+margin:6px 0;
+}
+
+.time-label{
+font-size:12px;
+opacity:.8;
+}
+
+.time-value{
+font-size:22px;
+font-weight:900;
+color:#ffe600;
+}
+
+/* ICONO */
+.icon{
+width:28px;
+height:28px;
+background:red;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
 }
 
 /* REPLAYS */
-.replays{margin-top:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.replays{
+margin-top:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px;
+}
 
 .video-card{
-background:#111a33;
+background:#0f1b33;
 border-radius:10px;
 overflow:hidden;
 cursor:pointer;
@@ -147,155 +154,138 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:24px;
 background:rgba(0,0,0,.6);
-padding:6px;
+padding:8px;
 border-radius:50%;
 }
 
 /* MOBILE */
-@media (max-width:600px){
+@media(max-width:700px){
 .banner-grid{grid-template-columns:1fr}
-.cards{grid-template-columns:1fr}
-
-.banner-text h3{font-size:16px}
-.banner-text p{font-size:13px}
+.match{font-size:24px}
+.time-value{font-size:18px}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">
-<img src="EJEMPLO LOGO 2 (2).png">
-</div>
-⚽ EL DESMARQUE DEL FÚTBOL
-</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
 <div class="container">
 
-<h1>Pasto vs Santa Fe y Millonarios vs Tolima</h1>
-
-<!-- 🔥 BANNERS -->
+<!-- 🔥 BANNERS PRO -->
 <div class="banner-grid">
 
+<!-- PARTIDO 1 -->
 <div class="banner">
 <img src="Estadio-Libertad-Pasto.jpg">
 
-<div class="badge" id="badge1">PRÓXIMA</div>
+<div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
-<div class="banner-text">
-<h3>Pasto 🆚 Santa Fe</h3>
+<div class="banner-content">
 
-<div class="time-box">
-<p>🎙️ 5:30 PM</p>
-<p>🕕 6:00 PM</p>
+<div class="match">
+PASTO <span>VS</span> SANTA FE
+</div>
+
+<div class="times">
+
+<div class="time-row">
+<div class="icon">🎙️</div>
+<div>
+<div class="time-label">INICIO TRANSMISIÓN</div>
+<div class="time-value">5:30 PM</div>
+</div>
+</div>
+
+<div class="time-row">
+<div class="icon">⏱</div>
+<div>
+<div class="time-label">INICIO DEL PARTIDO</div>
+<div class="time-value">6:00 PM</div>
+</div>
 </div>
 
 </div>
 
 </div>
+</div>
 
+<!-- PARTIDO 2 -->
 <div class="banner">
 <img src="ESTADIO MILLONARIOS 1.JPG">
 
-<div class="badge" id="badge2">PRÓXIMA</div>
+<div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
-<div class="banner-text">
-<h3>Millonarios 🆚 Tolima</h3>
+<div class="banner-content">
 
-<div class="time-box">
-<p>🕗 8:00 PM</p>
+<div class="match">
+MILLONARIOS <span>VS</span> TOLIMA
+</div>
+
+<div class="times">
+
+<div class="time-row">
+<div class="icon">⏱</div>
+<div>
+<div class="time-label">INICIO DEL PARTIDO</div>
+<div class="time-value">8:00 PM</div>
+</div>
 </div>
 
 </div>
 
 </div>
-
-</div>
-
-<!-- CARDS -->
-<div class="cards">
-
-<div class="card">
-<h2>PASTO 🆚 SANTA FE</h2>
-<a class="boton" href="/pasto-vs-santafe-en-vivo.html">VER PARTIDO</a>
-</div>
-
-<div class="card">
-<h2>MILLONARIOS 🆚 TOLIMA</h2>
-<a class="boton" href="/millonarios-vs-tolima-en-vivo.html">VER PARTIDO</a>
 </div>
 
 </div>
 
-<!-- REPLAYS (NO TOCADOS) -->
+<!-- 🎬 REPLAYS -->
 <div class="replays">
-<h2>📺 Repeticiones</h2>
+<h2>📺 REPLAYS</h2>
 
 <div class="grid">
 
-<div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
-<img src="repeticion-tolima-santa-fe.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-tolima-santa-fe.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
-<img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-jaguares-millonarios.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
-<img src="repeticion-santafe-llaneros.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-santafe-llaneros.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
-<img src="repeticion-millonarios-fortaleza.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-millonarios-fortaleza.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
-<img src="repeticion-bucaramanga-santafe.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-bucaramanga-santafe.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
-<img src="repeticion-once-caldas-millonarios.JPG"><div class="play">▶</div>
+<div class="video-card">
+<img src="repeticion-once-caldas-millonarios.JPG">
+<div class="play">▶</div>
 </div>
 
-<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
-<img src="repeticion-santafe-medellin.JPG"><div class="play">▶</div>
-</div>
-
-</div>
-
+<div class="video-card">
+<img src="repeticion-santafe-medellin.JPG">
+<div class="play">▶</div>
 </div>
 
 </div>
+</div>
 
-<script>
-const fechaEvento = new Date();
-fechaEvento.setDate(fechaEvento.getDate()+1);
-
-const pasto = new Date(fechaEvento);
-pasto.setHours(17,30,0,0);
-
-const millos = new Date(fechaEvento);
-millos.setHours(19,45,0,0);
-
-function actualizar(){
-const now = new Date().getTime();
-
-if(now >= pasto.getTime()){
-document.getElementById("badge1").innerHTML="🔴 EN VIVO";
-document.getElementById("badge1").classList.add("live");
-}
-
-if(now >= millos.getTime()){
-document.getElementById("badge2").innerHTML="🔴 EN VIVO";
-document.getElementById("badge2").classList.add("live");
-}
-}
-
-setInterval(actualizar,1000);
-</script>
+</div>
 
 </body>
 </html>
