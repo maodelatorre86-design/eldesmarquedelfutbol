@@ -43,17 +43,52 @@ padding:10px 14px;border-radius:8px;
 text-decoration:none;font-weight:bold;
 }
 
-/* PLAYER */
+/* 🎬 REPLAYS (TU SISTEMA ORIGINAL) */
+.replays{margin-top:30px;text-align:left}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
+}
+
+.video-card{
+background:#111a33;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+position:relative;
+transition:transform 0.2s;
+}
+
+.video-card:hover{transform:scale(1.03)}
+
+.video-card img{width:100%}
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+background:rgba(0,0,0,.6);
+border-radius:50%;
+padding:12px;
+}
+
+.video-card h3{padding:10px;font-size:14px}
+
 .player{
 margin-top:20px;
-aspect-ratio:16/9;
+display:none;
+aspect-ratio:16/9
 }
 
 .player iframe{
 width:100%;
 height:100%;
 border:0;
-border-radius:12px;
+border-radius:12px
 }
 </style>
 </head>
@@ -71,11 +106,11 @@ border-radius:12px;
 
 <h1>Partidos en vivo ⚽ Pasto vs Santa Fe y Millonarios vs Tolima</h1>
 
-<!-- BANNERS -->
+<!-- 🔥 BANNERS -->
 <div class="banner-grid">
 
 <div class="banner">
-<img src="ESTADIO PASTO.jpg">
+<img src="Estadio-Libertad-Pasto.jpg">
 <div class="overlay" id="estado1">PRÓXIMA TRANSMISIÓN</div>
 </div>
 
@@ -113,18 +148,70 @@ border-radius:12px;
 
 </div>
 
-<!-- PLAYER -->
-<div class="player" id="player"></div>
+<!-- PLAYER (NO TOCADO) -->
+<div id="player" class="player"></div>
+
+<!-- 🎬 REPLAYS COMPLETOS (NO MODIFICADOS) -->
+<div class="replays">
+<h2>📺 PARTIDOS ANTERIORES</h2>
+
+<div class="grid">
+
+<div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
+<img src="repeticion-tolima-santa-fe.JPG">
+<div class="play">▶</div>
+<h3>Tolima vs Santa Fe</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
+<img src="repeticion-jaguares-millonarios.JPG">
+<div class="play">▶</div>
+<h3>Jaguares vs Millonarios</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
+<img src="repeticion-santafe-llaneros.JPG">
+<div class="play">▶</div>
+<h3>Santa Fe vs Llaneros</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
+<img src="repeticion-millonarios-fortaleza.JPG">
+<div class="play">▶</div>
+<h3>Millonarios vs Fortaleza</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
+<img src="repeticion-bucaramanga-santafe.JPG">
+<div class="play">▶</div>
+<h3>Bucaramanga vs Santa Fe</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
+<img src="repeticion-once-caldas-millonarios.JPG">
+<div class="play">▶</div>
+<h3>Once Caldas vs Millonarios</h3>
+</div>
+
+<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
+<img src="repeticion-santafe-medellin.JPG">
+<div class="play">▶</div>
+<h3>Santa Fe vs Medellín</h3>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 <script>
-// 📅 FECHA (MAÑANA)
+// 📅 FECHA MAÑANA
 const fechaEvento = new Date();
 fechaEvento.setDate(fechaEvento.getDate() + 1);
 
-// TEXTO
 const ahora = new Date();
+
 const texto = (ahora.getDate() === fechaEvento.getDate())
 ? "📅 Hoy"
 : "📅 Mañana";
@@ -136,9 +223,8 @@ document.getElementById("fecha2").innerHTML = texto;
 const pasto = new Date(fechaEvento);
 pasto.setHours(17,30,0,0);
 
-// duración estimada partido (2h)
-const millonarios = new Date(fechaEvento);
-millonarios.setHours(19,45,0,0);
+const millos = new Date(fechaEvento);
+millos.setHours(19,45,0,0);
 
 function actualizar(){
 const now = new Date().getTime();
@@ -147,11 +233,19 @@ document.getElementById("estado1").innerHTML =
 (now >= pasto.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
 
 document.getElementById("estado2").innerHTML =
-(now >= millonarios.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
+(now >= millos.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
 }
 
 setInterval(actualizar,1000);
 actualizar();
+
+// 🎬 PLAYER ORIGINAL
+function playVideo(id){
+const player=document.getElementById("player");
+player.style.display="block";
+player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
+window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+}
 </script>
 
 </body>
