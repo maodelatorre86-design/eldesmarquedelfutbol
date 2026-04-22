@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ver Pasto vs Santa Fe EN VIVO hoy ⚽ Millonarios vs Tolima en vivo gratis</title>
+<title>Pasto vs Santa Fe EN VIVO hoy ⚽ Millonarios vs Tolima en vivo gratis</title>
 
 <meta name="description" content="Ver Pasto vs Santa Fe en vivo hoy gratis y Millonarios vs Tolima en vivo online. Liga Colombiana Fecha 18 con narración en español.">
 
@@ -16,7 +16,6 @@
 <meta property="og:title" content="Pasto vs Santa Fe EN VIVO ⚽">
 <meta property="og:description" content="Ver partido en vivo gratis aquí">
 <meta property="og:image" content="https://eldesmarquedelfutbol.com/Estadio-Libertad-Pasto.jpg">
-<meta property="og:url" content="https://eldesmarquedelfutbol.com/">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
@@ -36,6 +35,7 @@ h1{text-align:center;font-size:18px;margin:10px 0;}
 position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;
 }
 .banner img{width:100%;height:100%;object-fit:cover;}
+
 .banner::after{
 content:"";position:absolute;inset:0;
 background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
@@ -49,6 +49,7 @@ background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
 .banner-btn{
 position:absolute;bottom:15px;right:15px;
 background:#e50914;padding:10px;border-radius:8px;color:white;text-decoration:none;
+font-weight:bold;
 }
 
 .replays{margin-top:30px;}
@@ -82,7 +83,11 @@ Narración: Álvaro Malkún Salazar 🎙️ | Análisis: Mauricio Guerrero y Jai
 <div class="match">PASTO <span>VS</span> SANTA FE</div>
 <div class="time">5:30 PM / 6:00 PM</div>
 </div>
-<a class="banner-btn" href="/pasto-vs-santafe-en-vivo.html">VER PARTIDO</a>
+
+<a class="banner-btn" href="pasto-vs-santafe-en-vivo.html">
+VER PARTIDO
+</a>
+
 </div>
 
 <div class="banner">
@@ -91,7 +96,11 @@ Narración: Álvaro Malkún Salazar 🎙️ | Análisis: Mauricio Guerrero y Jai
 <div class="match">MILLONARIOS <span>VS</span> TOLIMA</div>
 <div class="time">8:00 PM</div>
 </div>
-<a class="banner-btn" href="/millonarios-vs-tolima-en-vivo.html">VER PARTIDO</a>
+
+<a class="banner-btn" href="millonarios-vs-tolima-en-vivo.html">
+VER PARTIDO
+</a>
+
 </div>
 
 </div>
@@ -100,6 +109,7 @@ Narración: Álvaro Malkún Salazar 🎙️ | Análisis: Mauricio Guerrero y Jai
 <div class="replays">
 <h2>📺 REPLAYS</h2>
 <div class="grid">
+
 <div class="video-card"><img src="repeticion-tolima-santa-fe.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-santafe-llaneros.JPG"><div class="play">▶</div></div>
@@ -107,20 +117,24 @@ Narración: Álvaro Malkún Salazar 🎙️ | Análisis: Mauricio Guerrero y Jai
 <div class="video-card"><img src="repeticion-bucaramanga-santafe.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-once-caldas-millonarios.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-santafe-medellin.JPG"><div class="play">▶</div></div>
+
 </div>
 </div>
 
 </div>
 
 <script>
-const evento=new Date(2026,3,23);
-const ahora=new Date();
-const esHoy=ahora.getFullYear()===evento.getFullYear() &&
-ahora.getMonth()===evento.getMonth() &&
-ahora.getDate()===evento.getDate();
+// FECHA CORRECTA
+const evento = new Date(2026,3,23);
+const ahora = new Date();
 
-document.getElementById("fechaTexto").innerHTML=
-esHoy?"📅 Hoy • 23 de abril":"📅 Mañana • 23 de abril";
+const esHoy =
+ahora.getFullYear() === evento.getFullYear() &&
+ahora.getMonth() === evento.getMonth() &&
+ahora.getDate() === evento.getDate();
+
+document.getElementById("fechaTexto").innerHTML =
+esHoy ? "📅 Hoy • 23 de abril" : "📅 Mañana • 23 de abril";
 </script>
 
 <script type="application/ld+json">
