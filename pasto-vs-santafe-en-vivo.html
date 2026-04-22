@@ -3,35 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pasto vs Santa Fe EN VIVO</title>
+
+<title>Pasto vs Santa Fe | Fecha 18 Liga Colombiana</title>
+
+<meta name="description" content="Pasto vs Santa Fe por la fecha 18 de la Liga Colombiana. Transmisión desde las 5:30 PM y partido a las 6:00 PM.">
+
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
+
+<style>
+body{margin:0;font-family:Arial;background:#060b16;color:white;}
+header{background:#0c162b;padding:15px;text-align:center;font-weight:bold;}
+
+.container{max-width:1000px;margin:auto;padding:15px;}
+
+.banner{
+position:relative;
+border-radius:16px;
+overflow:hidden;
+aspect-ratio:16/9;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.banner::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
+pointer-events:none;
+}
+
+.banner-content{
+position:absolute;
+bottom:15px;
+left:15px;
+z-index:2;
+}
+
+.match{
+font-size:30px;
+font-weight:900;
+}
+
+.match span{color:#ffb300;}
+
+.time{
+font-size:20px;
+color:#ffe600;
+font-weight:900;
+margin-top:5px;
+}
+
+.info{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+opacity:.9;
+}
+
+.fecha{
+text-align:center;
+margin-top:10px;
+color:#aaa;
+}
+
+.boton{
+display:block;
+margin-top:15px;
+background:#00d4ff;
+color:#000;
+padding:10px;
+border-radius:8px;
+text-align:center;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
 </head>
 
-<body style="background:#060b16;color:white;font-family:Arial;margin:0;">
+<body>
 
-<header style="background:#0c162b;padding:15px;text-align:center;">⚽ EL DESMARQUE DEL FÚTBOL</header>
+<header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
-<h2 style="text-align:center;">PASTO vs SANTA FE</h2>
+<div class="container">
 
-<p id="fechaTexto" style="text-align:center;color:#aaa;"></p>
+<p id="fechaTexto" class="fecha"></p>
 
-<p style="text-align:center;">
+<div class="banner">
+<img src="Estadio-Libertad-Pasto.jpg">
+
+<div class="banner-content">
+<div class="match">PASTO <span>VS</span> SANTA FE</div>
+<div class="time">🎙️ 5:30 PM</div>
+<div class="time">🕕 6:00 PM</div>
+</div>
+
+</div>
+
+<div class="info">
 Fecha 18 Liga Colombiana<br>
-🎙️ Álvaro Malkún Salazar<br>
+Narración: Álvaro Malkún Salazar 🎙️<br>
 Análisis: Mauricio Guerrero y Jaime Vélez
-</p>
+</div>
 
-<div style="aspect-ratio:16/9;margin:10px;">
-<iframe 
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/983292894149383&show_text=false" 
-width="100%" height="100%" allowfullscreen>
-</iframe>
+<a class="boton" href="./index.html">⬅ Volver</a>
+
 </div>
 
 <script>
 const evento=new Date(2026,3,23);
 const ahora=new Date();
-const esHoy=ahora.getFullYear()===evento.getFullYear() &&
+
+const esHoy=
+ahora.getFullYear()===evento.getFullYear() &&
 ahora.getMonth()===evento.getMonth() &&
 ahora.getDate()===evento.getDate();
 
