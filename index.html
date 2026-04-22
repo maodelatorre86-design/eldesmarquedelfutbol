@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>América vs Millonarios EN VIVO ⚽ | Partidos en vivo hoy</title>
+<title>Pasto vs Santa Fe y Millonarios vs Tolima EN VIVO ⚽</title>
 
-<meta name="description" content="Ver América vs Millonarios en vivo hoy gratis.">
+<meta name="description" content="Ver Pasto vs Santa Fe y Millonarios vs Tolima en vivo gratis.">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -55,35 +55,6 @@ height:100%;
 border:0;
 border-radius:12px;
 }
-
-/* REPLAYS (NO TOCAR) */
-.replays{margin-top:30px;text-align:left}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-
-.video-card{
-background:#111a33;
-border-radius:12px;
-overflow:hidden;
-cursor:pointer;
-position:relative;
-transition:transform 0.2s;
-}
-
-.video-card:hover{transform:scale(1.03)}
-.video-card img{width:100%}
-
-.play{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:40px;
-background:rgba(0,0,0,.6);
-border-radius:50%;
-padding:12px;
-}
-
-.video-card h3{padding:10px;font-size:14px}
 </style>
 </head>
 
@@ -98,19 +69,19 @@ padding:12px;
 
 <div class="container">
 
-<h1>América vs Millonarios EN VIVO ⚽</h1>
+<h1>Partidos en vivo ⚽ Pasto vs Santa Fe y Millonarios vs Tolima</h1>
 
-<!-- 🔥 BANNERS (AMÉRICA PRIMERO) -->
+<!-- BANNERS -->
 <div class="banner-grid">
 
 <div class="banner">
-<img src="estadio-pascual-america.jpg">
-<div class="overlay">🔴 EN VIVO</div>
+<img src="ESTADIO PASTO.jpg">
+<div class="overlay" id="estado1">PRÓXIMA TRANSMISIÓN</div>
 </div>
 
 <div class="banner">
-<img src="EL CAMPIN SANTA FE.jpg">
-<div class="overlay">FINALIZADO</div>
+<img src="ESTADIO MILLONARIOS 1.JPG">
+<div class="overlay" id="estado2">PRÓXIMA TRANSMISIÓN</div>
 </div>
 
 </div>
@@ -119,61 +90,68 @@ padding:12px;
 <div class="cards">
 
 <div class="card">
-<h2>AMÉRICA 🆚 MILLONARIOS</h2>
-<p>📅 Hoy • Domingo 19 de abril</p>
-<p>🕣 8:30 PM</p>
+<h2>PASTO 🆚 SANTA FE</h2>
+<p id="fecha1"></p>
+<p>🕕 Partido: <b>6:00 PM</b></p>
+<p>🎙️ Transmisión: <b>5:30 PM</b></p>
 
-<a class="boton" href="/america-vs-millonarios-en-vivo.html">
-🔴 VER PARTIDO EN VIVO
+<a class="boton" href="/pasto-vs-santafe-en-vivo.html">
+🔴 VER PARTIDO
 </a>
 </div>
 
 <div class="card">
-<h2>SANTA FE 🆚 CÚCUTA</h2>
-<p>📅 Hoy • Domingo 19 de abril</p>
-<p>🕑 2:00 PM</p>
+<h2>MILLONARIOS 🆚 TOLIMA</h2>
+<p id="fecha2"></p>
+<p>🕗 Partido: <b>8:00 PM</b></p>
+<p>🎙️ Transmisión: <b>Después del partido anterior</b></p>
 
-<a class="boton" href="/santafe-vs-cucuta-en-vivo.html">
-VER REPETICIÓN
+<a class="boton" href="/millonarios-vs-tolima-en-vivo.html">
+🔴 VER PARTIDO
 </a>
 </div>
 
 </div>
 
-<!-- 🔴 LIVE PRINCIPAL (AMÉRICA) -->
-<div class="player">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/26419154254360501&show_text=false" allowfullscreen></iframe>
-</div>
-
-<!-- REPLAYS (SIN CAMBIOS) -->
-<div class="replays">
-<h2>📺 PARTIDOS ANTERIORES</h2>
-
-<div class="grid">
-
-<div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
-<img src="repeticion-tolima-santa-fe.JPG">
-<div class="play">▶</div>
-<h3>Tolima vs Santa Fe</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
-<img src="repeticion-jaguares-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Jaguares vs Millonarios</h3>
-</div>
-
-</div>
-
-</div>
+<!-- PLAYER -->
+<div class="player" id="player"></div>
 
 </div>
 
 <script>
-function playVideo(id){
-const player=document.querySelector(".player");
-player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
+// 📅 FECHA (MAÑANA)
+const fechaEvento = new Date();
+fechaEvento.setDate(fechaEvento.getDate() + 1);
+
+// TEXTO
+const ahora = new Date();
+const texto = (ahora.getDate() === fechaEvento.getDate())
+? "📅 Hoy"
+: "📅 Mañana";
+
+document.getElementById("fecha1").innerHTML = texto;
+document.getElementById("fecha2").innerHTML = texto;
+
+// ⏱ HORARIOS
+const pasto = new Date(fechaEvento);
+pasto.setHours(17,30,0,0);
+
+// duración estimada partido (2h)
+const millonarios = new Date(fechaEvento);
+millonarios.setHours(19,45,0,0);
+
+function actualizar(){
+const now = new Date().getTime();
+
+document.getElementById("estado1").innerHTML =
+(now >= pasto.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
+
+document.getElementById("estado2").innerHTML =
+(now >= millonarios.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
 }
+
+setInterval(actualizar,1000);
+actualizar();
 </script>
 
 </body>
