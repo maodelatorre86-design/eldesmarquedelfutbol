@@ -4,64 +4,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pasto vs Santa Fe y Millonarios vs Tolima EN VIVO ⚽</title>
+<title>Ver Pasto vs Santa Fe EN VIVO hoy ⚽ Millonarios vs Tolima en vivo gratis</title>
 
-<meta name="description" content="Ver Pasto vs Santa Fe y Millonarios vs Tolima en vivo gratis.">
+<meta name="description" content="Ver Pasto vs Santa Fe en vivo hoy gratis y Millonarios vs Tolima en vivo online. Transmisión completa con narración en español.">
+
+<meta name="keywords" content="Pasto vs Santa Fe en vivo, Millonarios vs Tolima en vivo, fútbol colombiano en vivo hoy, ver partidos gratis">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Pasto vs Santa Fe EN VIVO ⚽">
+<meta property="og:description" content="Ver partido en vivo gratis">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/Estadio-Libertad-Pasto.jpg">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{margin:0;font-family:Arial;background:#0b0f19;color:white;text-align:center}
-header{background:#111a33;padding:18px;font-size:22px;font-weight:800}
-.container{max-width:1100px;margin:auto;padding:15px}
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(180deg,#0b0f19,#06080f);
+color:white;
+}
 
-.logo img{width:70px;margin-bottom:10px}
+/* HEADER */
+header{
+background:#111a33;
+padding:14px;
+text-align:center;
+font-weight:800;
+font-size:18px;
+}
+
+.logo img{
+width:55px;
+margin-bottom:5px;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:12px;
+}
 
 /* BANNERS */
-.banner-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.banner{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
-.banner img{width:100%;height:100%;object-fit:cover}
+.banner-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
 
-.overlay{
+.banner{
+position:relative;
+aspect-ratio:16/9;
+border-radius:14px;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.banner::after{
+content:"";
 position:absolute;
-top:50%;left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,.7);
-padding:12px 18px;
-border-radius:10px;
-font-weight:bold;
+bottom:0;
+left:0;
+width:100%;
+height:60%;
+background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.badge{
+position:absolute;
+top:10px;
+left:10px;
+padding:5px 10px;
+font-size:11px;
+border-radius:6px;
+background:#333;
+}
+
+.live{
+background:red;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
+
+.banner-text{
+position:absolute;
+bottom:10px;
+left:10px;
+}
+
+.banner-text h3{
+margin:0;
+font-size:14px;
+}
+
+.banner-text p{
+margin:2px 0;
+font-size:12px;
 }
 
 /* CARDS */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
-.card{background:#111a33;padding:18px;border-radius:12px}
-
-.boton{
-display:inline-block;margin-top:12px;
-background:#00d4ff;color:#000;
-padding:10px 14px;border-radius:8px;
-text-decoration:none;font-weight:bold;
+.cards{
+margin-top:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
-/* 🎬 REPLAYS (TU SISTEMA ORIGINAL) */
-.replays{margin-top:30px;text-align:left}
+.card{
+background:#111a33;
+border-radius:12px;
+padding:14px;
+}
+
+.card h2{
+margin:0 0 8px;
+font-size:14px;
+}
+
+/* BOTÓN */
+.boton{
+display:block;
+margin-top:10px;
+background:linear-gradient(90deg,#00d4ff,#00ffa3);
+color:#000;
+padding:10px;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* PLAYER */
+.player{
+margin-top:15px;
+display:none;
+aspect-ratio:16/9;
+}
+
+.player iframe{
+width:100%;
+height:100%;
+border-radius:12px;
+}
+
+/* REPLAYS */
+.replays{
+margin-top:25px;
+}
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
 }
 
 .video-card{
 background:#111a33;
-border-radius:12px;
+border-radius:10px;
 overflow:hidden;
 cursor:pointer;
 position:relative;
-transition:transform 0.2s;
 }
-
-.video-card:hover{transform:scale(1.03)}
 
 .video-card img{width:100%}
 
@@ -70,25 +187,16 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:40px;
+font-size:22px;
 background:rgba(0,0,0,.6);
+padding:6px;
 border-radius:50%;
-padding:12px;
 }
 
-.video-card h3{padding:10px;font-size:14px}
-
-.player{
-margin-top:20px;
-display:none;
-aspect-ratio:16/9
-}
-
-.player iframe{
-width:100%;
-height:100%;
-border:0;
-border-radius:12px
+/* MOBILE */
+@media (max-width:600px){
+.banner-grid{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -99,104 +207,71 @@ border-radius:12px
 <div class="logo">
 <img src="EJEMPLO LOGO 2 (2).png">
 </div>
-⚽ EL DESMARQUE DEL FÚTBOL — EN VIVO
+⚽ EL DESMARQUE DEL FÚTBOL
 </header>
 
 <div class="container">
 
-<h1>Partidos en vivo ⚽ Pasto vs Santa Fe y Millonarios vs Tolima</h1>
+<h1>Pasto vs Santa Fe EN VIVO hoy ⚽ Millonarios vs Tolima</h1>
 
-<!-- 🔥 BANNERS -->
+<p>
+Ver Pasto vs Santa Fe en vivo hoy gratis y Millonarios vs Tolima en vivo online. Disfruta el fútbol colombiano en vivo con transmisión completa.
+</p>
+
+<!-- BANNERS -->
 <div class="banner-grid">
 
 <div class="banner">
 <img src="Estadio-Libertad-Pasto.jpg">
-<div class="overlay" id="estado1">PRÓXIMA TRANSMISIÓN</div>
+<div class="badge" id="badge1">PRÓXIMA</div>
+<div class="banner-text">
+<h3>Pasto 🆚 Santa Fe</h3>
+<p>6:00 PM • 5:30 PM</p>
+</div>
 </div>
 
 <div class="banner">
 <img src="ESTADIO MILLONARIOS 1.JPG">
-<div class="overlay" id="estado2">PRÓXIMA TRANSMISIÓN</div>
+<div class="badge" id="badge2">PRÓXIMA</div>
+<div class="banner-text">
+<h3>Millonarios 🆚 Tolima</h3>
+<p>8:00 PM</p>
+</div>
 </div>
 
 </div>
 
-<!-- INFO -->
+<!-- CARDS -->
 <div class="cards">
 
 <div class="card">
 <h2>PASTO 🆚 SANTA FE</h2>
-<p id="fecha1"></p>
-<p>🕕 Partido: <b>6:00 PM</b></p>
-<p>🎙️ Transmisión: <b>5:30 PM</b></p>
-
-<a class="boton" href="/pasto-vs-santafe-en-vivo.html">
-🔴 VER PARTIDO
-</a>
+<a class="boton" href="/pasto-vs-santafe-en-vivo.html">VER PARTIDO</a>
 </div>
 
 <div class="card">
 <h2>MILLONARIOS 🆚 TOLIMA</h2>
-<p id="fecha2"></p>
-<p>🕗 Partido: <b>8:00 PM</b></p>
-<p>🎙️ Transmisión: <b>Después del partido anterior</b></p>
-
-<a class="boton" href="/millonarios-vs-tolima-en-vivo.html">
-🔴 VER PARTIDO
-</a>
+<a class="boton" href="/millonarios-vs-tolima-en-vivo.html">VER PARTIDO</a>
 </div>
 
 </div>
 
-<!-- PLAYER (NO TOCADO) -->
 <div id="player" class="player"></div>
 
-<!-- 🎬 REPLAYS COMPLETOS (NO MODIFICADOS) -->
+<!-- REPLAYS -->
 <div class="replays">
-<h2>📺 PARTIDOS ANTERIORES</h2>
+<h2>📺 Repeticiones</h2>
 
 <div class="grid">
 
 <div class="video-card" onclick="playVideo('1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl')">
 <img src="repeticion-tolima-santa-fe.JPG">
 <div class="play">▶</div>
-<h3>Tolima vs Santa Fe</h3>
 </div>
 
 <div class="video-card" onclick="playVideo('14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1')">
 <img src="repeticion-jaguares-millonarios.JPG">
 <div class="play">▶</div>
-<h3>Jaguares vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr')">
-<img src="repeticion-santafe-llaneros.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Llaneros</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7')">
-<img src="repeticion-millonarios-fortaleza.JPG">
-<div class="play">▶</div>
-<h3>Millonarios vs Fortaleza</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('10BF9ftY7gIe_37mbvA1VLcVe1jSrervM')">
-<img src="repeticion-bucaramanga-santafe.JPG">
-<div class="play">▶</div>
-<h3>Bucaramanga vs Santa Fe</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy')">
-<img src="repeticion-once-caldas-millonarios.JPG">
-<div class="play">▶</div>
-<h3>Once Caldas vs Millonarios</h3>
-</div>
-
-<div class="video-card" onclick="playVideo('1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG')">
-<img src="repeticion-santafe-medellin.JPG">
-<div class="play">▶</div>
-<h3>Santa Fe vs Medellín</h3>
 </div>
 
 </div>
@@ -206,20 +281,9 @@ border-radius:12px
 </div>
 
 <script>
-// 📅 FECHA MAÑANA
 const fechaEvento = new Date();
-fechaEvento.setDate(fechaEvento.getDate() + 1);
+fechaEvento.setDate(fechaEvento.getDate()+1);
 
-const ahora = new Date();
-
-const texto = (ahora.getDate() === fechaEvento.getDate())
-? "📅 Hoy"
-: "📅 Mañana";
-
-document.getElementById("fecha1").innerHTML = texto;
-document.getElementById("fecha2").innerHTML = texto;
-
-// ⏱ HORARIOS
 const pasto = new Date(fechaEvento);
 pasto.setHours(17,30,0,0);
 
@@ -229,22 +293,38 @@ millos.setHours(19,45,0,0);
 function actualizar(){
 const now = new Date().getTime();
 
-document.getElementById("estado1").innerHTML =
-(now >= pasto.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
+if(now >= pasto.getTime()){
+document.getElementById("badge1").innerHTML="🔴 EN VIVO";
+document.getElementById("badge1").classList.add("live");
+}
 
-document.getElementById("estado2").innerHTML =
-(now >= millos.getTime()) ? "🔴 EN VIVO" : "PRÓXIMA TRANSMISIÓN";
+if(now >= millos.getTime()){
+document.getElementById("badge2").innerHTML="🔴 EN VIVO";
+document.getElementById("badge2").classList.add("live");
+}
 }
 
 setInterval(actualizar,1000);
 actualizar();
 
-// 🎬 PLAYER ORIGINAL
 function playVideo(id){
 const player=document.getElementById("player");
 player.style.display="block";
 player.innerHTML=`<iframe src="https://drive.google.com/file/d/${id}/preview" allowfullscreen></iframe>`;
-window.scrollTo({top:player.offsetTop-20,behavior:'smooth'});
+}
+</script>
+
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SportsEvent",
+"name":"Pasto vs Santa Fe",
+"startDate":"2026-04-20T18:00:00-05:00",
+"competitor":[
+{"@type":"SportsTeam","name":"Pasto"},
+{"@type":"SportsTeam","name":"Santa Fe"}
+]
 }
 </script>
 
