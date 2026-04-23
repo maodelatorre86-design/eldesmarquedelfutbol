@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pasto vs Santa Fe EN VIVO ⚽ Millonarios vs Tolima</title>
-
-<link rel="icon" href="EJEMPLO LOGO 2 (2).png">
+<title>Pasto vs Santa Fe EN VIVO</title>
 
 <style>
 body{
@@ -24,15 +22,9 @@ font-weight:bold;
 }
 
 .container{
-max-width:1200px;
+max-width:1000px;
 margin:auto;
 padding:15px;
-}
-
-.banner-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
 }
 
 /* BANNER */
@@ -49,7 +41,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* 🔥 overlay corregido */
 .banner::after{
 content:"";
 position:absolute;
@@ -80,20 +71,20 @@ color:#ffe600;
 font-weight:900;
 }
 
-/* BOTÓN */
-.banner-btn{
-position:absolute;
-bottom:15px;
-right:15px;
-z-index:3;
-background:#e50914;
-padding:10px;
-border-radius:8px;
-color:white;
-text-decoration:none;
-font-weight:bold;
+/* PLAYER */
+.player{
+margin-top:15px;
+aspect-ratio:16/9;
+background:#000;
+border-radius:12px;
+overflow:hidden;
 }
 
+.player iframe{
+width:100%;
+height:100%;
+border:0;
+}
 </style>
 </head>
 
@@ -103,9 +94,6 @@ font-weight:bold;
 
 <div class="container">
 
-<div class="banner-grid">
-
-<!-- PARTIDO 1 -->
 <div class="banner">
 <img src="Estadio-Libertad-Pasto.jpg">
 
@@ -113,28 +101,15 @@ font-weight:bold;
 <div class="match">PASTO <span>VS</span> SANTA FE</div>
 <div class="time">5:30 PM / 6:00 PM</div>
 </div>
-
-<a class="banner-btn" href="./pasto-vs-santafe-en-vivo.html">
-VER PARTIDO
-</a>
-
 </div>
 
-<!-- PARTIDO 2 -->
-<div class="banner">
-<img src="ESTADIO MILLONARIOS 1.JPG">
-
-<div class="banner-content">
-<div class="match">MILLONARIOS <span>VS</span> TOLIMA</div>
-<div class="time">8:00 PM</div>
-</div>
-
-<a class="banner-btn" href="./millonarios-vs-tolima-en-vivo.html">
-VER PARTIDO
-</a>
-
-</div>
-
+<!-- 🔥 PLAYER REAL -->
+<div class="player">
+<iframe 
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1247135337187690&show_text=false&width=100%" 
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+allowfullscreen="true">
+</iframe>
 </div>
 
 </div>
