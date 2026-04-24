@@ -4,73 +4,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Millonarios vs Tolima | Fecha 18 Liga Colombiana</title>
+<title>Millonarios vs Tolima EN VIVO</title>
 
-<meta name="description" content="Millonarios vs Tolima por la fecha 18 de la Liga Colombiana. Partido a las 8:00 PM.">
+<meta name="description" content="Ver Millonarios vs Tolima en vivo por la fecha 18 de la Liga Colombiana.">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{margin:0;font-family:Arial;background:#060b16;color:white;}
-header{background:#0c162b;padding:15px;text-align:center;font-weight:bold;}
+body{
+margin:0;
+font-family:Arial;
+background:#060b16;
+color:white;
+}
 
-.container{max-width:1000px;margin:auto;padding:15px;}
+header{
+background:#0c162b;
+padding:15px;
+text-align:center;
+font-weight:bold;
+}
 
+.container{
+max-width:1000px;
+margin:auto;
+padding:15px;
+}
+
+/* BANNER */
 .banner{
 position:relative;
 border-radius:16px;
 overflow:hidden;
-aspect-ratio:16/9;
 }
 
 .banner img{
 width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.banner::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.95));
-pointer-events:none;
+height:auto;
+display:block;
 }
 
 .banner-content{
 position:absolute;
 bottom:15px;
 left:15px;
-z-index:2;
 }
 
 .match{
-font-size:30px;
+font-size:28px;
 font-weight:900;
 }
 
-.match span{color:#ffb300;}
+.match span{
+color:#ffb300;
+}
 
 .time{
-font-size:20px;
+font-size:18px;
 color:#ffe600;
-font-weight:900;
+font-weight:bold;
 margin-top:5px;
 }
 
-.info{
-text-align:center;
-margin-top:15px;
-font-size:14px;
-opacity:.9;
+/* PLAYER */
+.player{
+margin-top:20px;
 }
 
-.fecha{
-text-align:center;
-margin-top:10px;
-color:#aaa;
+.player iframe{
+width:100%;
+height:500px; /* 🔥 IMPORTANTE */
+border:none;
+border-radius:12px;
 }
 
+/* BOTÓN VOLVER */
 .boton{
 display:block;
 margin-top:15px;
@@ -91,8 +99,6 @@ font-weight:bold;
 
 <div class="container">
 
-<p id="fechaTexto" class="fecha"></p>
-
 <div class="banner">
 <img src="ESTADIO MILLONARIOS 1.JPG">
 
@@ -100,31 +106,19 @@ font-weight:bold;
 <div class="match">MILLONARIOS <span>VS</span> TOLIMA</div>
 <div class="time">🕗 8:00 PM</div>
 </div>
-
 </div>
 
-<div class="info">
-Fecha 18 Liga Colombiana<br>
-Narración: Álvaro Malkún Salazar 🎙️<br>
-Análisis: Mauricio Guerrero y Jaime Vélez
+<!-- 🔴 VIDEO FUNCIONANDO -->
+<div class="player">
+<iframe 
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/100063705559520/videos/1264326519187058"
+allowfullscreen>
+</iframe>
 </div>
 
-<a class="boton" href="./index.html">⬅ Volver</a>
+<a class="boton" href="./index.html">⬅ Volver al inicio</a>
 
 </div>
-
-<script>
-const evento=new Date(2026,3,23);
-const ahora=new Date();
-
-const esHoy=
-ahora.getFullYear()===evento.getFullYear() &&
-ahora.getMonth()===evento.getMonth() &&
-ahora.getDate()===evento.getDate();
-
-document.getElementById("fechaTexto").innerHTML=
-esHoy?"📅 Hoy • 23 de abril":"📅 Mañana • 23 de abril";
-</script>
 
 </body>
 </html>
