@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pasto vs Santa Fe EN VIVO ⚽ Millonarios vs Tolima</title>
+<title>Millonarios vs Sao Paulo EN VIVO ⚽ Copa Sudamericana</title>
 
-<meta name="description" content="Ver Pasto vs Santa Fe y Millonarios vs Tolima en vivo. Liga Colombiana Fecha 18.">
+<meta name="description" content="Millonarios vs Sao Paulo en vivo por Copa Sudamericana. Narración de Álvaro Malkún y análisis profesional.">
+
 <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="Pasto vs Santa Fe EN VIVO ⚽">
-<meta property="og:description" content="Transmisión en vivo del fútbol colombiano">
-<meta property="og:image" content="Estadio-Libertad-Pasto.jpg">
+<meta property="og:title" content="Millonarios vs Sao Paulo EN VIVO ⚽">
+<meta property="og:description" content="Transmisión en vivo del partido">
+<meta property="og:image" content="ESTADIO MILLONARIOS 1.JPG">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -56,7 +57,6 @@ height:auto;
 display:block;
 }
 
-/* overlay (NO bloquea clics) */
 .banner::after{
 content:"";
 position:absolute;
@@ -65,7 +65,6 @@ background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.9));
 pointer-events:none;
 }
 
-/* TEXTO */
 .banner-content{
 position:absolute;
 bottom:15px;
@@ -74,7 +73,7 @@ z-index:2;
 }
 
 .match{
-font-size:28px;
+font-size:30px;
 font-weight:900;
 }
 
@@ -87,6 +86,27 @@ font-size:18px;
 color:#ffe600;
 font-weight:bold;
 margin-top:5px;
+}
+
+.extra{
+margin-top:10px;
+font-size:13px;
+line-height:1.4;
+opacity:.9;
+max-width:80%;
+}
+
+/* BADGE */
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:#e50914;
+padding:6px 12px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+z-index:3;
 }
 
 /* BOTÓN */
@@ -103,10 +123,6 @@ text-decoration:none;
 font-weight:bold;
 }
 
-.banner-btn:hover{
-opacity:.9;
-}
-
 /* MOBILE */
 @media(max-width:700px){
 .banner-grid{grid-template-columns:1fr}
@@ -121,9 +137,38 @@ opacity:.9;
 
 <div class="container">
 
+<!-- 🔥 PARTIDO PRINCIPAL -->
+<div class="banner" style="margin-bottom:20px;">
+<img src="ESTADIO MILLONARIOS 1.JPG">
+
+<div class="badge">PRÓXIMA TRANSMISIÓN</div>
+
+<div class="banner-content">
+
+<div class="match">
+MILLONARIOS <span>VS</span> SAO PAULO 🇧🇷
+</div>
+
+<div class="time">🎙️ 6:45 PM — INICIO TRANSMISIÓN</div>
+<div class="time">🕢 7:30 PM — INICIO DEL PARTIDO</div>
+
+<div class="extra">
+🏆 Copa Sudamericana<br>
+🎤 Narración: Álvaro Malkún (más de 23 años acompañando a los equipos de Bogotá)<br>
+📊 Análisis: Mauricio Guerrero y Jaime Vélez
+</div>
+
+</div>
+
+<a class="banner-btn" href="./millonarios-vs-sao-paulo-en-vivo.html">
+VER TRANSMISIÓN
+</a>
+
+</div>
+
+<!-- 🔵 OTROS PARTIDOS -->
 <div class="banner-grid">
 
-<!-- PARTIDO 1 -->
 <div class="banner">
 <img src="Estadio-Libertad-Pasto.jpg">
 
@@ -137,7 +182,6 @@ VER PARTIDO
 </a>
 </div>
 
-<!-- PARTIDO 2 -->
 <div class="banner">
 <img src="ESTADIO MILLONARIOS 1.JPG">
 
