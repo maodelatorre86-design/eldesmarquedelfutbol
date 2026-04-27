@@ -6,17 +6,15 @@
 
 <title>Millonarios vs Sao Paulo EN VIVO hoy ⚽ Copa Sudamericana</title>
 
-<meta name="description" content="Ver Millonarios vs Sao Paulo en vivo hoy por la Copa Sudamericana. Transmisión desde las 6:45 PM y partido a las 7:30 PM con narración de Álvaro Malkún.">
+<meta name="description" content="Millonarios vs Sao Paulo en vivo por Copa Sudamericana. Transmisión desde las 6:45 PM y partido a las 7:30 PM con Álvaro Malkún.">
 
-<meta name="keywords" content="Millonarios vs Sao Paulo en vivo, Copa Sudamericana en vivo, fútbol en vivo hoy">
+<meta name="keywords" content="Millonarios vs Sao Paulo en vivo, Copa Sudamericana en vivo">
 
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eldesmarquedelfutbol.com/millonarios-vs-sao-paulo-en-vivo.html">
 
 <meta property="og:title" content="Millonarios vs Sao Paulo EN VIVO ⚽">
-<meta property="og:description" content="Transmisión en vivo del partido Millonarios vs Sao Paulo">
 <meta property="og:image" content="ESTADIO MILLONARIOS 1.JPG">
-<meta property="og:type" content="website">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -33,7 +31,6 @@ background:#0c162b;
 padding:14px;
 text-align:center;
 font-weight:bold;
-font-size:18px;
 }
 
 .container{
@@ -42,7 +39,7 @@ margin:auto;
 padding:12px;
 }
 
-/* 🔥 BLOQUE PRINCIPAL */
+/* BLOQUE */
 .banner-main{
 display:grid;
 grid-template-columns:1.1fr 1fr;
@@ -51,7 +48,6 @@ align-items:center;
 background:#0f1b33;
 border-radius:14px;
 overflow:hidden;
-margin-bottom:20px;
 }
 
 .banner-main img{
@@ -60,7 +56,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* INFO */
 .info{
 padding:15px;
 }
@@ -96,6 +91,12 @@ opacity:.9;
 line-height:1.4;
 }
 
+.fecha{
+margin-top:6px;
+font-size:13px;
+color:#aaa;
+}
+
 /* PLAYER */
 .player{
 margin-top:15px;
@@ -113,17 +114,15 @@ border-radius:12px;
 display:inline-block;
 margin-top:12px;
 background:#00d4ff;
-padding:10px 14px;
+padding:10px;
 border-radius:8px;
 color:#000;
 text-decoration:none;
 font-weight:bold;
 }
 
-/* MOBILE */
 @media(max-width:700px){
 .banner-main{grid-template-columns:1fr;}
-.match{font-size:20px;}
 .player iframe{height:300px;}
 }
 </style>
@@ -135,35 +134,36 @@ font-weight:bold;
 
 <div class="container">
 
-<!-- 🔥 INFO DEL PARTIDO -->
 <div class="banner-main">
 
 <img src="ESTADIO MILLONARIOS 1.JPG">
 
 <div class="info">
 
-<div class="badge">EN VIVO</div>
+<div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="match">
 MILLONARIOS <span>VS</span> SAO PAULO 🇧🇷
 </div>
+
+<div id="fechaTexto" class="fecha"></div>
 
 <div class="time">🎙️ 6:45 PM — TRANSMISIÓN</div>
 <div class="time">🕢 7:30 PM — PARTIDO</div>
 
 <div class="extra">
 🏆 Copa Sudamericana<br>
-🎤 Narración: Álvaro Malkún (más de 23 años acompañando a los equipos de Bogotá)<br>
-📊 Análisis: Mauricio Guerrero y Jaime Vélez
+🎤 Álvaro Malkún (23+ años acompañando a Bogotá)<br>
+📊 Mauricio Guerrero y Jaime Vélez
 </div>
 
 </div>
 </div>
 
-<!-- 🔴 VIDEO -->
+<!-- VIDEO -->
 <div class="player">
 <iframe 
-src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_EL_LINK_DEL_LIVE&show_text=false"
+src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_EL_LINK"
 allowfullscreen>
 </iframe>
 </div>
@@ -172,17 +172,28 @@ allowfullscreen>
 
 </div>
 
-<!-- 🔍 SEO EXTRA -->
+<script>
+// 🔥 FECHA DINÁMICA
+const evento = new Date(2026,3,28); // 28 abril
+const ahora = new Date();
+
+const esHoy =
+ahora.getFullYear() === evento.getFullYear() &&
+ahora.getMonth() === evento.getMonth() &&
+ahora.getDate() === evento.getDate();
+
+document.getElementById("fechaTexto").innerHTML =
+esHoy
+? "📅 Hoy • martes 28 de abril"
+: "📅 Mañana • martes 28 de abril";
+</script>
+
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
 "@type":"SportsEvent",
 "name":"Millonarios vs Sao Paulo",
-"startDate":"2026-04-23T19:30:00-05:00",
-"competitor":[
-{"@type":"SportsTeam","name":"Millonarios"},
-{"@type":"SportsTeam","name":"Sao Paulo"}
-]
+"startDate":"2026-04-28T19:30:00-05:00"
 }
 </script>
 
