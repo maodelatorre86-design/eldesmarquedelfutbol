@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Millonarios vs Sao Paulo EN VIVO ⚽ + Fútbol colombiano</title>
+<title>Millonarios vs Sao Paulo EN VIVO ⚽ Copa Sudamericana</title>
 
-<meta name="description" content="Millonarios vs Sao Paulo en vivo por Copa Sudamericana y más partidos del fútbol colombiano.">
+<meta name="description" content="Millonarios vs Sao Paulo en vivo por Copa Sudamericana. Narración de Álvaro Malkún y análisis profesional.">
 
 <meta name="robots" content="index, follow">
 
@@ -37,7 +37,7 @@ margin:auto;
 padding:12px;
 }
 
-/* 🔥 DESTACADO COMPACTO */
+/* 🔥 BLOQUE PRINCIPAL */
 .banner-main{
 display:grid;
 grid-template-columns:1.1fr 1fr;
@@ -46,7 +46,7 @@ align-items:center;
 background:#0f1b33;
 border-radius:14px;
 overflow:hidden;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .banner-main img{
@@ -55,7 +55,7 @@ height:100%;
 object-fit:cover;
 }
 
-/* TEXTO */
+/* INFO */
 .info{
 padding:15px;
 }
@@ -75,7 +75,9 @@ font-size:24px;
 font-weight:900;
 }
 
-.match span{color:#ffb300;}
+.match span{
+color:#ffb300;
+}
 
 .time{
 font-size:16px;
@@ -103,64 +105,9 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* GRID PARTIDOS */
-.banner-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.banner{
-position:relative;
-border-radius:12px;
-overflow:hidden;
-}
-
-.banner img{
-width:100%;
-display:block;
-}
-
-.banner-content{
-position:absolute;
-bottom:10px;
-left:10px;
-}
-
-.banner::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom, transparent, rgba(0,0,0,.9));
-pointer-events:none;
-}
-
-.match-small{
-font-size:18px;
-font-weight:900;
-}
-
-.time-small{
-font-size:14px;
-color:#ffe600;
-}
-
-.banner-btn{
-position:absolute;
-bottom:10px;
-right:10px;
-background:#e50914;
-padding:8px 10px;
-border-radius:6px;
-color:white;
-text-decoration:none;
-font-size:12px;
-font-weight:bold;
-}
-
 /* 🎬 REPLAYS */
 .replays{
-margin-top:25px;
+margin-top:20px;
 }
 
 .grid{
@@ -208,7 +155,7 @@ grid-template-columns:1fr;
 
 <div class="container">
 
-<!-- 🔥 DESTACADO -->
+<!-- 🔥 PARTIDO PRINCIPAL -->
 <div class="banner-main">
 
 <img src="ESTADIO MILLONARIOS 1.JPG">
@@ -226,7 +173,7 @@ MILLONARIOS <span>VS</span> SAO PAULO 🇧🇷
 
 <div class="extra">
 🏆 Copa Sudamericana<br>
-🎤 Álvaro Malkún (23+ años narrando en Bogotá)<br>
+🎤 Álvaro Malkún (más de 23 años acompañando a los equipos de Bogotá)<br>
 📊 Mauricio Guerrero & Jaime Vélez
 </div>
 
@@ -237,34 +184,7 @@ VER TRANSMISIÓN
 </div>
 </div>
 
-<!-- 🔵 OTROS PARTIDOS -->
-<div class="banner-grid">
-
-<div class="banner">
-<img src="Estadio-Libertad-Pasto.jpg">
-
-<div class="banner-content">
-<div class="match-small">PASTO vs SANTA FE</div>
-<div class="time-small">5:30 / 6:00 PM</div>
-</div>
-
-<a class="banner-btn" href="./pasto-vs-santafe-en-vivo.html">VER</a>
-</div>
-
-<div class="banner">
-<img src="ESTADIO MILLONARIOS 1.JPG">
-
-<div class="banner-content">
-<div class="match-small">MILLONARIOS vs TOLIMA</div>
-<div class="time-small">8:00 PM</div>
-</div>
-
-<a class="banner-btn" href="./millonarios-vs-tolima-en-vivo.html">VER</a>
-</div>
-
-</div>
-
-<!-- 🎬 REPLAYS (NO SE BORRAN) -->
+<!-- 🎬 REPLAYS -->
 <div class="replays">
 <h2>📺 REPLAYS</h2>
 
