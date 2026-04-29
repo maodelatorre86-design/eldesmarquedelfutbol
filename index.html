@@ -11,6 +11,7 @@
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Millonarios vs Sao Paulo EN VIVO ⚽">
+<meta property="og:description" content="Transmisión en vivo del partido">
 <meta property="og:image" content="ESTADIO MILLONARIOS 1.JPG">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
@@ -28,7 +29,6 @@ background:#0c162b;
 padding:14px;
 text-align:center;
 font-weight:bold;
-font-size:18px;
 }
 
 .container{
@@ -55,7 +55,6 @@ height:100%;
 object-fit:cover;
 }
 
-/* INFO */
 .info{
 padding:15px;
 }
@@ -75,9 +74,7 @@ font-size:24px;
 font-weight:900;
 }
 
-.match span{
-color:#ffb300;
-}
+.match span{color:#ffb300;}
 
 .time{
 font-size:16px;
@@ -91,6 +88,12 @@ margin-top:8px;
 font-size:13px;
 opacity:.9;
 line-height:1.4;
+}
+
+.fecha{
+margin-top:6px;
+font-size:13px;
+color:#aaa;
 }
 
 /* BOTÓN */
@@ -121,7 +124,6 @@ background:#0f1b33;
 border-radius:10px;
 overflow:hidden;
 position:relative;
-cursor:pointer;
 }
 
 .video-card img{
@@ -139,7 +141,7 @@ padding:6px;
 border-radius:50%;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media(max-width:700px){
 .banner-main{
 grid-template-columns:1fr;
@@ -168,13 +170,15 @@ grid-template-columns:1fr;
 MILLONARIOS <span>VS</span> SAO PAULO 🇧🇷
 </div>
 
+<div id="fechaTexto" class="fecha"></div>
+
 <div class="time">🎙️ 6:45 PM — TRANSMISIÓN</div>
 <div class="time">🕢 7:30 PM — PARTIDO</div>
 
 <div class="extra">
 🏆 Copa Sudamericana<br>
-🎤 Álvaro Malkún (más de 23 años acompañando a los equipos de Bogotá)<br>
-📊 Mauricio Guerrero & Jaime Vélez
+🎤 Álvaro Malkún (23+ años acompañando a Bogotá)<br>
+📊 Mauricio Guerrero y Jaime Vélez
 </div>
 
 <a class="btn" href="./millonarios-vs-sao-paulo-en-vivo.html">
@@ -229,6 +233,22 @@ VER TRANSMISIÓN
 </div>
 
 </div>
+
+<script>
+// 📅 FECHA DINÁMICA
+const evento = new Date(2026,3,28);
+const ahora = new Date();
+
+const esHoy =
+ahora.getFullYear() === evento.getFullYear() &&
+ahora.getMonth() === evento.getMonth() &&
+ahora.getDate() === evento.getDate();
+
+document.getElementById("fechaTexto").innerHTML =
+esHoy
+? "📅 Hoy • martes 28 de abril"
+: "📅 Mañana • martes 28 de abril";
+</script>
 
 </body>
 </html>
