@@ -4,39 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transmisión EN VIVO Liga Colombiana ⚽ Domingo 3 de mayo</title>
+<title>Transmisión EN VIVO Liga Colombiana ⚽ 3 de mayo</title>
 
-<meta name="description" content="Transmisión EN VIVO de todos los partidos de la Liga Colombiana. Se definen los 8 clasificados. Domingo 3 de mayo desde las 2:45 PM.">
-
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/">
-
-<meta property="og:title" content="Transmisión EN VIVO Liga Colombiana ⚽">
-<meta property="og:description" content="Todos los partidos en vivo el 3 de mayo">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/Transmision-3-de-mayo.png">
+<meta name="description" content="Transmisión en vivo de todos los partidos de la Liga Colombiana. Domingo 3 de mayo desde las 2:45 PM.">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{margin:0;font-family:Arial;background:#060b16;color:white;}
-header{background:#0c162b;padding:14px;text-align:center;font-weight:bold;font-size:18px;}
+body{
+margin:0;
+font-family:Arial;
+background:#060b16;
+color:white;
+}
 
-.container{max-width:1100px;margin:auto;padding:12px;}
+header{
+background:#0c162b;
+padding:14px;
+text-align:center;
+font-weight:bold;
+}
 
+.container{
+max-width:1200px;
+margin:auto;
+padding:12px;
+}
+
+/* 🔥 BANNER */
 .banner-main{
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:12px;
-align-items:center;
 background:#0f1b33;
 border-radius:14px;
 overflow:hidden;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
-.banner-main img{width:100%;height:100%;object-fit:cover;}
+.banner-main img{
+width:100%;
+height:auto; /* 🔥 clave: NO cortar imagen */
+display:block;
+}
 
-.info{padding:15px;}
+/* INFO */
+.info{
+padding:15px;
+}
 
 .badge{
 background:#e50914;
@@ -48,23 +60,47 @@ display:inline-block;
 margin-bottom:10px;
 }
 
-.title{font-size:26px;font-weight:900;}
+.title{
+font-size:26px;
+font-weight:900;
+}
 
-.time{font-size:16px;color:#ffe600;font-weight:bold;margin-top:6px;}
-
-.extra{margin-top:10px;font-size:13px;opacity:.9;}
-
-.matches{margin-top:10px;font-size:13px;line-height:1.5;}
-
-.btn{
-display:inline-block;
-margin-top:12px;
-background:#e50914;
-padding:10px 14px;
-border-radius:8px;
-color:white;
-text-decoration:none;
+.time{
+font-size:16px;
+color:#ffe600;
 font-weight:bold;
+margin-top:6px;
+}
+
+.extra{
+margin-top:10px;
+font-size:13px;
+opacity:.9;
+}
+
+/* PLAYER */
+.player{
+margin-top:15px;
+border-radius:12px;
+overflow:hidden;
+background:black;
+}
+
+.player iframe{
+width:100%;
+height:520px;
+border:none;
+}
+
+/* 🔴 PLACEHOLDER */
+.placeholder{
+height:520px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#000;
+font-size:20px;
+color:#999;
 }
 
 /* REPLAYS */
@@ -76,8 +112,8 @@ font-weight:bold;
 .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);padding:6px;border-radius:50%;}
 
 @media(max-width:700px){
-.banner-main{grid-template-columns:1fr;}
-.title{font-size:22px;}
+.player iframe,.placeholder{height:280px;}
+.title{font-size:20px;}
 }
 </style>
 </head>
@@ -88,29 +124,24 @@ font-weight:bold;
 
 <div class="container">
 
-<!-- 🔥 EVENTO PRINCIPAL -->
+<!-- 🔥 IMAGEN COMPLETA -->
 <div class="banner-main">
-
 <img src="Transmision-3-de-mayo.png">
+</div>
 
+<!-- INFO -->
 <div class="info">
 
 <div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
 <div class="title">
-TRANSMISIÓN GIGANTE ⚽<br>LIGA COLOMBIANA
+TRANSMISIÓN GIGANTE ⚽
 </div>
 
-<div class="time">🎙️ 2:45 PM — TRANSMISIÓN</div>
-<div class="time">🕞 3:30 PM — TODOS LOS PARTIDOS</div>
+<div class="time">🎙️ 2:45 PM — INICIO</div>
+<div class="time">🕞 3:30 PM — PARTIDOS</div>
 
 <div class="extra">
-🏆 Definición de los 8 clasificados<br>
-🎤 Álvaro Malkún<br>
-📊 Mauricio Guerrero y Jaime Vélez
-</div>
-
-<div class="matches">
 Santa Fe vs Internacional de Bogotá<br>
 Alianza FC vs Millonarios<br>
 Fortaleza vs Bucaramanga<br>
@@ -118,11 +149,15 @@ Medellín vs Águilas Doradas<br>
 Tolima vs Deportivo Cali
 </div>
 
-<a class="btn" href="./transmision-3-de-mayo-en-vivo.html">
-VER TRANSMISIÓN
-</a>
-
 </div>
+
+<!-- 🔴 LIVE AUTOMÁTICO -->
+<div class="player" id="liveContainer">
+
+<div class="placeholder" id="placeholder">
+🔴 La transmisión comenzará a las 2:45 PM
+</div>
+
 </div>
 
 <!-- 🎬 REPLAYS -->
@@ -134,46 +169,21 @@ VER TRANSMISIÓN
 <div class="video-card"><img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-santafe-llaneros.JPG"><div class="play">▶</div></div>
 <div class="video-card"><img src="repeticion-millonarios-fortaleza.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-bucaramanga-santafe.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-once-caldas-millonarios.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-santafe-medellin.JPG"><div class="play">▶</div></div>
 </div>
 
 </div>
 
 </div>
 
-<!-- 🔥 SCHEMA CORREGIDO (SIN ERRORES) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsEvent",
-  "name": "Transmisión Liga Colombiana - Definición de Clasificados",
-  "description": "Transmisión en vivo de todos los partidos de la Liga Colombiana donde se definen los 8 clasificados.",
-  "startDate": "2026-05-03T14:45:00-05:00",
-  "endDate": "2026-05-03T18:00:00-05:00",
-  "image": "https://eldesmarquedelfutbol.com/Transmision-3-de-mayo.png",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+<script>
+// 🔥 CONFIGURAR HORA DEL EVENTO
+const inicio = new Date(2026, 4, 3, 14, 45, 0); // 3 mayo 2:45 PM
+const ahora = new Date();
 
-  "location": {
-    "@type": "VirtualLocation",
-    "url": "https://eldesmarquedelfutbol.com/transmision-3-de-mayo-en-vivo.html"
-  },
-
-  "organizer": {
-    "@type": "Organization",
-    "name": "El Desmarque del Fútbol",
-    "url": "https://eldesmarquedelfutbol.com"
-  },
-
-  "offers": {
-    "@type": "Offer",
-    "url": "https://eldesmarquedelfutbol.com/transmision-3-de-mayo-en-vivo.html",
-    "price": "0",
-    "priceCurrency": "COP",
-    "availability": "https://schema.org/InStock"
-  }
+if(ahora >= inicio){
+document.getElementById("liveContainer").innerHTML = `
+<iframe src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_TU_LINK_DEL_LIVE" allowfullscreen></iframe>
+`;
 }
 </script>
 
