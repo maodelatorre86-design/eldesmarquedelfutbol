@@ -31,7 +31,7 @@ margin:auto;
 padding:12px;
 }
 
-/* 🔥 BANNER */
+/* 🔥 IMAGEN */
 .banner-main{
 background:#0f1b33;
 border-radius:14px;
@@ -41,7 +41,7 @@ margin-bottom:20px;
 
 .banner-main img{
 width:100%;
-height:auto; /* 🔥 clave: NO cortar imagen */
+height:auto;
 display:block;
 }
 
@@ -92,7 +92,7 @@ height:520px;
 border:none;
 }
 
-/* 🔴 PLACEHOLDER */
+/* PLACEHOLDER */
 .placeholder{
 height:520px;
 display:flex;
@@ -101,6 +101,8 @@ justify-content:center;
 background:#000;
 font-size:20px;
 color:#999;
+text-align:center;
+padding:20px;
 }
 
 /* REPLAYS */
@@ -134,9 +136,7 @@ color:#999;
 
 <div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
-<div class="title">
-TRANSMISIÓN GIGANTE ⚽
-</div>
+<div class="title">TRANSMISIÓN GIGANTE ⚽</div>
 
 <div class="time">🎙️ 2:45 PM — INICIO</div>
 <div class="time">🕞 3:30 PM — PARTIDOS</div>
@@ -151,7 +151,7 @@ Tolima vs Deportivo Cali
 
 </div>
 
-<!-- 🔴 LIVE AUTOMÁTICO -->
+<!-- 🔴 LIVE -->
 <div class="player" id="liveContainer">
 
 <div class="placeholder" id="placeholder">
@@ -176,13 +176,13 @@ Tolima vs Deportivo Cali
 </div>
 
 <script>
-// 🔥 CONFIGURAR HORA DEL EVENTO
-const inicio = new Date(2026, 4, 3, 14, 45, 0); // 3 mayo 2:45 PM
+// 🔥 CONFIGURAR INICIO
+const inicio = new Date(2026, 4, 3, 14, 45, 0);
 const ahora = new Date();
 
 if(ahora >= inicio){
 document.getElementById("liveContainer").innerHTML = `
-<iframe src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_TU_LINK_DEL_LIVE" allowfullscreen></iframe>
+<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/923606570674912" allowfullscreen></iframe>
 `;
 }
 </script>
