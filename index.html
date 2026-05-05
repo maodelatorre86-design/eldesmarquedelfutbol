@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transmisión EN VIVO Liga Colombiana ⚽ 3 de mayo</title>
+<title>Santa Fe vs Corinthians EN VIVO ⚽ Copa Libertadores</title>
 
-<meta name="description" content="Transmisión en vivo de todos los partidos de la Liga Colombiana. Domingo 3 de mayo desde las 2:45 PM.">
+<meta name="description" content="Santa Fe vs Corinthians en vivo por Copa Libertadores. Transmisión desde las 6:45 PM y partido a las 7:30 PM.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Santa Fe vs Corinthians EN VIVO ⚽">
+<meta property="og:image" content="SANTA FE CORINTHIANS.png">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -25,62 +30,79 @@ text-align:center;
 font-weight:bold;
 }
 
+/* CONTENEDOR */
 .container{
 max-width:1200px;
 margin:auto;
 padding:12px;
 }
 
-/* 🔥 IMAGEN */
-.banner-main{
-background:#0f1b33;
-border-radius:14px;
+/* 🔥 HERO DOBLE */
+.hero{
+position:relative;
+border-radius:16px;
 overflow:hidden;
 margin-bottom:20px;
 }
 
-.banner-main img{
+/* fondo estadio */
+.hero-bg{
+position:absolute;
+inset:0;
+background:url("EL CAMPIN SANTA FE.jpg") center/cover no-repeat;
+filter:blur(6px) brightness(.4);
+}
+
+/* overlay */
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+text-align:center;
+}
+
+.hero img{
 width:100%;
-height:auto;
-display:block;
+max-height:420px;
+object-fit:contain;
+border-radius:12px;
 }
 
-/* INFO */
-.info{
-padding:15px;
-}
-
+/* BADGE */
 .badge{
-background:#e50914;
-padding:6px 10px;
-border-radius:6px;
-font-size:11px;
-font-weight:bold;
 display:inline-block;
+background:#e50914;
+padding:6px 12px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
 margin-bottom:10px;
 }
 
+/* TITULO */
 .title{
-font-size:26px;
+font-size:28px;
 font-weight:900;
+margin-top:10px;
 }
 
 .time{
-font-size:16px;
+font-size:18px;
 color:#ffe600;
 font-weight:bold;
-margin-top:6px;
+margin-top:5px;
 }
 
+/* INFO */
 .extra{
 margin-top:10px;
-font-size:13px;
+font-size:14px;
 opacity:.9;
 }
 
 /* PLAYER */
 .player{
-margin-top:15px;
+margin-top:20px;
 border-radius:12px;
 overflow:hidden;
 background:black;
@@ -107,15 +129,35 @@ padding:20px;
 
 /* REPLAYS */
 .replays{margin-top:25px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px;
+}
 
-.video-card{background:#0f1b33;border-radius:10px;overflow:hidden;position:relative;}
+.video-card{
+background:#0f1b33;
+border-radius:10px;
+overflow:hidden;
+position:relative;
+}
+
 .video-card img{width:100%;}
-.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);padding:6px;border-radius:50%;}
 
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.6);
+padding:6px;
+border-radius:50%;
+}
+
+/* MOBILE */
 @media(max-width:700px){
+.title{font-size:22px;}
 .player iframe,.placeholder{height:280px;}
-.title{font-size:20px;}
 }
 </style>
 </head>
@@ -126,36 +168,39 @@ padding:20px;
 
 <div class="container">
 
-<!-- 🔥 IMAGEN COMPLETA -->
-<div class="banner-main">
-<img src="Transmision-3-de-mayo.png">
-</div>
+<!-- 🔥 HERO -->
+<div class="hero">
 
-<!-- INFO -->
-<div class="info">
+<div class="hero-bg"></div>
+
+<div class="hero-content">
 
 <div class="badge">PRÓXIMA TRANSMISIÓN</div>
 
-<div class="title">TRANSMISIÓN GIGANTE ⚽</div>
+<img src="SANTA FE CORINTHIANS.png">
 
-<div class="time">🎙️ 2:45 PM — INICIO</div>
-<div class="time">🕞 3:30 PM — PARTIDOS</div>
-
-<div class="extra">
-Santa Fe vs Internacional de Bogotá<br>
-Alianza FC vs Millonarios<br>
-Fortaleza vs Bucaramanga<br>
-Medellín vs Águilas Doradas<br>
-Tolima vs Deportivo Cali
+<div class="title">
+SANTA FE vs CORINTHIANS
 </div>
 
+<div class="time">🎙️ 6:45 PM — TRANSMISIÓN</div>
+<div class="time">🕢 7:30 PM — PARTIDO</div>
+
+<div class="extra">
+🏆 Copa Libertadores<br>
+📍 El Campín de Bogotá<br>
+🎤 Álvaro Malkún<br>
+📊 Mauricio Guerrero y Jaime Vélez
+</div>
+
+</div>
 </div>
 
 <!-- 🔴 LIVE -->
 <div class="player" id="liveContainer">
 
-<div class="placeholder" id="placeholder">
-🔴 La transmisión comenzará a las 2:45 PM
+<div class="placeholder">
+🔴 La transmisión comenzará a las 6:45 PM
 </div>
 
 </div>
@@ -176,13 +221,13 @@ Tolima vs Deportivo Cali
 </div>
 
 <script>
-// 🔥 CONFIGURAR INICIO
-const inicio = new Date(2026, 4, 3, 14, 45, 0);
+// 🔥 ACTIVACIÓN AUTOMÁTICA
+const inicio = new Date(2026, 4, 6, 18, 45, 0); // 6 mayo 6:45 PM
 const ahora = new Date();
 
 if(ahora >= inicio){
 document.getElementById("liveContainer").innerHTML = `
-<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/923606570674912" allowfullscreen></iframe>
+<iframe src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_EL_LINK_DEL_LIVE" allowfullscreen></iframe>
 `;
 }
 </script>
