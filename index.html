@@ -6,7 +6,7 @@
 
 <title>Santa Fe vs Corinthians EN VIVO ⚽ Copa Libertadores</title>
 
-<meta name="description" content="Santa Fe vs Corinthians en vivo por Copa Libertadores. Transmisión desde las 6:45 PM y partido a las 7:30 PM.">
+<meta name="description" content="Santa Fe vs Corinthians en vivo por Copa Libertadores. Miércoles 6 de mayo desde las 6:45 PM.">
 
 <meta name="robots" content="index, follow">
 
@@ -30,14 +30,13 @@ text-align:center;
 font-weight:bold;
 }
 
-/* CONTENEDOR */
 .container{
 max-width:1200px;
 margin:auto;
 padding:12px;
 }
 
-/* 🔥 HERO DOBLE */
+/* HERO */
 .hero{
 position:relative;
 border-radius:16px;
@@ -45,7 +44,6 @@ overflow:hidden;
 margin-bottom:20px;
 }
 
-/* fondo estadio */
 .hero-bg{
 position:absolute;
 inset:0;
@@ -53,7 +51,6 @@ background:url("EL CAMPIN SANTA FE.jpg") center/cover no-repeat;
 filter:blur(6px) brightness(.4);
 }
 
-/* overlay */
 .hero-content{
 position:relative;
 z-index:2;
@@ -86,6 +83,14 @@ font-weight:900;
 margin-top:10px;
 }
 
+/* FECHA */
+.date{
+font-size:15px;
+color:#ccc;
+margin-top:6px;
+}
+
+/* HORAS */
 .time{
 font-size:18px;
 color:#ffe600;
@@ -168,7 +173,7 @@ border-radius:50%;
 
 <div class="container">
 
-<!-- 🔥 HERO -->
+<!-- HERO -->
 <div class="hero">
 
 <div class="hero-bg"></div>
@@ -181,6 +186,11 @@ border-radius:50%;
 
 <div class="title">
 SANTA FE vs CORINTHIANS
+</div>
+
+<!-- 🔥 FECHA AGREGADA -->
+<div class="date">
+📅 Miércoles 6 de mayo
 </div>
 
 <div class="time">🎙️ 6:45 PM — TRANSMISIÓN</div>
@@ -196,16 +206,16 @@ SANTA FE vs CORINTHIANS
 </div>
 </div>
 
-<!-- 🔴 LIVE -->
+<!-- LIVE -->
 <div class="player" id="liveContainer">
 
 <div class="placeholder">
-🔴 La transmisión comenzará a las 6:45 PM
+🔴 La transmisión comenzará el miércoles 6 de mayo a las 6:45 PM
 </div>
 
 </div>
 
-<!-- 🎬 REPLAYS -->
+<!-- REPLAYS -->
 <div class="replays">
 <h2>📺 REPLAYS</h2>
 
@@ -221,8 +231,8 @@ SANTA FE vs CORINTHIANS
 </div>
 
 <script>
-// 🔥 ACTIVACIÓN AUTOMÁTICA
-const inicio = new Date(2026, 4, 6, 18, 45, 0); // 6 mayo 6:45 PM
+// ACTIVACIÓN AUTOMÁTICA
+const inicio = new Date(2026, 4, 6, 18, 45, 0);
 const ahora = new Date();
 
 if(ahora >= inicio){
