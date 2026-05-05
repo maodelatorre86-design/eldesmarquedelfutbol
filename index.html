@@ -4,59 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Santa Fe vs Corinthians EN VIVO ⚽ Copa Libertadores</title>
+<title>Santa Fe vs Corinthians EN VIVO hoy ⚽ Copa Libertadores</title>
 
-<meta name="description" content="Santa Fe vs Corinthians en vivo por Copa Libertadores. Miércoles 6 de mayo desde las 6:45 PM.">
+<meta name="description" content="Ver Santa Fe vs Corinthians en vivo hoy por Copa Libertadores. Transmisión desde las 6:45 PM.">
 
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/santa-fe-vs-corinthians-en-vivo.html">
 
 <meta property="og:title" content="Santa Fe vs Corinthians EN VIVO ⚽">
-<meta property="og:image" content="SANTA FE CORINTHIANS.png">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/SANTA FE CORINTHIANS.png">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#060b16;
-color:white;
-}
+body{margin:0;font-family:Arial;background:#060b16;color:white;}
+header{background:#0c162b;padding:14px;text-align:center;font-weight:bold;}
 
-header{
-background:#0c162b;
-padding:14px;
-text-align:center;
-font-weight:bold;
-}
+.container{max-width:1200px;margin:auto;padding:12px;}
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:12px;
-}
-
-/* HERO */
-.hero{
-position:relative;
-border-radius:16px;
-overflow:hidden;
-margin-bottom:20px;
-}
-
+.hero{position:relative;border-radius:16px;overflow:hidden;margin-bottom:20px;}
 .hero-bg{
-position:absolute;
-inset:0;
+position:absolute;inset:0;
 background:url("EL CAMPIN SANTA FE.jpg") center/cover no-repeat;
 filter:blur(6px) brightness(.4);
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-padding:20px;
-text-align:center;
-}
+.hero-content{position:relative;z-index:2;padding:20px;text-align:center;}
 
 .hero img{
 width:100%;
@@ -68,58 +41,27 @@ border-radius:12px;
 /* BADGE */
 .badge{
 display:inline-block;
-background:#e50914;
 padding:6px 12px;
 border-radius:6px;
 font-size:12px;
 font-weight:bold;
 margin-bottom:10px;
+background:#e50914;
 }
 
 /* TITULO */
-.title{
-font-size:28px;
-font-weight:900;
-margin-top:10px;
-}
+.title{font-size:28px;font-weight:900;margin-top:10px;}
 
-/* FECHA */
-.date{
-font-size:15px;
-color:#ccc;
-margin-top:6px;
-}
+.date{font-size:15px;color:#ccc;margin-top:6px;}
 
-/* HORAS */
-.time{
-font-size:18px;
-color:#ffe600;
-font-weight:bold;
-margin-top:5px;
-}
+.time{font-size:18px;color:#ffe600;font-weight:bold;margin-top:5px;}
 
-/* INFO */
-.extra{
-margin-top:10px;
-font-size:14px;
-opacity:.9;
-}
+.extra{margin-top:10px;font-size:14px;opacity:.9;}
 
-/* PLAYER */
-.player{
-margin-top:20px;
-border-radius:12px;
-overflow:hidden;
-background:black;
-}
+.player{margin-top:20px;border-radius:12px;overflow:hidden;background:black;}
 
-.player iframe{
-width:100%;
-height:520px;
-border:none;
-}
+.player iframe{width:100%;height:520px;border:none;}
 
-/* PLACEHOLDER */
 .placeholder{
 height:520px;
 display:flex;
@@ -132,34 +74,6 @@ text-align:center;
 padding:20px;
 }
 
-/* REPLAYS */
-.replays{margin-top:25px;}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:10px;
-}
-
-.video-card{
-background:#0f1b33;
-border-radius:10px;
-overflow:hidden;
-position:relative;
-}
-
-.video-card img{width:100%;}
-
-.play{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,.6);
-padding:6px;
-border-radius:50%;
-}
-
-/* MOBILE */
 @media(max-width:700px){
 .title{font-size:22px;}
 .player iframe,.placeholder{height:280px;}
@@ -171,27 +85,24 @@ border-radius:50%;
 
 <header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
+<h1 style="display:none;">
+Santa Fe vs Corinthians en vivo hoy Copa Libertadores
+</h1>
+
 <div class="container">
 
-<!-- HERO -->
 <div class="hero">
-
 <div class="hero-bg"></div>
 
 <div class="hero-content">
 
-<div class="badge">PRÓXIMA TRANSMISIÓN</div>
+<div id="badge" class="badge">PRÓXIMA TRANSMISIÓN</div>
 
 <img src="SANTA FE CORINTHIANS.png">
 
-<div class="title">
-SANTA FE vs CORINTHIANS
-</div>
+<div class="title">SANTA FE vs CORINTHIANS</div>
 
-<!-- 🔥 FECHA AGREGADA -->
-<div class="date">
-📅 Miércoles 6 de mayo
-</div>
+<div id="fechaTexto" class="date"></div>
 
 <div class="time">🎙️ 6:45 PM — TRANSMISIÓN</div>
 <div class="time">🕢 7:30 PM — PARTIDO</div>
@@ -208,37 +119,54 @@ SANTA FE vs CORINTHIANS
 
 <!-- LIVE -->
 <div class="player" id="liveContainer">
-
-<div class="placeholder">
-🔴 La transmisión comenzará el miércoles 6 de mayo a las 6:45 PM
+<div class="placeholder" id="placeholder">
+🔴 La transmisión comenzará pronto
 </div>
-
-</div>
-
-<!-- REPLAYS -->
-<div class="replays">
-<h2>📺 REPLAYS</h2>
-
-<div class="grid">
-<div class="video-card"><img src="repeticion-tolima-santa-fe.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-jaguares-millonarios.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-santafe-llaneros.JPG"><div class="play">▶</div></div>
-<div class="video-card"><img src="repeticion-millonarios-fortaleza.JPG"><div class="play">▶</div></div>
-</div>
-
 </div>
 
 </div>
 
 <script>
-// ACTIVACIÓN AUTOMÁTICA
+// CONFIG
+const evento = new Date(2026, 4, 6); // 6 mayo
 const inicio = new Date(2026, 4, 6, 18, 45, 0);
+
 const ahora = new Date();
 
+// HOY / MAÑANA
+const esHoy =
+ahora.getFullYear() === evento.getFullYear() &&
+ahora.getMonth() === evento.getMonth() &&
+ahora.getDate() === evento.getDate();
+
+document.getElementById("fechaTexto").innerHTML =
+(esHoy ? "📅 Hoy • miércoles 6 de mayo" : "📅 Mañana • miércoles 6 de mayo");
+
+// EN VIVO
 if(ahora >= inicio){
+document.getElementById("badge").innerHTML = "🔴 EN VIVO";
 document.getElementById("liveContainer").innerHTML = `
 <iframe src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_EL_LINK_DEL_LIVE" allowfullscreen></iframe>
 `;
+}
+</script>
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SportsEvent",
+"name":"Santa Fe vs Corinthians",
+"startDate":"2026-05-06T19:30:00-05:00",
+"location":{
+"@type":"Place",
+"name":"El Campín",
+"address":{
+"@type":"PostalAddress",
+"addressLocality":"Bogotá",
+"addressCountry":"CO"
+}
+}
 }
 </script>
 
