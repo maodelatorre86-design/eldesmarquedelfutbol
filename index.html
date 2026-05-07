@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Santa Fe vs Corinthians EN VIVO hoy ⚽ Copa Libertadores</title>
+<title>Boston River vs Millonarios EN VIVO hoy ⚽ Copa Sudamericana</title>
 
-<meta name="description" content="Ver Santa Fe vs Corinthians en vivo hoy por Copa Libertadores. Transmisión desde las 6:45 PM y partido a las 7:30 PM.">
+<meta name="description" content="Ver Boston River vs Millonarios en vivo hoy. Partido de Copa Sudamericana a las 5:00 PM.">
 
-<meta name="keywords" content="Santa Fe vs Corinthians en vivo, Copa Libertadores en vivo, Santa Fe hoy">
+<meta name="keywords" content="Boston River vs Millonarios en vivo, Millonarios hoy, Copa Sudamericana en vivo">
 
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://eldesmarquedelfutbol.com/santa-fe-vs-corinthians-en-vivo.html">
+<link rel="canonical" href="https://eldesmarquedelfutbol.com/boston-river-vs-millonarios-en-vivo.html">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Santa Fe vs Corinthians EN VIVO ⚽">
-<meta property="og:description" content="Transmisión en vivo Santa Fe vs Corinthians por Copa Libertadores">
-<meta property="og:image" content="https://eldesmarquedelfutbol.com/SANTA FE CORINTHIANS.png">
-<meta property="og:url" content="https://eldesmarquedelfutbol.com/santa-fe-vs-corinthians-en-vivo.html">
+<meta property="og:title" content="Boston River vs Millonarios EN VIVO ⚽">
+<meta property="og:description" content="Transmisión en vivo Boston River vs Millonarios">
+<meta property="og:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20MILLONARIOS%201.JPG">
+<meta property="og:url" content="https://eldesmarquedelfutbol.com/boston-river-vs-millonarios-en-vivo.html">
 <meta property="og:type" content="website">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Santa Fe vs Corinthians EN VIVO">
-<meta name="twitter:image" content="https://eldesmarquedelfutbol.com/SANTA FE CORINTHIANS.png">
+<meta name="twitter:title" content="Boston River vs Millonarios EN VIVO">
+<meta name="twitter:image" content="https://eldesmarquedelfutbol.com/ESTADIO%20MILLONARIOS%201.JPG">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
 
@@ -42,7 +42,6 @@ text-align:center;
 font-weight:bold;
 }
 
-/* CONTENEDOR */
 .container{
 max-width:1200px;
 margin:auto;
@@ -57,15 +56,13 @@ overflow:hidden;
 margin-bottom:20px;
 }
 
-/* Fondo estadio */
 .hero-bg{
 position:absolute;
 inset:0;
-background:url("EL CAMPIN SANTA FE.jpg") center/cover no-repeat;
-filter:blur(6px) brightness(.4);
+background:url("ESTADIO MILLONARIOS 1.JPG") center/cover no-repeat;
+filter:blur(6px) brightness(.35);
 }
 
-/* Contenido */
 .hero-content{
 position:relative;
 z-index:2;
@@ -73,15 +70,14 @@ padding:20px;
 text-align:center;
 }
 
-/* Imagen principal */
-.hero img{
+.hero-image{
 width:100%;
 max-height:420px;
-object-fit:contain;
+object-fit:cover;
 border-radius:12px;
 }
 
-/* Badge */
+/* BADGE */
 .badge{
 display:inline-block;
 padding:6px 12px;
@@ -92,21 +88,21 @@ margin-bottom:10px;
 background:#e50914;
 }
 
-/* Título */
+/* TITULO */
 .title{
-font-size:28px;
+font-size:30px;
 font-weight:900;
 margin-top:10px;
 }
 
-/* Fecha */
+/* FECHA */
 .date{
 font-size:15px;
 color:#ccc;
 margin-top:6px;
 }
 
-/* Horarios */
+/* HORARIOS */
 .time{
 font-size:18px;
 color:#ffe600;
@@ -114,12 +110,12 @@ font-weight:bold;
 margin-top:5px;
 }
 
-/* Información */
+/* INFO */
 .extra{
 margin-top:10px;
 font-size:14px;
-opacity:.9;
 line-height:1.5;
+opacity:.95;
 }
 
 /* PLAYER */
@@ -136,7 +132,7 @@ height:520px;
 border:none;
 }
 
-/* Placeholder */
+/* PLACEHOLDER */
 .placeholder{
 height:520px;
 display:flex;
@@ -204,7 +200,7 @@ height:280px;
 
 <!-- H1 SEO -->
 <h1 style="display:none;">
-Santa Fe vs Corinthians en vivo hoy Copa Libertadores
+Boston River vs Millonarios en vivo hoy Copa Sudamericana
 </h1>
 
 <div class="container">
@@ -220,25 +216,24 @@ Santa Fe vs Corinthians en vivo hoy Copa Libertadores
 PRÓXIMA TRANSMISIÓN
 </div>
 
-<img src="SANTA FE CORINTHIANS.png">
+<img class="hero-image" src="ESTADIO MILLONARIOS 1.JPG">
 
 <div class="title">
-SANTA FE vs CORINTHIANS
+BOSTON RIVER vs MILLONARIOS
 </div>
 
 <div id="fechaTexto" class="date"></div>
 
 <div class="time">
-🎙️ 6:45 PM — TRANSMISIÓN
+🎙️ 4:15 PM — TRANSMISIÓN
 </div>
 
 <div class="time">
-🕢 7:30 PM — PARTIDO
+🕔 5:00 PM — PARTIDO
 </div>
 
 <div class="extra">
-🏆 Copa Libertadores<br>
-📍 El Campín de Bogotá<br>
+🏆 Copa Sudamericana<br>
 🎤 Álvaro Malkún<br>
 📊 Mauricio Guerrero y Jaime Vélez
 </div>
@@ -290,8 +285,8 @@ SANTA FE vs CORINTHIANS
 
 <script>
 // CONFIGURACIÓN FECHAS
-const evento = new Date(2026, 4, 6);
-const inicio = new Date(2026, 4, 6, 18, 45, 0);
+const evento = new Date(2026, 4, 7);
+const inicio = new Date(2026, 4, 7, 16, 15, 0);
 
 const ahora = new Date();
 
@@ -303,8 +298,8 @@ ahora.getDate() === evento.getDate();
 
 document.getElementById("fechaTexto").innerHTML =
 (esHoy
-? "📅 Hoy • miércoles 6 de mayo"
-: "📅 Mañana • miércoles 6 de mayo");
+? "📅 Hoy • jueves 7 de mayo"
+: "📅 Mañana • jueves 7 de mayo");
 
 // 🔴 EN VIVO
 if(ahora >= inicio){
@@ -313,7 +308,7 @@ document.getElementById("badge").innerHTML = "🔴 EN VIVO";
 
 document.getElementById("liveContainer").innerHTML = `
 <iframe 
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1998061797461274"
+src="https://www.facebook.com/plugins/video.php?href=PEGA_AQUI_EL_LINK_DEL_LIVE"
 allowfullscreen>
 </iframe>
 `;
@@ -326,19 +321,18 @@ allowfullscreen>
 {
 "@context":"https://schema.org",
 "@type":"SportsEvent",
-"name":"Santa Fe vs Corinthians",
-"description":"Transmisión en vivo Santa Fe vs Corinthians por Copa Libertadores",
-"startDate":"2026-05-06T19:30:00-05:00",
-"endDate":"2026-05-06T21:30:00-05:00",
-"image":"https://eldesmarquedelfutbol.com/SANTA FE CORINTHIANS.png",
+"name":"Boston River vs Millonarios",
+"description":"Transmisión en vivo Boston River vs Millonarios por Copa Sudamericana",
+"startDate":"2026-05-07T17:00:00-05:00",
+"endDate":"2026-05-07T19:00:00-05:00",
+"image":"https://eldesmarquedelfutbol.com/ESTADIO%20MILLONARIOS%201.JPG",
 
 "location":{
 "@type":"Place",
-"name":"Estadio El Campín",
+"name":"Montevideo",
 "address":{
 "@type":"PostalAddress",
-"addressLocality":"Bogotá",
-"addressCountry":"CO"
+"addressCountry":"UY"
 }
 },
 
