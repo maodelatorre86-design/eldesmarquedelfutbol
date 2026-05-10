@@ -8,9 +8,9 @@
 <!-- SEO -->
 <title>América vs Santa Fe EN VIVO hoy ⚽ Cuartos de Final Liga Colombiana</title>
 
-<meta name="description" content="Ver América vs Santa Fe en vivo hoy por los cuartos de final ida de la Liga Colombiana. Partido desde el estadio Pascual Guerrero de Cali.">
+<meta name="description" content="Ver América vs Santa Fe en vivo hoy por los cuartos de final ida de la Liga Colombiana desde el estadio Pascual Guerrero de Cali.">
 
-<meta name="keywords" content="América vs Santa Fe en vivo, Santa Fe hoy, América de Cali hoy, Liga Colombiana en vivo">
+<meta name="keywords" content="América vs Santa Fe en vivo, Santa Fe hoy, América de Cali hoy, Liga Colombiana">
 
 <meta name="robots" content="index, follow">
 
@@ -142,20 +142,7 @@ background:black;
 width:100%;
 height:520px;
 border:none;
-}
-
-/* PLACEHOLDER */
-
-.placeholder{
-height:520px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#000;
-font-size:20px;
-color:#999;
-text-align:center;
-padding:20px;
+display:block;
 }
 
 /* REPLAYS */
@@ -200,8 +187,7 @@ border-radius:50%;
 font-size:24px;
 }
 
-.player iframe,
-.placeholder{
+.player iframe{
 height:280px;
 }
 
@@ -214,7 +200,7 @@ height:280px;
 
 <header>⚽ EL DESMARQUE DEL FÚTBOL</header>
 
-<!-- SEO H1 -->
+<!-- H1 SEO -->
 <h1 style="display:none;">
 América vs Santa Fe en vivo hoy por los cuartos de final ida de la Liga Colombiana
 </h1>
@@ -228,8 +214,8 @@ América vs Santa Fe en vivo hoy por los cuartos de final ida de la Liga Colombi
 
 <div class="hero-content">
 
-<div id="badge" class="badge">
-PRÓXIMA TRANSMISIÓN
+<div class="badge">
+🔴 EN VIVO
 </div>
 
 <img class="hero-image" src="estadio-pascual-america.jpg" alt="América vs Santa Fe">
@@ -238,7 +224,9 @@ PRÓXIMA TRANSMISIÓN
 AMÉRICA vs SANTA FE
 </div>
 
-<div id="fechaTexto" class="date"></div>
+<div class="date">
+📅 Hoy • viernes 12 de junio
+</div>
 
 <div class="time">
 🎙️ 7:30 PM — TRANSMISIÓN
@@ -258,12 +246,17 @@ AMÉRICA vs SANTA FE
 </div>
 </div>
 
-<!-- 🔴 LIVE -->
-<div class="player" id="liveContainer">
+<!-- 🔴 REPRODUCTOR CORREGIDO -->
+<div class="player">
 
-<div class="placeholder">
-🔴 La transmisión comenzará pronto
-</div>
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1601196914314306&show_text=false&autoplay=false"
+style="border:none;overflow:hidden"
+scrolling="no"
+frameborder="0"
+allowfullscreen="true"
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
 
 </div>
 
@@ -300,42 +293,7 @@ AMÉRICA vs SANTA FE
 
 </div>
 
-<script>
-
-// FECHAS
-const evento = new Date(2026, 5, 12);
-const inicio = new Date(2026, 5, 12, 19, 30, 0);
-
-const ahora = new Date();
-
-// HOY / MAÑANA
-const esHoy =
-ahora.getFullYear() === evento.getFullYear() &&
-ahora.getMonth() === evento.getMonth() &&
-ahora.getDate() === evento.getDate();
-
-document.getElementById("fechaTexto").innerHTML =
-(esHoy
-? "📅 Hoy • viernes 12 de junio"
-: "📅 Mañana • viernes 12 de junio");
-
-// 🔴 EN VIVO
-if(ahora >= inicio){
-
-document.getElementById("badge").innerHTML = "🔴 EN VIVO";
-
-document.getElementById("liveContainer").innerHTML = `
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1601196914314306"
-allowfullscreen>
-</iframe>
-`;
-
-}
-
-</script>
-
-<!-- SEO SCHEMA -->
+<!-- SCHEMA SEO -->
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
