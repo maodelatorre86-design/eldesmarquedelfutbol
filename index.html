@@ -30,7 +30,6 @@
 <meta name="twitter:description" content="Cuartos de final vuelta Liga Colombiana">
 <meta name="twitter:image" content="https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg">
 
-<!-- MOBILE -->
 <meta name="theme-color" content="#060b16">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
@@ -57,8 +56,6 @@ max-width:1200px;
 margin:auto;
 padding:12px;
 }
-
-/* HERO */
 
 .hero{
 position:relative;
@@ -90,8 +87,6 @@ object-fit:cover;
 border-radius:14px;
 }
 
-/* BADGE */
-
 .badge{
 display:inline-block;
 padding:8px 14px;
@@ -103,8 +98,6 @@ background:#e50914;
 letter-spacing:.5px;
 }
 
-/* TITULO */
-
 .title{
 font-size:36px;
 font-weight:900;
@@ -112,15 +105,11 @@ margin-top:12px;
 text-shadow:0 0 12px rgba(0,0,0,.7);
 }
 
-/* FECHA */
-
 .date{
 font-size:16px;
 color:#d8d8d8;
 margin-top:8px;
 }
-
-/* HORARIOS */
 
 .time{
 font-size:21px;
@@ -129,16 +118,12 @@ font-weight:bold;
 margin-top:6px;
 }
 
-/* INFO */
-
 .extra{
 margin-top:14px;
 font-size:15px;
 line-height:1.7;
 opacity:.97;
 }
-
-/* PLAYER */
 
 .player{
 margin-top:22px;
@@ -148,19 +133,12 @@ background:black;
 box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.placeholder{
+.player iframe{
+width:100%;
 height:560px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#000;
-font-size:22px;
-color:#999;
-text-align:center;
-padding:20px;
+border:none;
+display:block;
 }
-
-/* REPLAYS */
 
 .replays{
 margin-top:28px;
@@ -210,15 +188,13 @@ border-radius:50%;
 font-size:15px;
 }
 
-/* MOBILE */
-
 @media(max-width:700px){
 
 .title{
 font-size:25px;
 }
 
-.placeholder{
+.player iframe{
 height:280px;
 }
 
@@ -257,7 +233,7 @@ Santa Fe vs América en vivo hoy por los cuartos de final vuelta de la Liga Colo
 <div class="hero-content">
 
 <div class="badge">
-PRÓXIMA TRANSMISIÓN
+🔴 EN VIVO
 </div>
 
 <img class="hero-image" src="EL CAMPIN SANTA FE.jpg" alt="Santa Fe vs América">
@@ -292,9 +268,14 @@ SANTA FE vs AMÉRICA
 
 <div class="player">
 
-<div class="placeholder">
-🔴 La transmisión comenzará a las 8:15 PM
-</div>
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1516279243294794&show_text=false&autoplay=false"
+style="border:none;overflow:hidden"
+scrolling="no"
+frameborder="0"
+allowfullscreen="true"
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
 
 </div>
 
@@ -306,7 +287,6 @@ SANTA FE vs AMÉRICA
 
 <div class="grid">
 
-<!-- BUCARAMANGA VS SANTA FE -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl/preview"
 target="_blank">
@@ -314,7 +294,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- JAGUARES VS MILLONARIOS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy/preview"
 target="_blank">
@@ -322,7 +301,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- MILLONARIOS VS FORTALEZA -->
 <a class="video-card"
 href="https://drive.google.com/file/d/12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7/preview"
 target="_blank">
@@ -330,7 +308,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- ONCE CALDAS VS MILLONARIOS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1/preview"
 target="_blank">
@@ -338,7 +315,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- SANTA FE VS LLANEROS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr/preview"
 target="_blank">
@@ -346,7 +322,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- SANTA FE VS MEDELLÍN -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG/preview"
 target="_blank">
@@ -354,7 +329,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- TOLIMA VS SANTA FE -->
 <a class="video-card"
 href="https://drive.google.com/file/d/10BF9ftY7gIe_37mbvA1VLcVe1jSrervM/preview"
 target="_blank">
@@ -369,6 +343,7 @@ target="_blank">
 </div>
 
 <!-- SEO SCHEMA -->
+
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
