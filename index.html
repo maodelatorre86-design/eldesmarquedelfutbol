@@ -14,12 +14,12 @@
 
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://www.eldesmarquedelfutbol.com/santa-fe-vs-junior-en-vivo.html">
+<link rel="canonical" href="https://www.eldesmarquedelfutbol.com/">
 
 <!-- OPEN GRAPH -->
 <meta property="og:title" content="Santa Fe vs Junior EN VIVO ⚽">
 <meta property="og:description" content="Semifinal ida Liga Colombiana desde El Campín de Bogotá">
-<meta property="og:url" content="https://www.eldesmarquedelfutbol.com/santa-fe-vs-junior-en-vivo.html">
+<meta property="og:url" content="https://www.eldesmarquedelfutbol.com/">
 <meta property="og:image" content="https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="El Desmarque del Fútbol">
@@ -30,7 +30,6 @@
 <meta name="twitter:description" content="Semifinal ida Liga Colombiana">
 <meta name="twitter:image" content="https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg">
 
-<!-- MOBILE -->
 <meta name="theme-color" content="#060b16">
 
 <link rel="icon" href="EJEMPLO LOGO 2 (2).png">
@@ -103,6 +102,13 @@ margin-bottom:14px;
 background:#e50914;
 letter-spacing:.6px;
 box-shadow:0 0 18px rgba(229,9,20,.4);
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
 /* TITULO */
@@ -151,16 +157,11 @@ background:black;
 box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.placeholder{
+.player iframe{
+width:100%;
 height:560px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#000;
-font-size:24px;
-color:#999;
-text-align:center;
-padding:20px;
+border:none;
+display:block;
 }
 
 /* REPLAYS */
@@ -213,6 +214,24 @@ border-radius:50%;
 font-size:15px;
 }
 
+/* TELEGRAM */
+
+.telegram{
+margin-top:24px;
+text-align:center;
+}
+
+.telegram a{
+display:inline-block;
+background:#229ED9;
+color:white;
+padding:12px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+}
+
 /* MOBILE */
 
 @media(max-width:700px){
@@ -221,9 +240,8 @@ font-size:15px;
 font-size:28px;
 }
 
-.placeholder{
+.player iframe{
 height:280px;
-font-size:20px;
 }
 
 .hero-image{
@@ -267,8 +285,8 @@ Santa Fe vs Junior en vivo hoy por la semifinal ida de la Liga Colombiana
 
 <div class="hero-content">
 
-<div class="badge" id="estado-transmision">
-PRÓXIMA TRANSMISIÓN
+<div class="badge">
+🔴 EN VIVO
 </div>
 
 <img class="hero-image"
@@ -279,23 +297,23 @@ alt="Santa Fe vs Junior">
 SANTA FE vs JUNIOR
 </div>
 
-<div class="date" id="fecha-dinamica">
-📅 Mañana • sábado 16 de mayo
+<div class="date">
+📅 Hoy • sábado 16 de mayo
 </div>
 
 <div class="time">
-🎙️ Transmisión desde las 7:45 PM
+🎙️ Transmisión EN VIVO
 </div>
 
 <div class="time">
-🕣 Partido 8:30 PM
+🕣 Semifinal IDA — Liga Colombiana
 </div>
 
 <div class="extra">
-🏆 Semifinal IDA — Liga Colombiana<br>
-📍 Estadio El Campín — Bogotá<br>
+🏟️ Estadio El Campín — Bogotá<br>
 🎤 Narración de Álvaro Malkún Salazar<br>
-📊 Análisis de Mauricio Guerrero y Jaime Vélez
+📊 Análisis de Mauricio Guerrero y Jaime Vélez<br>
+⚽ Más de 23 años acompañando el fútbol bogotano
 </div>
 
 </div>
@@ -306,9 +324,24 @@ SANTA FE vs JUNIOR
 
 <div class="player">
 
-<div class="placeholder">
-🔴 La transmisión comenzará a las 7:45 PM
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1620586518998401&show_text=false&autoplay=false"
+style="border:none;overflow:hidden"
+scrolling="no"
+frameborder="0"
+allowfullscreen="true"
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
+
 </div>
+
+<!-- TELEGRAM -->
+
+<div class="telegram">
+
+<a href="https://t.me/eldesmarquedelfutbol" target="_blank">
+📲 ÚNETE AL TELEGRAM OFICIAL
+</a>
 
 </div>
 
@@ -320,7 +353,6 @@ SANTA FE vs JUNIOR
 
 <div class="grid">
 
-<!-- BUCARAMANGA VS SANTA FE -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl/preview"
 target="_blank">
@@ -328,7 +360,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- JAGUARES VS MILLONARIOS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1FeVKXlq2TIhV6Fv8oT5EoTzY0w1ahFmy/preview"
 target="_blank">
@@ -336,7 +367,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- MILLONARIOS VS FORTALEZA -->
 <a class="video-card"
 href="https://drive.google.com/file/d/12G7N5F6Wm4EfHZ-0tc_7Zn29k3ERfGX7/preview"
 target="_blank">
@@ -344,7 +374,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- ONCE CALDAS VS MILLONARIOS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/14D0VKkvDkSeZaC0k1omefUu5IfjVQRr1/preview"
 target="_blank">
@@ -352,7 +381,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- SANTA FE VS LLANEROS -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1Mc1iUoG1QgAYKMpoCAJWQEnrfsG-Lgwr/preview"
 target="_blank">
@@ -360,7 +388,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- SANTA FE VS MEDELLÍN -->
 <a class="video-card"
 href="https://drive.google.com/file/d/1HYUzjoLiAm4v0J2ClYxGB559sicQtJaG/preview"
 target="_blank">
@@ -368,7 +395,6 @@ target="_blank">
 <div class="play">▶</div>
 </a>
 
-<!-- TOLIMA VS SANTA FE -->
 <a class="video-card"
 href="https://drive.google.com/file/d/10BF9ftY7gIe_37mbvA1VLcVe1jSrervM/preview"
 target="_blank">
@@ -381,34 +407,6 @@ target="_blank">
 </div>
 
 </div>
-
-<!-- FECHA DINÁMICA -->
-
-<script>
-
-const fecha = document.getElementById("fecha-dinamica");
-const estado = document.getElementById("estado-transmision");
-
-const ahora = new Date();
-
-const inicioLive = new Date("2026-05-16T19:45:00-05:00");
-
-const partido = new Date("2026-05-16T20:30:00-05:00");
-
-if(
-ahora.getDate() === 16 &&
-ahora.getMonth() === 4
-){
-fecha.innerHTML = "📅 Hoy • sábado 16 de mayo";
-}else{
-fecha.innerHTML = "📅 Mañana • sábado 16 de mayo";
-}
-
-if(ahora >= inicioLive){
-estado.innerHTML = "🔴 EN VIVO";
-}
-
-</script>
 
 <!-- SEO SCHEMA -->
 
