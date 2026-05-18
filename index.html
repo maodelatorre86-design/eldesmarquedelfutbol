@@ -273,7 +273,7 @@ SAO PAULO vs MILLONARIOS
 🏆 Copa Sudamericana<br>
 📍 Estadio Morumbí — Sao Paulo, Brasil<br>
 🎤 Narración de Álvaro Malkún Salazar<br>
-📊 Análisis de Mauricio Guerrero y Jaime Vélez<br>
+📊 Mauricio Guerrero y Jaime Vélez<br>
 ⚽ Más de 23 años acompañando el fútbol bogotano
 </div>
 
@@ -307,23 +307,23 @@ SAO PAULO vs MILLONARIOS
 
 <!-- SANTA FE VS JUNIOR -->
 <a class="video-card"
-href="https://drive.google.com/file/d/1cj2SLi0Jz8EtdwcJGTYfmwEJP_6PamTo/preview"
+href="https://drive.google.com/file/d/1oTzPB7SlYlcJ2x8t4mU9e2McZEdO8q4p/preview"
 target="_blank">
 <img src="repeticion-santa-fe-vs-junior.JPG" alt="Santa Fe vs Junior">
 <div class="play">▶</div>
 </a>
 
-<!-- SANTA FE VS AMÉRICA -->
+<!-- SANTA FE VS AMERICA -->
 <a class="video-card"
-href="https://drive.google.com/file/d/1uXkRLvyyCXC5vvg-hBKABvTdwLSdgSfa/preview"
+href="https://drive.google.com/file/d/1eDVNpsuvfqV6YF2wi-hyOBv5msodhzvn/preview"
 target="_blank">
 <img src="repeticion-santa-fe-vs-america.JPG" alt="Santa Fe vs América">
 <div class="play">▶</div>
 </a>
 
-<!-- AMÉRICA VS SANTA FE -->
+<!-- AMERICA VS SANTA FE -->
 <a class="video-card"
-href="https://drive.google.com/file/d/1oTzPB7SlYlcJ2x8t4mU9e2McZEdO8q4p/preview"
+href="https://drive.google.com/file/d/1nL-xWUbsGow9uBuWLzxQlYWTu6IpNXtT/preview"
 target="_blank">
 <img src="repeticion-america-vs-santa-fe.JPG" alt="América vs Santa Fe">
 <div class="play">▶</div>
@@ -331,7 +331,7 @@ target="_blank">
 
 <!-- FECHA 19 -->
 <a class="video-card"
-href="https://drive.google.com/file/d/1nL-xWUbsGow9uBuWLzxQlYWTu6IpNXtT/preview"
+href="https://drive.google.com/file/d/1uXkRLvyyCXC5vvg-hBKABvTdwLSdgSfa/preview"
 target="_blank">
 <img src="repeticion-fecha-19.JPG" alt="Fecha 19">
 <div class="play">▶</div>
@@ -347,25 +347,9 @@ target="_blank">
 
 <!-- BOSTON RIVER VS MILLONARIOS -->
 <a class="video-card"
-href="https://drive.google.com/file/d/1eDVNpsuvfqV6YF2wi-hyOBv5msodhzvn/preview"
+href="https://drive.google.com/file/d/1wwd4HVsiE5FqhpWJuBMAxlwmmPoxwwfV/preview"
 target="_blank">
 <img src="repeticion-boston-river-vs-millonarios.JPG" alt="Boston River vs Millonarios">
-<div class="play">▶</div>
-</a>
-
-<!-- PASTO VS SANTA FE -->
-<a class="video-card"
-href="https://drive.google.com/file/d/1eEyryq4MbMidy2MlOvvBlyET3s5oBJDt/preview"
-target="_blank">
-<img src="repeticion-pasto-vs-santa-fe.JPG" alt="Pasto vs Santa Fe">
-<div class="play">▶</div>
-</a>
-
-<!-- MILLONARIOS VS TOLIMA -->
-<a class="video-card"
-href="https://drive.google.com/file/d/1kQPpabHjsPm5q2cx9jbq_5Op-t4aO4ys/preview"
-target="_blank">
-<img src="repeticion-millonarios-vs-tolima.JPG" alt="Millonarios vs Tolima">
 <div class="play">▶</div>
 </a>
 
@@ -429,7 +413,6 @@ target="_blank">
 <script>
 
 const fecha = document.getElementById("fecha");
-const estado = document.getElementById("estado");
 
 const ahora = new Date();
 
@@ -438,7 +421,7 @@ ahora.getDate() === 19 &&
 ahora.getMonth() === 4
 ){
 fecha.innerHTML = "📅 Hoy • Copa Sudamericana";
-estado.innerHTML = "🔴 EN VIVO";
+document.getElementById("estado").innerHTML = "🔴 EN VIVO";
 }else{
 fecha.innerHTML = "📅 Mañana • Copa Sudamericana";
 }
