@@ -6,29 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>Santa Fe vs Junior EN VIVO ⚽ Semifinal Ida Liga Colombiana</title>
+<title>Sao Paulo vs Millonarios EN VIVO ⚽ Copa Sudamericana</title>
 
-<meta name="description" content="Ver Santa Fe vs Junior en vivo hoy desde el estadio El Campín de Bogotá por la semifinal ida de la Liga Colombiana.">
+<meta name="description" content="Ver Sao Paulo vs Millonarios en vivo hoy desde el estadio Morumbí de Sao Paulo, Brasil, por Copa Sudamericana.">
 
-<meta name="keywords" content="Santa Fe vs Junior en vivo, Santa Fe hoy, Junior hoy, Liga Colombiana en vivo, semifinal liga colombiana">
+<meta name="keywords" content="Sao Paulo vs Millonarios en vivo, Millonarios hoy, Copa Sudamericana en vivo, Sao Paulo hoy">
 
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://www.eldesmarquedelfutbol.com/">
 
 <!-- OPEN GRAPH -->
-<meta property="og:title" content="Santa Fe vs Junior EN VIVO ⚽">
-<meta property="og:description" content="Semifinal ida Liga Colombiana desde El Campín de Bogotá">
+<meta property="og:title" content="Sao Paulo vs Millonarios EN VIVO ⚽">
+<meta property="og:description" content="Copa Sudamericana desde el estadio Morumbí">
 <meta property="og:url" content="https://www.eldesmarquedelfutbol.com/">
-<meta property="og:image" content="https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg">
+<meta property="og:image" content="https://www.eldesmarquedelfutbol.com/estadio-morumbi.jpg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="El Desmarque del Fútbol">
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Santa Fe vs Junior EN VIVO">
-<meta name="twitter:description" content="Semifinal ida Liga Colombiana">
-<meta name="twitter:image" content="https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg">
+<meta name="twitter:title" content="Sao Paulo vs Millonarios EN VIVO">
+<meta name="twitter:description" content="Copa Sudamericana">
+<meta name="twitter:image" content="https://www.eldesmarquedelfutbol.com/estadio-morumbi.jpg">
 
 <meta name="theme-color" content="#060b16">
 
@@ -58,8 +58,6 @@ margin:auto;
 padding:12px;
 }
 
-/* HERO */
-
 .hero{
 position:relative;
 border-radius:18px;
@@ -71,7 +69,7 @@ box-shadow:0 0 25px rgba(0,0,0,.4);
 .hero-bg{
 position:absolute;
 inset:0;
-background:url("EL CAMPIN SANTA FE.jpg") center/cover no-repeat;
+background:url("estadio-morumbi.jpg") center/cover no-repeat;
 filter:blur(6px) brightness(.35);
 transform:scale(1.1);
 }
@@ -90,8 +88,6 @@ object-fit:cover;
 border-radius:14px;
 }
 
-/* BADGE */
-
 .badge{
 display:inline-block;
 padding:10px 18px;
@@ -102,16 +98,7 @@ margin-bottom:14px;
 background:#e50914;
 letter-spacing:.6px;
 box-shadow:0 0 18px rgba(229,9,20,.4);
-animation:pulse 1.5s infinite;
 }
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-/* TITULO */
 
 .title{
 font-size:40px;
@@ -121,15 +108,11 @@ line-height:1.1;
 text-shadow:0 0 12px rgba(0,0,0,.8);
 }
 
-/* FECHA */
-
 .date{
 font-size:17px;
 color:#d8d8d8;
 margin-top:10px;
 }
-
-/* HORARIOS */
 
 .time{
 font-size:22px;
@@ -138,16 +121,12 @@ font-weight:bold;
 margin-top:8px;
 }
 
-/* INFO */
-
 .extra{
 margin-top:16px;
 font-size:15px;
 line-height:1.8;
 opacity:.97;
 }
-
-/* PLAYER */
 
 .player{
 margin-top:22px;
@@ -157,14 +136,17 @@ background:black;
 box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.player iframe{
-width:100%;
+.placeholder{
 height:560px;
-border:none;
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#000;
+font-size:24px;
+color:#999;
+text-align:center;
+padding:20px;
 }
-
-/* REPLAYS */
 
 .replays{
 margin-top:28px;
@@ -214,8 +196,6 @@ border-radius:50%;
 font-size:15px;
 }
 
-/* TELEGRAM */
-
 .telegram{
 margin-top:24px;
 text-align:center;
@@ -232,16 +212,15 @@ font-weight:bold;
 font-size:16px;
 }
 
-/* MOBILE */
-
 @media(max-width:700px){
 
 .title{
 font-size:28px;
 }
 
-.player iframe{
+.placeholder{
 height:280px;
+font-size:20px;
 }
 
 .hero-image{
@@ -272,12 +251,10 @@ font-size:18px;
 </header>
 
 <h1 style="display:none;">
-Santa Fe vs Junior en vivo hoy por la semifinal ida de la Liga Colombiana
+Sao Paulo vs Millonarios en vivo hoy por Copa Sudamericana
 </h1>
 
 <div class="container">
-
-<!-- HERO -->
 
 <div class="hero">
 
@@ -285,32 +262,33 @@ Santa Fe vs Junior en vivo hoy por la semifinal ida de la Liga Colombiana
 
 <div class="hero-content">
 
-<div class="badge">
-🔴 EN VIVO
+<div class="badge" id="estado-transmision">
+PRÓXIMA TRANSMISIÓN
 </div>
 
 <img class="hero-image"
-src="EL CAMPIN SANTA FE.jpg"
-alt="Santa Fe vs Junior">
+src="estadio-morumbi.jpg"
+alt="Sao Paulo vs Millonarios">
 
 <div class="title">
-SANTA FE vs JUNIOR
+SAO PAULO vs MILLONARIOS
 </div>
 
-<div class="date">
-📅 Hoy • sábado 16 de mayo
-</div>
-
-<div class="time">
-🎙️ Transmisión EN VIVO
+<div class="date" id="fecha-dinamica">
+📅 Mañana • Copa Sudamericana
 </div>
 
 <div class="time">
-🕣 Semifinal IDA — Liga Colombiana
+🎙️ Transmisión desde las 7:00 PM
+</div>
+
+<div class="time">
+🕣 Partido 7:30 PM
 </div>
 
 <div class="extra">
-🏟️ Estadio El Campín — Bogotá<br>
+🏆 Copa Sudamericana<br>
+📍 Estadio Morumbí — Sao Paulo, Brasil<br>
 🎤 Narración de Álvaro Malkún Salazar<br>
 📊 Análisis de Mauricio Guerrero y Jaime Vélez<br>
 ⚽ Más de 23 años acompañando el fútbol bogotano
@@ -320,22 +298,13 @@ SANTA FE vs JUNIOR
 
 </div>
 
-<!-- PLAYER -->
-
 <div class="player">
 
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1620586518998401&show_text=false&autoplay=false"
-style="border:none;overflow:hidden"
-scrolling="no"
-frameborder="0"
-allowfullscreen="true"
-allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-</iframe>
-
+<div class="placeholder">
+🔴 La transmisión comenzará a las 7:00 PM
 </div>
 
-<!-- TELEGRAM -->
+</div>
 
 <div class="telegram">
 
@@ -352,6 +321,82 @@ allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share
 <h2>📺 REPLAYS</h2>
 
 <div class="grid">
+
+<!-- MÁS RECIENTES -->
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1oTzPB7SlYlcJ2x8t4mU9e2McZEdO8q4p/preview"
+target="_blank">
+<img src="replay-1.jpg" alt="Replay reciente 1">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1eDVNpsuvfqV6YF2wi-hyOBv5msodhzvn/preview"
+target="_blank">
+<img src="replay-2.jpg" alt="Replay reciente 2">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1nL-xWUbsGow9uBuWLzxQlYWTu6IpNXtT/preview"
+target="_blank">
+<img src="replay-3.jpg" alt="Replay reciente 3">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1uXkRLvyyCXC5vvg-hBKABvTdwLSdgSfa/preview"
+target="_blank">
+<img src="replay-4.jpg" alt="Replay reciente 4">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/14L_Dn9JI3YUYdRr0hsVCnPjHYbHy9t4v/preview"
+target="_blank">
+<img src="replay-5.jpg" alt="Replay reciente 5">
+<div class="play">▶</div>
+</a>
+
+<!-- INTERMEDIOS -->
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1cj2SLi0Jz8EtdwcJGTYfmwEJP_6PamTo/preview"
+target="_blank">
+<img src="replay-6.jpg" alt="Replay 6">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1eEyryq4MbMidy2MlOvvBlyET3s5oBJDt/preview"
+target="_blank">
+<img src="replay-7.jpg" alt="Replay 7">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1kQPpabHjsPm5q2cx9jbq_5Op-t4aO4ys/preview"
+target="_blank">
+<img src="replay-8.jpg" alt="Replay 8">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1fFQP-Ec1iZDgZ52u5TH591qpKlxxNQZv/preview"
+target="_blank">
+<img src="replay-9.jpg" alt="Replay 9">
+<div class="play">▶</div>
+</a>
+
+<a class="video-card"
+href="https://drive.google.com/file/d/1CQ6RTTOJJXkvbBhTjJ2WACzKiE0U6Geq/preview"
+target="_blank">
+<img src="replay-10.jpg" alt="Replay 10">
+<div class="play">▶</div>
+</a>
+
+<!-- REPLAYS ANTERIORES -->
 
 <a class="video-card"
 href="https://drive.google.com/file/d/1zr1Iw1kv5KJbjQof45cF-_xSuo98FHUl/preview"
@@ -408,44 +453,21 @@ target="_blank">
 
 </div>
 
-<!-- SEO SCHEMA -->
+<script>
 
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"SportsEvent",
+const fecha = document.getElementById("fecha-dinamica");
 
-"name":"Santa Fe vs Junior",
+const ahora = new Date();
 
-"description":"Transmisión en vivo Santa Fe vs Junior por la semifinal ida de la Liga Colombiana",
-
-"startDate":"2026-05-16T20:30:00-05:00",
-
-"endDate":"2026-05-16T22:30:00-05:00",
-
-"image":"https://www.eldesmarquedelfutbol.com/EL%20CAMPIN%20SANTA%20FE.jpg",
-
-"eventStatus":"https://schema.org/EventScheduled",
-
-"eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode",
-
-"location":{
-"@type":"Place",
-"name":"Estadio El Campín",
-"address":{
-"@type":"PostalAddress",
-"addressLocality":"Bogotá",
-"addressCountry":"CO"
-}
-},
-
-"organizer":{
-"@type":"Organization",
-"name":"El Desmarque del Fútbol",
-"url":"https://www.eldesmarquedelfutbol.com"
+if(
+ahora.getDate() === 19 &&
+ahora.getMonth() === 4
+){
+fecha.innerHTML = "📅 Hoy • Copa Sudamericana";
+}else{
+fecha.innerHTML = "📅 Mañana • Copa Sudamericana";
 }
 
-}
 </script>
 
 </body>
