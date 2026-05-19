@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/america-vs-millonarios-en-vivo.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/millonarios-vs-tolima-en-vivo.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/santa-fe-vs-corinthians-en-vivo.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
