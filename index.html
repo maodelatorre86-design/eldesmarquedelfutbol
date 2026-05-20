@@ -124,17 +124,13 @@ margin-top:22px;
 border-radius:14px;
 overflow:hidden;
 background:black;
+box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-.placeholder{
+iframe{
+width:100%;
 height:560px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-color:#999;
-text-align:center;
-padding:20px;
+border:none;
 }
 
 .telegram{
@@ -205,9 +201,8 @@ border-radius:50%;
 font-size:28px;
 }
 
-.placeholder{
+iframe{
 height:280px;
-font-size:20px;
 }
 
 .hero-image{
@@ -281,11 +276,15 @@ SAO PAULO vs MILLONARIOS
 
 </div>
 
+<!-- PLAYER FACEBOOK -->
+
 <div class="player">
 
-<div class="placeholder">
-🔴 La transmisión comenzará a las 7:00 PM
-</div>
+<iframe
+src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1022107100315116/&show_text=false&autoplay=true"
+allowfullscreen="true"
+allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+</iframe>
 
 </div>
 
@@ -413,6 +412,7 @@ target="_blank">
 <script>
 
 const fecha = document.getElementById("fecha");
+const estado = document.getElementById("estado");
 
 const ahora = new Date();
 
@@ -421,7 +421,7 @@ ahora.getDate() === 19 &&
 ahora.getMonth() === 4
 ){
 fecha.innerHTML = "📅 Hoy • Copa Sudamericana";
-document.getElementById("estado").innerHTML = "🔴 EN VIVO";
+estado.innerHTML = "🔴 EN VIVO";
 }else{
 fecha.innerHTML = "📅 Mañana • Copa Sudamericana";
 }
