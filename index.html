@@ -5,19 +5,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sao Paulo vs Millonarios EN VIVO ⚽ Copa Sudamericana</title>
+<title>Junior vs Santa Fe EN VIVO ⚽ Semifinal Vuelta Liga Colombiana</title>
 
-<meta name="description" content="Ver Sao Paulo vs Millonarios en vivo hoy desde el estadio Morumbí de Sao Paulo, Brasil, por Copa Sudamericana.">
+<meta name="description" content="Ver Junior vs Santa Fe en vivo hoy desde el estadio Romelio Martínez de Barranquilla. Semifinal vuelta de la Liga Colombiana 2026.">
 
-<meta name="keywords" content="Sao Paulo vs Millonarios en vivo, Millonarios hoy, Copa Sudamericana, Sao Paulo hoy">
+<meta name="keywords" content="Junior vs Santa Fe en vivo, Santa Fe hoy, Junior hoy, semifinal liga colombiana, Romelio Martínez">
 
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://www.eldesmarquedelfutbol.com/">
 
-<meta property="og:title" content="Sao Paulo vs Millonarios EN VIVO ⚽">
-<meta property="og:description" content="Copa Sudamericana desde el estadio Morumbí">
-<meta property="og:image" content="https://www.eldesmarquedelfutbol.com/estadio-morumbi.jpg">
+<meta property="og:title" content="Junior vs Santa Fe EN VIVO ⚽">
+<meta property="og:description" content="Semifinal vuelta desde el estadio Romelio Martínez de Barranquilla">
+<meta property="og:image" content="https://www.eldesmarquedelfutbol.com/ESTADIO%20ROMELIO%20MARTINEZ.jpg">
 <meta property="og:url" content="https://www.eldesmarquedelfutbol.com/">
 <meta property="og:type" content="website">
 
@@ -62,7 +62,7 @@ margin-bottom:20px;
 .hero-bg{
 position:absolute;
 inset:0;
-background:url("estadio-morumbi.jpg") center/cover no-repeat;
+background:url("ESTADIO ROMELIO MARTINEZ.jpg") center/cover no-repeat;
 filter:blur(6px) brightness(.35);
 transform:scale(1.1);
 }
@@ -93,7 +93,7 @@ border-radius:14px;
 }
 
 .title{
-font-size:40px;
+font-size:42px;
 font-weight:900;
 margin-top:12px;
 line-height:1.1;
@@ -127,10 +127,15 @@ background:black;
 box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-iframe{
-width:100%;
+.placeholder{
 height:560px;
-border:none;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:#999;
+text-align:center;
+padding:20px;
 }
 
 .telegram{
@@ -195,14 +200,23 @@ padding:8px 10px;
 border-radius:50%;
 }
 
+.footer{
+margin-top:40px;
+padding:25px;
+text-align:center;
+font-size:14px;
+color:#aaa;
+}
+
 @media(max-width:700px){
 
 .title{
-font-size:28px;
+font-size:30px;
 }
 
-iframe{
+.placeholder{
 height:280px;
+font-size:20px;
 }
 
 .hero-image{
@@ -241,32 +255,33 @@ font-size:18px;
 <div class="hero-content">
 
 <div class="badge" id="estado">
-PRÓXIMA TRANSMISIÓN
+🔥 SEMIFINAL VUELTA
 </div>
 
 <img class="hero-image"
-src="estadio-morumbi.jpg"
-alt="Sao Paulo vs Millonarios">
+src="ESTADIO ROMELIO MARTINEZ.jpg"
+alt="Junior vs Santa Fe">
 
 <div class="title">
-SAO PAULO vs MILLONARIOS
+JUNIOR vs SANTA FE
 </div>
 
-<div class="date" id="fecha">
-📅 Mañana • Copa Sudamericana
-</div>
-
-<div class="time">
-🎙️ Transmisión desde las 7:00 PM
+<div class="date">
+📅 Sábado 23 de mayo de 2026
 </div>
 
 <div class="time">
-⚽ Partido 7:30 PM
+🎙️ Transmisión desde las 7:30 PM
+</div>
+
+<div class="time">
+⚽ Partido 8:30 PM
 </div>
 
 <div class="extra">
-🏆 Copa Sudamericana<br>
-📍 Estadio Morumbí — Sao Paulo, Brasil<br>
+🏆 Liga Colombiana — Semifinal Vuelta<br>
+📍 Estadio Romelio Martínez — Barranquilla<br>
+🔥 Aquí se conocerá el segundo finalista del fútbol colombiano<br>
 🎤 Narración de Álvaro Malkún Salazar<br>
 📊 Mauricio Guerrero y Jaime Vélez<br>
 ⚽ Más de 23 años acompañando el fútbol bogotano
@@ -276,15 +291,11 @@ SAO PAULO vs MILLONARIOS
 
 </div>
 
-<!-- PLAYER FACEBOOK -->
-
 <div class="player">
 
-<iframe
-src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/1022107100315116/&show_text=false&autoplay=true"
-allowfullscreen="true"
-allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-</iframe>
+<div class="placeholder">
+🔴 La transmisión comenzará el sábado a las 7:30 PM
+</div>
 
 </div>
 
@@ -407,26 +418,11 @@ target="_blank">
 
 </div>
 
+<div class="footer">
+© 2026 EL DESMARQUE DEL FÚTBOL
 </div>
 
-<script>
-
-const fecha = document.getElementById("fecha");
-const estado = document.getElementById("estado");
-
-const ahora = new Date();
-
-if(
-ahora.getDate() === 19 &&
-ahora.getMonth() === 4
-){
-fecha.innerHTML = "📅 Hoy • Copa Sudamericana";
-estado.innerHTML = "🔴 EN VIVO";
-}else{
-fecha.innerHTML = "📅 Mañana • Copa Sudamericana";
-}
-
-</script>
+</div>
 
 </body>
 </html>
