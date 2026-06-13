@@ -1,8 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Nacional vs Junior EN VIVO</title></head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El Desmarque del Fútbol</title>
+
+<meta name="description" content="El Desmarque del Fútbol. Cobertura del Mundial de Fútbol 2026, noticias, análisis y seguimiento de la Liga Colombiana.">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#07111f;
+color:#fff;
+text-align:center;
+}
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("imagen_el-desmarque_del_futbol.png") center center no-repeat;
+background-size:cover;
+opacity:.18;
+}
+
+.content{
+position:relative;
+max-width:900px;
+z-index:2;
+}
+
+.logo{
+width:220px;
+max-width:90%;
+margin-bottom:30px;
+}
+
+h1{
+font-size:52px;
+margin-bottom:20px;
+color:#FFD700;
+}
+
+h2{
+font-size:32px;
+margin-bottom:30px;
+color:#ffffff;
+}
+
+.mensaje{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:15px;
+margin-bottom:25px;
+line-height:1.7;
+font-size:20px;
+}
+
+.junior{
+background:rgba(255,215,0,.15);
+border:2px solid #FFD700;
+padding:25px;
+border-radius:15px;
+margin-bottom:25px;
+}
+
+.junior h3{
+font-size:32px;
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.mundial{
+background:rgba(0,180,255,.15);
+border:2px solid #00B4FF;
+padding:25px;
+border-radius:15px;
+}
+
+.mundial h3{
+font-size:32px;
+color:#00B4FF;
+margin-bottom:10px;
+}
+
+.footer{
+margin-top:40px;
+font-size:14px;
+opacity:.8;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:36px;
+}
+
+h2{
+font-size:24px;
+}
+
+.mensaje,
+.junior,
+.mundial{
+font-size:18px;
+}
+
+}
+</style>
+</head>
+
 <body>
-<iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/eldesmarquedelfutbol/videos/4441678709492063/&show_text=false&autoplay=true"
-width="100%" height="560"></iframe>
+
+<section class="hero">
+
+<div class="content">
+
+<img src="imagen_el-desmarque_del_futbol.png"
+alt="El Desmarque del Fútbol"
+class="logo">
+
+<h1>EL DESMARQUE DEL FÚTBOL</h1>
+
+<h2>Seguimos Informando</h2>
+
+<div class="mensaje">
+Agradecemos a todos nuestros seguidores por acompañarnos durante esta temporada.
+Muy pronto regresaremos con toda la información, análisis y transmisiones del fútbol colombiano.
+</div>
+
+<div class="junior">
+<h3>🏆 Felicitaciones Junior de Barranquilla</h3>
+
+<p>
+El Desmarque del Fútbol felicita al Junior de Barranquilla por la obtención del bicampeonato de la Liga Colombiana.
+Un reconocimiento a jugadores, cuerpo técnico, directivos y afición por este importante logro para la institución rojiblanca.
+</p>
+</div>
+
+<div class="mundial">
+<h3>🌎 Modo Mundial 2026</h3>
+
+<p>
+Mientras se prepara el inicio del segundo semestre de la Liga Colombiana,
+estaremos dedicados a la cobertura especial del Mundial de Fútbol 2026 con información, resultados, análisis y seguimiento de la Selección Colombia.
+</p>
+</div>
+
+<div class="footer">
+© 2026 El Desmarque del Fútbol
+</div>
+
+</div>
+
+</section>
+
 </body>
 </html>
